@@ -33,6 +33,7 @@ public class ControllerFacade implements IController {
         super();
         this.view = view;
         this.model = model;
+        
     }
 
     /**
@@ -52,7 +53,9 @@ public class ControllerFacade implements IController {
             message.append(example);
             message.append('\n');
         }
+        
         this.getView().displayMessage(message.toString());
+        
     }
 
     /**
@@ -62,6 +65,7 @@ public class ControllerFacade implements IController {
      */
     public IView getView() {
         return this.view;
+        
     }
 
     /**
@@ -71,5 +75,7 @@ public class ControllerFacade implements IController {
      */
     public IModel getModel() {
         return this.model;
+        
     }
+    
 }
