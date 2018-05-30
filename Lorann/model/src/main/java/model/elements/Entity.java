@@ -1,20 +1,30 @@
 package model.elements;
 
 import model.Direction;
+import model.Map;
 
 public class Entity extends Element{
 	protected Direction direction;
 	protected int x;
 	protected int y;
+	protected Map map;
 	
 	
 	
 	
 	
-	public Entity(int x , int y , String image) {
+	public Entity(int x , int y , String image ,Map map) {
 		super(image);
 		this.x=x;
 		this.y=y;
+		this.map=map;
+	}
+	
+	public Entity(int x , int y , String images[] ,Map map) {
+		super(images);
+		this.x=x;
+		this.y=y;
+		this.map=map;
 	}
 	
 	

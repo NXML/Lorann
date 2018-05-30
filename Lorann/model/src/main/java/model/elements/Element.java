@@ -1,5 +1,6 @@
 package model.elements;
 
+import model.Gif;
 import model.IElements;
 import model.Sprite;
 
@@ -21,6 +22,10 @@ public class Element implements IElements {
 	public Element(String image){
 	this.sprite = new Sprite(image);
 	}
+	
+	public Element(String images[]){
+		this.sprite = new Gif(images);
+		}
 
 
 	

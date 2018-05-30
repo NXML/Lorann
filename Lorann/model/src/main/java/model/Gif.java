@@ -12,8 +12,8 @@ public class Gif extends Sprite{
 	
 	
 	
-	Gif(String startImage , String paths[]) {
-		super(startImage);
+	public Gif(String paths[]) {
+		super(paths[0]);
 		for (String path : paths) 
 		{
 				int i = 0;
