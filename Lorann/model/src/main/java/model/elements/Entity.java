@@ -3,7 +3,7 @@ package model.elements;
 import model.Direction;
 import model.Map;
 
-public class Entity extends Element{
+public class Entity extends Element {
 	protected Direction direction;
 	protected int x;
 	protected int y;
@@ -34,7 +34,8 @@ public class Entity extends Element{
 	}
 	
 	public boolean canMoveTo(int x , int y) {
-		return true;
+		return map.getElementXY(x, y).isPermeable();
+		
 	}
 	// Function moves
 	public void moveUP() {
