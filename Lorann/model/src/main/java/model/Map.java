@@ -19,7 +19,7 @@ private int width;
 private int height;
 private DataLoader dataLoader;
 
-
+//constructor
 public Map(){
 	this.dataLoader = new DataLoader(this);
 	this.dataLoader.load();
@@ -46,6 +46,8 @@ public ArrayList<Entity> getEntity(){return entities;}
 
 
 public Hero getHero(){return this.hero;};
+
+public void setHero(Hero hero){this.hero= hero;}
 
 public boolean isFinished() {return finished;}
 

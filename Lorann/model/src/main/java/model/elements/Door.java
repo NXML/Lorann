@@ -1,14 +1,18 @@
 package model.elements;
 
-public class Door extends MotionlessElement{
+import model.Map;
+
+public class Door extends Entity{
 	public static char charSprite = 'Q';
 	public static String imagePath = "Door_Open.png";
 	private boolean open = false;
 
-	public Door(String image) {
-		super(image);
+	public Door(int x , int y , Map map) {
+		super(x, x, imagePath, map);
 		// TODO Auto-generated constructor stub
 	}
+
+	
 
 	public boolean isOpen() {
 		return open;

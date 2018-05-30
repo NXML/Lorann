@@ -4,7 +4,7 @@ import model.Map;
 
 public class Hero extends Entity{
 	
-	static final char charSprite = '@';
+	public static final char charSprite = '@';
 	static final String imagesPaths[]= {"lorann_b.png","lorann_bl.png","lorann_l.png","lorann_ul.png","lorann_u.png","lorann_ur.png","lorann_r.png","lorann_br.png"};
 
 

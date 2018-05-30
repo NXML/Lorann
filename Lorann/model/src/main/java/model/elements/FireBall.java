@@ -10,5 +10,7 @@ public class FireBall extends AI{
 		super(x, y, imagePaths, map);
 		// TODO Auto-generated constructor stub
 	}
+	
+	void move() {}
 
 }
