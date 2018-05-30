@@ -19,21 +19,53 @@ private int width;
 private int height;
 private DataLoader dataLoader;
 
-//constructor
+/*
+ * <p>Constructor <p>
+ * Start to load data using a data Loader
+ * 
+ * */
 public Map(){
 	this.dataLoader = new DataLoader(this);
 	this.dataLoader.load();
 	
 }
-/// getter setter element
+/*
+ * Return an element at specific coordinaites
+ * @param int x
+ * @param int y
+ * @return Element
+ */
 public model.elements.Element getElementXY(int x , int y) {return elements[x][y];}
+
+
+/*
+ * place a certain Element at specific coordinates
+ * @param int x
+ * @param int y
+ * @return Void
+ */
 public void setElementXY(int x , int y , model.elements.Element element) {this.elements[x][y]=element;}
 
 
-//getter setter entity
+/*
+ * add entity to the arraylist of entities in this map
+ * @param entity
+ * 
+ */
 public void addEntity(Entity entity) {entities.add(entity);};
 
+/*
+ * add entity from the arraylist of entities in this map
+ * @param entity
+ * 
+ */
 public void removeEntity(Entity entity) {entities.remove(entity);};
+
+/*
+ *return all the arraylist entities of this map 
+ * @return ArrayList<Entity>
+ * 
+ */
 public ArrayList<Entity> getEntity(){return entities;}
 
 
@@ -43,20 +75,51 @@ public ArrayList<Entity> getEntity(){return entities;}
 
 
 
-
+/*
+ * get Curent map hero
+ * @return Hero
+ */
 
 public Hero getHero(){return this.hero;};
 
+
+/*
+ * set current map hero
+ * @param Hero
+ * 
+ */
 public void setHero(Hero hero){this.hero= hero;}
 
-public boolean isFinished() {return finished;}
 
+/*
+ * return the finish state of a map
+ * @return boolean
+ * 
+ */
+public boolean isFinished() {return finished;}
+/*
+ * set the current finish state of a map 
+ * @param boolean
+ */
 public void setFinished(boolean finished) {this.finished = finished;}
 
+/*
+ * Function to get the ID of a map
+ * @return int
+ * 
+ */
 public int getID() {return ID;}
 
+/*
+ * Function to get the width of the map
+ * @return int
+ */
 public int getWidth() {return width;}
 
+/*
+ * function to get the Height of the map 
+ * @return int
+ */
 public int getHeight(){return height;}
 
 

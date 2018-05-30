@@ -7,7 +7,12 @@ import javax.imageio.ImageIO;
 public class Gif extends Sprite{
 	private Image images[];
 	private int state = 0;
-
+	/*
+	 * <p> This class allow you to set multiple sprite to an element</p>
+	 * 
+	 * @param Table ofImage paths
+	 * 
+	 */
 	public Gif(String paths[]) {
 		super(paths[0]);
 		for (String path : paths) 
@@ -21,10 +26,16 @@ public class Gif extends Sprite{
 				}	
 		}
 	}
-
+	/*
+	 * Set the state of this sprite his next state
+	 * @return void
+	 */
 	public void next() {this.state=(state+1)%images.length;}
 
-
+	/*
+	 *Return the image at the currnet state of this sprite 
+	 * 
+	 */
 	public Image getImage() {
 		this.image=images[state];
 		this.next();
