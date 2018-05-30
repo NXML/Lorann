@@ -30,7 +30,7 @@ public class ElementFactory {
 	public Entity  createDemon(int x, int y) {return new Demon(x,y, map);}
 	public Entity  createMasked(int x, int y) {return new Masked(x,y, map);}
 	public Entity  createOgre(int x, int y) {return new Ogre(x,y, map);}
-	public Entity  createZombie(int x, int y) {return new Zomie(x,y, map);}
+	public Entity  createZombie(int x, int y) {return new Zombie(x,y, map);}
 	
 	
 	
