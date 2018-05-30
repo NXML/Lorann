@@ -28,7 +28,16 @@ public class DataLoader extends AbstractLoader{
 		
 	}
 	
-	
+	/*
+	 * <h2> Load elements from database<h2>
+	 * using LoranBDDConnector
+	 * 
+	 * @Author Arthur Michel
+	 * @param int MapID
+	 * 
+	 * 
+	 * 
+	 */
 	public void setMapElementsByID(int ID) {
 		final CallableStatement callStatement = prepareCall(sqlGetMapByID);
 	     try {
@@ -56,7 +65,16 @@ public class DataLoader extends AbstractLoader{
 	
 	
 	
-	
+	/*
+	 * <h2> Load array from database<h2>
+	 * using LoranBDDConnector
+	 * 
+	 * @Author Arthur Michel
+	 * @param int MapID
+	 * 
+	 * 
+	 * 
+	 */
 	
 	public void setMapEntityByID(int ID){
 		final CallableStatement callStatement = prepareCall(sqlGetMapByID);
@@ -85,7 +103,16 @@ public class DataLoader extends AbstractLoader{
 	
 	
 	
-	
+	/*
+	 * <h2> Load hero from database<h2>
+	 * using LoranBDDConnector
+	 * 
+	 * @Author Arthur Michel
+	 * @param int MapID
+	 * 
+	 * 
+	 * 
+	 */
 	
 	public void setMapHeroByID(int ID){
 		final CallableStatement callStatement = prepareCall(sqlGetMapByID);
@@ -117,7 +144,10 @@ public class DataLoader extends AbstractLoader{
 	
 	
 	
-	
+	/*
+	 * Function that run all function for load Elements
+	 * 
+	 */
 	
 	
 	public void load() {
