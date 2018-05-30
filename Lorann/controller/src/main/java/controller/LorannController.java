@@ -1,5 +1,7 @@
 package controller;
 
+import java.io.IOException;
+
 import model.IModel;
 import view.IView;
 
@@ -11,15 +13,28 @@ public class LorannController extends ControllerFacade implements IOrderPerforme
 
 	public LorannController(IView view, IModel model) {
 		super(view, model);
+		this.clearUserOrder();
 		
 	}
 	
+	@Override
 	public void play() {
+		
+	}
+	
+	public IModel getModel() {
+		return this.model;
+		
+	}
+	
+	public IView getView() {
+		return this.view;
 		
 	}
 
 	@Override
-	public void orderPerform(UserOrder userOrder) {
+	public void orderPerform(final UserOrder userOrder) {
+		this.setUserOrder(userOrder);
 		
 	}
 	
@@ -28,12 +43,13 @@ public class LorannController extends ControllerFacade implements IOrderPerforme
 		
 	}
 	
-	private void setUserOrder(UserOrder userOrder) {
+	private void setUserOrder(final UserOrder userOrder) {
 		this.userOrder = userOrder;
 		
 	}
 	
 	private void clearUserOrder() {
+		this.userOrder = UserOrder.NOP;
 		
 	}
 	
@@ -47,7 +63,12 @@ public class LorannController extends ControllerFacade implements IOrderPerforme
 		
 	}
 	
-	private void launchFireball() {
+	private void launchFireball() throws IOException {
+		
+	}
+	
+	public IOrderPerformer getOrderPerformer() {
+		return this;
 		
 	}
 

@@ -9,6 +9,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class LorannControllerTest {
+	private LorannController lorannController;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -34,6 +35,12 @@ public class LorannControllerTest {
 	@Test
 	public void testOrderPerform() {
 		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void testLaunchFireball() {
+		fail("Not yet implemented");
+		
 	}
 
 }

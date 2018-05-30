@@ -27,7 +27,7 @@ public class ControllerFacadeTest {
 	}
 
 	@Test
-	public void testStart() {
+	public void testPlay() {
 		fail("Not yet implemented");
 	}
 

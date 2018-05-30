@@ -78,5 +78,11 @@ public class ControllerFacade implements IController {
         return this.model;
         
     }
+
+	@Override
+	public IOrderPerformer getOrderPerformer() {
+		return null;
+		
+	}
     
 }

@@ -10,6 +10,8 @@ import java.sql.SQLException;
  */
 public interface IController {
 	
-	public void play() throws SQLException;
+	void play() throws SQLException;
+	
+	IOrderPerformer getOrderPerformer();
 
 }
