@@ -1,5 +1,7 @@
 package model.elements;
 
+import model.Direction;
+
 public class Entity extends Element{
 	protected Direction direction;
 	protected int x;
