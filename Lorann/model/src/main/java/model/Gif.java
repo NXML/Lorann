@@ -1,4 +1,4 @@
-package elements;
+package model;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
@@ -6,6 +6,8 @@ import javax.imageio.ImageIO;
 
 public class Gif extends Sprite{
 	private Image images[];
+	private int state = 0;
+	
 	
 	
 	
@@ -20,17 +22,17 @@ public class Gif extends Sprite{
 				    this.images[i] = ImageIO.read(pathToFile);
 				} catch (IOException ex) {
 				    ex.printStackTrace();
-				}
-				
-				
+				}	
 		}
 	}
 
+	public void next() {this.state=(state+1)%images.length;}
 
 
-
-	public Image[] getImages() {
-		return images;
+	public Image getImage() {
+		this.image=images[state];
+		this.next();
+		return this.image;
 	}
 
 		

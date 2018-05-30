@@ -1,4 +1,4 @@
-package elements;
+package model.elements;
 
 public class Entity extends Element{
 	protected Direction direction;

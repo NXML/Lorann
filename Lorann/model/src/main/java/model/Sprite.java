@@ -1,4 +1,4 @@
-package elements;
+package model;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
@@ -9,7 +9,7 @@ public class Sprite {
 	protected Image image;
 	
 	
-	Sprite(String path){
+	public Sprite(String path){
 		try {
 		    File pathToFile = new File(path);
 		    this.image = ImageIO.read(pathToFile);

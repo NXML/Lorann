@@ -1,6 +1,7 @@
-package elements;
+package model.elements;
 
 import model.IElements;
+import model.Sprite;
 
 
 
