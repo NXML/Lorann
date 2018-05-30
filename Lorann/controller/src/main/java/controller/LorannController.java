@@ -3,7 +3,7 @@ package controller;
 import model.IModel;
 import view.IView;
 
-public class LorannController extends ControllerFacade implements IOrderPerformer, IController {
+public class LorannController extends ControllerFacade implements IOrderPerformer {
 	private static final int TIME_SLEEP = 30;
 	private IView view;
 	private IModel model;
@@ -19,7 +19,7 @@ public class LorannController extends ControllerFacade implements IOrderPerforme
 	}
 
 	@Override
-	public void orderPerform(final UserOrder userOrder) {
+	public void orderPerform(UserOrder userOrder) {
 		
 	}
 	
@@ -28,7 +28,7 @@ public class LorannController extends ControllerFacade implements IOrderPerforme
 		
 	}
 	
-	private void setUserOrder(final UserOrder userOrder) {
+	private void setUserOrder(UserOrder userOrder) {
 		this.userOrder = userOrder;
 		
 	}
@@ -37,12 +37,12 @@ public class LorannController extends ControllerFacade implements IOrderPerforme
 		
 	}
 	
-	private void setView(final IView view) {
+	private void setView(IView view) {
 		this.view = view;
 		
 	}
 	
-	private void setModel(final IModel model) {
+	private void setModel(IModel model) {
 		this.model = model;
 		
 	}

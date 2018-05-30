@@ -37,12 +37,13 @@ public class ControllerFacade implements IController {
     }
 
     /**
-     * Start.
+     * Play.
      *
      * @throws SQLException
      *             the SQL exception
      */
-    public void start() throws SQLException {
+    @Override
+    public void play() throws SQLException {
         this.getView().displayMessage(this.getModel().getExampleById(1).toString());
 
         this.getView().displayMessage(this.getModel().getExampleByName("Example 2").toString());
