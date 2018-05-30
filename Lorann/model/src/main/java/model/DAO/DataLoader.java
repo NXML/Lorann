@@ -15,7 +15,12 @@ import model.elements.Ogre;
 import model.elements.Purse;
 import model.elements.VWall;
 import model.elements.Zombie;
-
+/**
+ * <h1>The Class DataLoader.</h1>
+ * 
+ * @author Arthur-Michel 
+ * @version 1.0
+ */
 public class DataLoader extends AbstractLoader{
 	
 	private final static String sqlGetMapByID ="{call FindMapByID(?)}";
