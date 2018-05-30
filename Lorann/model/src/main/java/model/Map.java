@@ -18,16 +18,30 @@ private Hero hero;
 private int width;
 private int height;
 private DataLoader dataLoader;
-private ElementFactory elementFactory;
+
 
 public Map(){
 	this.dataLoader = new DataLoader(this);
 	this.dataLoader.load();
 	
 }
-
+/// getter setter element
 public Element getElementXY(int x , int y) {return elements[x][y];}
+public void setElementXY(int x , int y , Element element) {this.elements[x][y]=element;}
+
+
+//getter setter entity
+public void addEntity(Entity entity) {entities.add(entity);};
+
+public void removeEntity(Entity entity) {entities.remove(entity);};
 public ArrayList<Entity> getEntity(){return entities;}
+
+
+
+
+
+
+
 
 
 
