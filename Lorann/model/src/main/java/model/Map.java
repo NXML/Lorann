@@ -13,7 +13,7 @@ private int ID;
 private boolean finished = false;
 private boolean exit = false;
 private ArrayList<Entity> entities;
-private Element[][] elements;
+private model.elements.Element[][] elements;
 private Hero hero;
 private int width;
 private int height;
@@ -26,8 +26,8 @@ public Map(){
 	
 }
 /// getter setter element
-public Element getElementXY(int x , int y) {return elements[x][y];}
-public void setElementXY(int x , int y , Element element) {this.elements[x][y]=element;}
+public model.elements.Element getElementXY(int x , int y) {return elements[x][y];}
+public void setElementXY(int x , int y , model.elements.Element element) {this.elements[x][y]=element;}
 
 
 //getter setter entity

@@ -1,6 +1,16 @@
 package model;
 
-import model.elements.*;
+
+import model.elements.Cross;
+import model.elements.Demon;
+import model.elements.Element;
+import model.elements.Entity;
+import model.elements.Ground;
+import model.elements.HWall;
+import model.elements.Masked;
+import model.elements.Ogre;
+import model.elements.VWall;
+import model.elements.Zombie;
 
 
 public class ElementFactory {

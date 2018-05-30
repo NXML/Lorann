@@ -10,7 +10,7 @@ public class Element implements IElements {
 
 	protected boolean permeable;
 	protected Sprite sprite;
-	protected char charSprite;
+	public char charSprite;
 	
 	
 	public char getCharSprite() {
