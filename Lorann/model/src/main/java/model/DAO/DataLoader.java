@@ -13,6 +13,7 @@ import model.elements.Element;
 import model.elements.Entity;
 import model.elements.Ground;
 import model.elements.HWall;
+import model.elements.Purse;
 import model.elements.VWall;
 
 public class DataLoader extends AbstractLoader{
@@ -37,9 +38,9 @@ public class DataLoader extends AbstractLoader{
 				if (result.first()) {
 					model.elements.Element  Bufferelement = null;
 					char Bufferchar = result.getString("CharSprite").charAt(0);
-					if(Bufferchar == Cross.spriteChar) {Bufferelement = elementFactory.getCross();}
-					else if(Bufferchar == HWall.spriteChar) {Bufferelement = elementFactory.gethWall();}
-					else if(Bufferchar == VWall.spriteChar) {Bufferelement = elementFactory.getvWall();}
+					if(Bufferchar == Cross.charSprite) {Bufferelement = elementFactory.getCross();}
+					else if(Bufferchar == HWall.charSprite) {Bufferelement = elementFactory.gethWall();}
+					else if(Bufferchar == VWall.charSprite) {Bufferelement = elementFactory.getvWall();}
 					else {Bufferelement = elementFactory.getGround();}
 					map.setElementXY(result.getInt("CoordX"), result.getInt("CoordY"), Bufferelement);
 					result.next();
@@ -49,18 +50,48 @@ public class DataLoader extends AbstractLoader{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	
-	
-	
-	};
+	}
 	
 	
 	
 	
 	
 	
-	public void setMapEntityByID(int ID){};	
-	public void setMapHeroByID(int ID){};
+	public void setMapEntityByID(int ID){
+		final CallableStatement callStatement = prepareCall(sqlGetMapByID);
+	     try {
+			callStatement.setInt(1, ID);
+			if (callStatement.execute()) {
+				final ResultSet result = callStatement.getResultSet();
+				if (result.first()) {
+					
+					char Bufferchar = result.getString("CharSprite").charAt(0);
+					
+					
+					if(Bufferchar == Purse.charSprite) {map.addEntity(new Purse(result.getInt("CoordX"), result.getInt("CoordY"),map));}
+					
+					
+					
+					
+					
+		
+					result.next();
+					}
+				}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	public void setMapHeroByID(int ID){}
 
 
 	

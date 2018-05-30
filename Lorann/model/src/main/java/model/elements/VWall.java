@@ -1,7 +1,7 @@
 package model.elements;
 
 public class VWall extends Wall{
-	public static char spriteChar = '|';
+	public static char charSprite = '|';
 	private final static  String imagePath="VWall.png";
 	
 	
