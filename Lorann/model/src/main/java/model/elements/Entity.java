@@ -31,6 +31,9 @@ public class Entity extends Element {
 	public void moveTo(int x,int y) {
 		this.x=x;
 		this.y=y;
+		this.setChanged();
+		this.notifyObservers();
+
 	}
 	
 	public boolean canMoveTo(int x , int y) {

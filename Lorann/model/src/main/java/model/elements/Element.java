@@ -1,12 +1,14 @@
 package model.elements;
 
+import java.util.Observable;
+
 import model.Gif;
 import model.IElements;
 import model.Sprite;
 
 
 
-public class Element implements IElements {
+public class Element extends Observable implements IElements {
 
 	protected boolean permeable;
 	protected Sprite sprite;
