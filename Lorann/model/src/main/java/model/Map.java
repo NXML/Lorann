@@ -18,6 +18,7 @@ private Hero hero;
 private int width;
 private int height;
 private DataLoader dataLoader;
+private ElementFactory elementFactory;
 
 public Map(){
 	this.dataLoader = new DataLoader(this);

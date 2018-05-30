@@ -8,8 +8,8 @@ public class Demon extends Monster{
 	
 	
 	
-	public Demon(int x, int y, String image, Map map) {
-		super(x, y, image, map);
+	public Demon(int x, int y, Map map) {
+		super(x, y, imagePath, map);
 		// TODO Auto-generated constructor stub
 	}
 	

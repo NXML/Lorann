@@ -8,8 +8,8 @@ public class Ogre extends Monster{
 	
 	
 	
-	public Ogre(int x, int y, String image, Map map) {
-		super(x, y, image, map);
+	public Ogre(int x, int y,  Map map) {
+		super(x, y, imagePath, map);
 		// TODO Auto-generated constructor stub
 	}
 	
