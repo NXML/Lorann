@@ -1,16 +1,19 @@
 package model.elements;
 
+import model.Direction;
 import model.Map;
 
 public class FireBall extends AI{
-
+	
 	public static String imagePaths[]= {"fireball_1.png","fireball_2.png","fireball_3.png","fireball_4.png","fireball_5.png"};
 
-	public FireBall(int x, int y, Map map) {
+	public FireBall(int x, int y,Direction direction, Map map) {
 		super(x, y, imagePaths, map);
-		// TODO Auto-generated constructor stub
+		this.direction=direction;
 	}
 	
-	void move() {}
+	void move() {
+		moveTo(x,y);
+	}
 
 }
