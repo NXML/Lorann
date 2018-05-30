@@ -7,11 +7,7 @@ import javax.imageio.ImageIO;
 public class Gif extends Sprite{
 	private Image images[];
 	private int state = 0;
-	
-	
-	
-	
-	
+
 	public Gif(String paths[]) {
 		super(paths[0]);
 		for (String path : paths) 
