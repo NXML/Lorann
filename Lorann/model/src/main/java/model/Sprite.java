@@ -11,7 +11,7 @@ public class Sprite implements ISprite{
 	
 	public Sprite(String path){
 		try {
-		    File pathToFile = new File("Sprite\\"+path);
+		    File pathToFile = new File("..\\model\\Sprite\\"+path);
 		    this.image = ImageIO.read(pathToFile);
 		} catch (IOException ex) {
 		    ex.printStackTrace();

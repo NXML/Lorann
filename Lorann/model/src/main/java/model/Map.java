@@ -45,7 +45,7 @@ public IElement getElementXY(int x , int y) {return elements[x][y];}
  * @param int y
  * @return Void
  */
-public void setElementXY(int x , int y , model.elements.Element element) {this.elements[x][y]=element;}
+public void setElementXY(int x , int y , IElement element) {this.elements[x][y]=element;}
 
 
 /*
