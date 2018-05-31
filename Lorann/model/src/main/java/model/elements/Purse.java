@@ -10,7 +10,7 @@ import model.Map;
 public class Purse extends Item{
 	
 	public static char charSprite = '$';
-	public static String imagePath = "purse.png";
+	public static String imagePath = "Sprite/purse.png";
 	
 	/*
 	 * 

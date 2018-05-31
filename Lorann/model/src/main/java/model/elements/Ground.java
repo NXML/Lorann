@@ -8,9 +8,9 @@ package model.elements;
 public class Ground extends MotionlessElement{
 	
 	public static char spriteChar = '*';
-	public static String imagePath = "Ground.png";
+	public static String imagePath = "Sprite/ground.png";
 	
-	/*
+	/*Sprite/
 	 * 
 	 * Constructor using superconstructor
 	 * 

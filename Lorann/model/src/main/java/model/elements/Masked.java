@@ -9,7 +9,7 @@ import model.Map;
  */
 public class Masked extends Monster{
 	public static char charSprite = '3';
-	public static String imagePath = "monster_3.png";
+	public static String imagePath = "Sprite/monster_3.png";
 	
 	
 	/*Constructor of a Masked which is a monster using super constructor

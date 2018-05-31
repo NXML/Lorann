@@ -6,7 +6,7 @@ package model.elements;
  * @version 1.0
  */
 public class HWall extends Wall{
-	private final static  String imagePath="HWall.png";
+	private final static  String imagePath="Sprite/horizontal_bone.png";
 	public static char charSprite = '-';
 	/*
 	 * Constructor using superconstructor

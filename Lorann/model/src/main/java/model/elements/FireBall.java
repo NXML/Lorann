@@ -10,7 +10,7 @@ import model.Map;
  */
 public class FireBall extends AI{
 	
-	public static String imagePaths[]= {"fireball_1.png","fireball_2.png","fireball_3.png","fireball_4.png","fireball_5.png"};
+	public static String imagePaths[]= {"Sprite/fireball_1.png","Sprite/fireball_2.png","Sprite/fireball_3.png","Sprite/fireball_4.png","Sprite/fireball_5.png"};
 	
 	/*
 	 * Entity Constructor

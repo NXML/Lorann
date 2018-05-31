@@ -9,7 +9,7 @@ import model.Map;
  */
 public class CristalBall extends Item{
 	
-	public static String image ="crystal_ball.png";
+	public static String image ="Sprite/crystal_ball.png";
 /*
  * Cristall ball Construcor using super constructor 
  * 

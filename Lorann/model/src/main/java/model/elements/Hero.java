@@ -11,7 +11,7 @@ import model.Map;
 public class Hero extends Entity implements IHero{
 	
 	public static final char charSprite = '@';
-	static final String imagesPaths[]= {"lorann_b.png","lorann_bl.png","lorann_l.png","lorann_ul.png","lorann_u.png","lorann_ur.png","lorann_r.png","lorann_br.png"};
+	static final String imagesPaths[]= {"Sprite/lorann_b.png","Sprite/lorann_bl.png","Sprite/lorann_l.png","Sprite/lorann_ul.png","Sprite/lorann_u.png","Sprite/lorann_ur.png","Sprite/lorann_r.png","Sprite/lorann_br.png"};
 
 
 

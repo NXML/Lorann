@@ -8,7 +8,7 @@ package model.elements;
  */
 public class Cross extends Wall{
 	
-	public static String imagePath="Cross.png";
+	public static String imagePath="Sprite/bone.png";
 	public static char charSprite = 'O';
 	
 	/*
