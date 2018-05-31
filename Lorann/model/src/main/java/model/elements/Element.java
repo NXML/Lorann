@@ -3,7 +3,8 @@ package model.elements;
 import java.util.Observable;
 
 import model.Gif;
-
+import model.IElement;
+import model.ISprite;
 import model.Sprite;
 
 
@@ -13,10 +14,10 @@ import model.Sprite;
  * @author Arthur-Michel 
  * @version 1.0
  */
-public class Element extends Observable  {
+public class Element extends Observable implements IElement {
 
 	protected boolean permeable;
-	protected Sprite sprite;
+	protected ISprite sprite;
 
 	/*
 	 * 
@@ -36,8 +37,8 @@ public class Element extends Observable  {
 		}
 
 
-	
-	public Sprite getSprite() {
+	@Override
+	public ISprite getSprite() {
 		// TODO Auto-generated method stub
 		return sprite;
 	}
@@ -47,6 +48,7 @@ public class Element extends Observable  {
 	 * @return Bolean Permeability
 	 * 
 	 */
+	@Override
 	public boolean isPermeable() {
 		return permeable;
 	}

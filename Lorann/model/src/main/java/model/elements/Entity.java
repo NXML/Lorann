@@ -1,6 +1,7 @@
 package model.elements;
 
 import model.Direction;
+import model.IEntity;
 import model.Map;
 
 
@@ -12,7 +13,7 @@ import model.Map;
  */
 
 
-public class Entity extends Element {
+public class Entity extends Element implements IEntity{
 	protected Direction direction;
 	protected int x;
 	protected int y;
@@ -59,6 +60,7 @@ public class Entity extends Element {
 	 * Check passability on another Block
 	 *  @return Boolean 
 	 */
+	
 	public boolean canMoveTo(int x , int y) {
 		return map.getElementXY(x, y).isPermeable();
 		
@@ -70,6 +72,7 @@ public class Entity extends Element {
 	/**
 	 * Move up
 	 */
+	@Override
 	public void moveUP() {
 		if(canMoveTo(this.x ,this.y-1)) {moveTo(this.x ,this.y-1);}
 		
@@ -77,6 +80,7 @@ public class Entity extends Element {
 	/*
 	 * MoveDown
 	 */
+	@Override
 	public void moveDOWN() {
 		if(canMoveTo(this.x ,this.y+1)) {moveTo(this.x ,this.y+1);}
 		
@@ -84,6 +88,7 @@ public class Entity extends Element {
 	/*
 	 * moveRight
 	 */
+	@Override
 	public void moveRIGHT() {
 		if(canMoveTo(this.x+1 ,this.y)) {moveTo(this.x+1 ,this.y);}
 		
@@ -91,6 +96,7 @@ public class Entity extends Element {
 	/*
 	 * moveLeft
 	 */
+	@Override
 	public void moveLEFT() {
 		if(canMoveTo(this.x-1 ,this.y)) {moveTo(this.x-1 ,this.y);}
 		
@@ -98,10 +104,12 @@ public class Entity extends Element {
 	/*
 	 * moveUP_RIGHT
 	 */
+	@Override
 	public void moveUP_RIGHT() {
 		if(canMoveTo(this.x+1 ,this.y-1)) {moveTo(this.x+1 ,this.y-1);}
 		
 	}
+	@Override
 	public void moveUP_LEFT() {
 		if(canMoveTo(this.x-1 ,this.y-1)) {moveTo(this.x-1 ,this.y-1);}
 		
@@ -109,6 +117,7 @@ public class Entity extends Element {
 	/*
 	 * moveUP_LEFT
 	 */
+	@Override
 	public void moveDOWN_LEFT() {
 		if(canMoveTo(this.x-1 ,this.y+1)) {moveTo(this.x-1 ,this.y+1);}
 		
@@ -116,10 +125,19 @@ public class Entity extends Element {
 	/*
 	 * moveDOWN_RIGHT
 	 */
+	@Override
 	public void moveDOWN_RIGHT() {
 		if(canMoveTo(this.x+1 ,this.y+1)) {moveTo(this.x+1 ,this.y+1);}
 		
 	}
+
+	@Override
+	public void move() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 	
 	
 	

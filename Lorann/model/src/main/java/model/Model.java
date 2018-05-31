@@ -1,7 +1,7 @@
 package model;
 
-public class Model {
-private Map map;
+public class Model implements IModel{
+private IMap map;
 /*
  * <h2>Constructor of the model<h2>
  * 
@@ -14,7 +14,8 @@ public Model() {
  * Function that return this model's map
  * @return map
  */
-public Map getMap() {
+@Override
+public IMap getMap() {
 	return map;
 }
 

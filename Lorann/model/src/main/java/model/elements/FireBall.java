@@ -28,7 +28,8 @@ public class FireBall extends AI{
 	 * Function that define the IA for fireball
 	 * 
 	 */
-	void move() {
+	@Override
+	public void move() {
 		moveTo(x,y);
 	}
 

@@ -8,13 +8,13 @@ import model.elements.Entity;
 import model.elements.Hero;
 
 
-public class Map {
-private int ID;
+public class Map implements IMap{
+private int ID=1;
 private boolean finished = false;
 private boolean exit = false;
-private ArrayList<Entity> entities;
-private model.elements.Element[][] elements;
-private Hero hero;
+private ArrayList<IEntity> entities;
+private IElement[][] elements;
+private IHero hero;
 private int width;
 private int height;
 private DataLoader dataLoader;
@@ -35,7 +35,8 @@ public Map(){
  * @param int y
  * @return Element
  */
-public model.elements.Element getElementXY(int x , int y) {return elements[x][y];}
+@Override
+public IElement getElementXY(int x , int y) {return elements[x][y];}
 
 
 /*
@@ -52,21 +53,24 @@ public void setElementXY(int x , int y , model.elements.Element element) {this.e
  * @param entity
  * 
  */
-public void addEntity(Entity entity) {entities.add(entity);};
+@Override
+public void addEntity(IEntity entity) {entities.add(entity);};
 
 /*
  * add entity from the arraylist of entities in this map
  * @param entity
  * 
  */
-public void removeEntity(Entity entity) {entities.remove(entity);};
+@Override
+public void removeEntity(IEntity entity) {entities.remove(entity);};
 
 /*
  *return all the arraylist entities of this map 
  * @return ArrayList<Entity>
  * 
  */
-public ArrayList<Entity> getEntity(){return entities;}
+@Override
+public ArrayList<IEntity> getEntity(){return entities;}
 
 
 
@@ -79,8 +83,8 @@ public ArrayList<Entity> getEntity(){return entities;}
  * get Curent map hero
  * @return Hero
  */
-
-public Hero getHero(){return this.hero;};
+@Override
+public IHero getHero(){return this.hero;};
 
 
 /*
@@ -88,7 +92,7 @@ public Hero getHero(){return this.hero;};
  * @param Hero
  * 
  */
-public void setHero(Hero hero){this.hero= hero;}
+public void setHero(IHero hero){this.hero= hero;}
 
 
 /*

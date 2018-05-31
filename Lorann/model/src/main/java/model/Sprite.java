@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class Sprite {
+public class Sprite implements ISprite{
 	protected Image image;
 	
 	
@@ -18,8 +18,8 @@ public class Sprite {
 		}
 		
 	}
-	
-	Image getImage() {
+	@Override
+	public Image getImage() {
 		return this.image;
 	}
 
