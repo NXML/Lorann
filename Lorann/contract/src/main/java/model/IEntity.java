@@ -10,4 +10,6 @@ public interface IEntity extends IElement{
 	public void moveUP_LEFT();
 	public void moveDOWN_LEFT();
 	public void moveDOWN_RIGHT();
+	public int getX();
+	public int getY();
 }

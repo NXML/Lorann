@@ -144,6 +144,14 @@ public class Entity extends Element implements IEntity{
 		
 		
 	}
+	@Override
+	public int getX() {
+		return x;
+	}
+	@Override
+	public int getY() {
+		return y;
+	}
 	
 	
 	
