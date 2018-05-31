@@ -1,9 +1,10 @@
 package main;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import controller.ControllerFacade;
-import model.ModelFacade;
+import model.Model;
 import view.ViewFacade;
 
 /**
@@ -21,14 +22,10 @@ public abstract class Main {
      *            the arguments
      * @throws InterruptedException 
      */
-    public static void main(final String[] args) throws InterruptedException {
-        final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
-
-        try {
-            controller.play();
-        } catch (final InterruptedException exception) {
-            exception.printStackTrace();
-        }
+    public static void main(final String[] args) throws InterruptedException, IOException {
+        final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new Model());
+        controller.play();
+        
     }
 
 }
