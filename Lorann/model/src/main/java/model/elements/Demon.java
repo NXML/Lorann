@@ -10,6 +10,7 @@ import model.Map;
 public class Demon extends Monster{
 	public static char charSprite = '1';
 	public static String imagePath = "monster_1.png";
+	private int movementVector =1;
 	
 	
 	/*Constructor of a Demon which is a monster using super constructor
@@ -22,10 +23,20 @@ public class Demon extends Monster{
 		// TODO Auto-generated constructor stub
 	}
 	/*
-	 * Function that define the move patern of this Monster
+	 * Function that define the move pattern of this Monster
+	 * horizontal deplacement in the map
+	 * 
 	 */
 	public void Move() {
-		this.moveTo(x, y);
+		
+		if(canMoveTo(x+(1*movementVector), y)) {
+			moveTo(x+(1*movementVector), y);
+		}
+		else if(canMoveTo(x-(1*movementVector), y)){
+			movementVector *= -1;
+		}
+		
+		
 	}
 
 }

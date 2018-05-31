@@ -10,6 +10,7 @@ import model.Map;
 public class Zombie extends Monster{
 	public static char charSprite = '2';
 	public static String imagePath = "monster_2.png";
+	public int movementVector = 1;
 	
 	
 	/*Constructor of a Zombie which is a monster using super constructor
@@ -22,10 +23,19 @@ public class Zombie extends Monster{
 		// TODO Auto-generated constructor stub
 	}
 	/*
-	 * Function that define the move patern of this Monster
+	 * Function that define the move pattern of this Monster
+	 * vertical deplacement in the map
 	 */
-	public void Move() {
-		this.moveTo(x, y);
+public void Move() {
+		
+		if(canMoveTo(x, y+(1*movementVector))) {
+			moveTo(x, y+(1*movementVector));
+		}
+		else if(canMoveTo(x, y-(1*movementVector))){
+			movementVector *= -1;
+		}
+		
+		
 	}
 
 }
