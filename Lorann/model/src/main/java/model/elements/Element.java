@@ -3,7 +3,7 @@ package model.elements;
 import java.util.Observable;
 
 import model.Gif;
-import model.IElements;
+
 import model.Sprite;
 
 
@@ -13,7 +13,7 @@ import model.Sprite;
  * @author Arthur-Michel 
  * @version 1.0
  */
-public class Element extends Observable implements IElements {
+public class Element extends Observable  {
 
 	protected boolean permeable;
 	protected Sprite sprite;
