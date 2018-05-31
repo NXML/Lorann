@@ -1,8 +1,5 @@
 package controller;
 
-import java.sql.SQLException;
-import java.util.List;
-
 import model.IModel;
 import view.IView;
 
@@ -19,6 +16,9 @@ public class ControllerFacade implements IController {
 
     /** The model. */
     private final IModel model;
+    
+    /** The controller. */
+    private IController controller;
 
     /**
      * Instantiates a new controller facade.
@@ -43,6 +43,7 @@ public class ControllerFacade implements IController {
      */
     @Override
     public void play() throws InterruptedException {
+    	this.controller.play();
     	
     }
 
