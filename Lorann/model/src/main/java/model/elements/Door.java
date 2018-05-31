@@ -9,7 +9,7 @@ import model.Map;
  */
 public class Door extends Entity{
 	public static char charSprite = 'Q';
-	public static String imagePath = "Sprite/gate_closed.png";
+	public static String imagePath = "gate_closed.png";
 	private boolean open = false;
 
 	public Door(int x , int y , Map map) {

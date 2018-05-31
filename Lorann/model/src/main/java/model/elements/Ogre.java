@@ -9,7 +9,7 @@ import model.Map;
  */
 public class Ogre extends Monster{
 	public static char charSprite = '4';
-	public static String imagePath = "Sprite/monster_4.png";
+	public static String imagePath = "monster_4.png";
 	
 	
 	/*Constructor of a Ogre which is a monster using super constructor

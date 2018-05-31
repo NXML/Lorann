@@ -19,7 +19,7 @@ public class Gif extends Sprite{
 		{
 				int i = 0;
 				try {
-				    File pathToFile = new File(path);
+				    File pathToFile = new File("Sprite\\"+path);
 				    this.images[i] = ImageIO.read(pathToFile);
 				} catch (IOException ex) {
 				    ex.printStackTrace();
