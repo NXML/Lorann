@@ -134,7 +134,7 @@ public class LorannController extends ControllerFacade implements IOrderPerforme
 	 * Launch a fireball.
 	 * 
 	 * @throws IOException
-	 * 			Signals that an I/O exception has occured
+	 * 			Signals that an I/O exception has occurred
 	 */
 	private void launchFireball() throws IOException {
 		
