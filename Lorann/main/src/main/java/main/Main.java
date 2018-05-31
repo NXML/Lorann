@@ -1,7 +1,10 @@
 package main;
 
+import java.sql.SQLException;
 
-
+import controller.ControllerFacade;
+import model.ModelFacade;
+import view.ViewFacade;
 
 /**
  * <h1>The Class Main.</h1>
@@ -16,9 +19,16 @@ public abstract class Main {
      *
      * @param args
      *            the arguments
+     * @throws InterruptedException 
      */
-    public static void main(final String[] args) {
-        
+    public static void main(final String[] args) throws InterruptedException {
+        final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
+
+        try {
+            controller.play();
+        } catch (final InterruptedException exception) {
+            exception.printStackTrace();
         }
     }
 
+}
