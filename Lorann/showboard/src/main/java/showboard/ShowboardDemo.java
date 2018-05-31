@@ -28,16 +28,16 @@ public class ShowboardDemo extends Observable implements Runnable, KeyListener {
     public static final int        height              = 15;
 
     /** The road. */
-    private IRoad            road;
+  //  private IRoad            road;
 
     /** My vehicle. */
-    private IMobile          myVehicle;
+  //  private IMobile          myVehicle;
     
     /** The Constant timeLoop represents the time in millisecond for each loop. */
     private static final int       timeLoop            = 20;
 
     /** The Constant sizeFrameCloseView is the size of the view frames. */
-    private static final int       sizeFrame           = 50;
+    private static final int       sizeFrame           = 500;
 
     /** The Constant widthBetweenFrame. */
     private static final int       widthBetweenFrame   = 10;
@@ -45,24 +45,8 @@ public class ShowboardDemo extends Observable implements Runnable, KeyListener {
     /** The Constant closeView is the cadre of the board displayed in the close view frame. */
     private static final Rectangle closeView           = new Rectangle(5, 5, width - 5, height - 5);
 
-    /** The Constant closeView is the cadre of the board displayed in the close view frame. */
-    private static final Rectangle fullView            = new Rectangle(0, 0, width, height);
 
-    /** The Constant closeView is the cadre of the board displayed in the loop view frame. */
-    private static final Rectangle loopView            = new Rectangle(3, 3, width, height);
-
-    /** The Constant closeView is the cadre of the board displayed in the width loop view frame. */
-    private static final Rectangle widthLoopView       = new Rectangle(3, 3, width, height);
-
-    /** The Constant monstersNumber is the number of monsters instantiated on the board. */
-    private static final int       monstersNumber      = 20;
-
-    /**
-     * The Constant imageMonstersNumber is the number of images used. All the images of monster have
-     * to be named "Monster&lt;9&gt;.png"
-     */
-    private static final int       imageMonstersNumber = 4;
-
+ 
     private final List<Tile>   tile;
     
     /** The white tile. */
@@ -83,11 +67,11 @@ public class ShowboardDemo extends Observable implements Runnable, KeyListener {
     
     
     public ShowboardDemo(final IRoad road, final IMobile myVehicle) throws IOException {
-        super();
+       super();
        final Random random = new Random();
-      //  this.  whiteTile  .loadImage();
-      //  this.  blackTile  .loadImage();
-      // this.  lightGrayTile  .loadImage();
+        this.  whiteTile  .loadImage();
+        this.  blackTile  .loadImage();
+       this.  lightGrayTile  .loadImage();
         this.tile = new ArrayList<Tile>();
       //   for (int i = 1; i <= monstersNumber; i++) {b
      //  	 final Monster monster = new Monster("Monster" + ((i % imageMonstersNumber) + 1) + ".png");
