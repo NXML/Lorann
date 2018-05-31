@@ -5,7 +5,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 public class Gif extends Sprite{
-	private Image images[];
+	private Image images[] = new Image[8];
 	private int state = 0;
 	/*
 	 * <p> This class allow you to set multiple sprite to an element</p>
