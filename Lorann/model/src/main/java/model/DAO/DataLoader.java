@@ -50,14 +50,16 @@ public class DataLoader extends AbstractLoader{
 			if (callStatement.execute()) {
 				final ResultSet result = callStatement.getResultSet();
 				if (result.first()) {
-					model.elements.Element  Bufferelement = null;
-					char Bufferchar = result.getString("CharSprite").charAt(0);
-					if(Bufferchar == Cross.charSprite) {Bufferelement = elementFactory.getCross();}
-					else if(Bufferchar == HWall.charSprite) {Bufferelement = elementFactory.gethWall();}
-					else if(Bufferchar == VWall.charSprite) {Bufferelement = elementFactory.getvWall();}
-					else {Bufferelement = elementFactory.getGround();}
-					map.setElementXY(result.getInt("CoordX"), result.getInt("CoordY"), Bufferelement);
-					result.next();
+					do {
+						model.elements.Element  Bufferelement = null;
+						char Bufferchar = result.getString("CharSprite").charAt(0);
+						if(Bufferchar == Cross.charSprite) {Bufferelement = elementFactory.getCross();}
+						else if(Bufferchar == HWall.charSprite) {Bufferelement = elementFactory.gethWall();}
+						else if(Bufferchar == VWall.charSprite) {Bufferelement = elementFactory.getvWall();}
+						else {Bufferelement = elementFactory.getGround();}
+						map.setElementXY(result.getInt("CoordX"), result.getInt("CoordY"), Bufferelement);
+						}
+						while(result.next());
 					}
 				result.close();
 				}
@@ -88,15 +90,20 @@ public class DataLoader extends AbstractLoader{
 			if (callStatement.execute()) {
 				final ResultSet result = callStatement.getResultSet();
 				if (result.first()) {
-					char Bufferchar = result.getString("CharSprite").charAt(0);
-					if(Bufferchar == Purse.charSprite) {map.addEntity(new Purse(result.getInt("CoordX"), result.getInt("CoordY"),map));}
-					if(Bufferchar == Door.charSprite) {map.addEntity(new Door(result.getInt("CoordX"), result.getInt("CoordY"),map));}
-					if(Bufferchar == Demon.charSprite){map.addEntity(new Demon(result.getInt("CoordX"), result.getInt("CoordY"),map));}
-					if(Bufferchar == Ogre.charSprite){map.addEntity(new Ogre(result.getInt("CoordX"), result.getInt("CoordY"),map));}
-					if(Bufferchar == Masked.charSprite){map.addEntity(new Masked(result.getInt("CoordX"), result.getInt("CoordY"),map));}
-					if(Bufferchar == Zombie.charSprite){map.addEntity(new Zombie(result.getInt("CoordX"), result.getInt("CoordY"),map));}
-					result.next();
-					}
+					do {
+						char Bufferchar = result.getString("CharSprite").charAt(0);
+						if(Bufferchar == Purse.charSprite) {map.addEntity(new Purse(result.getInt("CoordX"), result.getInt("CoordY"),map));}
+						if(Bufferchar == Door.charSprite) {map.addEntity(new Door(result.getInt("CoordX"), result.getInt("CoordY"),map));}
+						if(Bufferchar == Demon.charSprite){map.addEntity(new Demon(result.getInt("CoordX"), result.getInt("CoordY"),map));}
+						if(Bufferchar == Ogre.charSprite){map.addEntity(new Ogre(result.getInt("CoordX"), result.getInt("CoordY"),map));}
+						if(Bufferchar == Masked.charSprite){map.addEntity(new Masked(result.getInt("CoordX"), result.getInt("CoordY"),map));}
+						if(Bufferchar == Zombie.charSprite){map.addEntity(new Zombie(result.getInt("CoordX"), result.getInt("CoordY"),map));}
+						}
+					while(result.next());
+					
+				
+				
+				}
 				result.close();
 				}
 		} catch (SQLException e) {
@@ -126,14 +133,17 @@ public class DataLoader extends AbstractLoader{
 			if (callStatement.execute()) {
 				final ResultSet result = callStatement.getResultSet();
 				if (result.first()) {
-					char Bufferchar = result.getString("CharSprite").charAt(0);
-					if(Bufferchar == Hero.charSprite) {
-						Hero BufferedHero= new Hero(result.getInt("CoordX"), result.getInt("CoordY"),map);
-						map.addEntity(BufferedHero);
-						map.setHero(BufferedHero);
+					do {
+						char Bufferchar = result.getString("CharSprite").charAt(0);
+						if(Bufferchar == Hero.charSprite) {
+							Hero BufferedHero= new Hero(result.getInt("CoordX"), result.getInt("CoordY"),map);
+							map.addEntity(BufferedHero);
+							map.setHero(BufferedHero);
+						}
 					}
-					result.next();
-					}
+					while(result.next());
+					
+				}
 				result.close();
 				}
 		} catch (SQLException e) {
