@@ -52,6 +52,11 @@ public class Element extends Observable implements IElement {
 	public boolean isPermeable() {
 		return permeable;
 	}
+	
+	public String toString() {
+		return "This is an element";
+		
+	}
 
 	
 	
