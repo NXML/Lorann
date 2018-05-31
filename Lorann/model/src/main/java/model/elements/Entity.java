@@ -2,6 +2,7 @@ package model.elements;
 
 import model.Direction;
 import model.IEntity;
+import model.ISprite;
 import model.Map;
 
 
@@ -136,6 +137,14 @@ public class Entity extends Element implements IEntity{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public ISprite getSprite() {
+		return sprite;
+		
+		
+	}
+	
 	
 	
 	
