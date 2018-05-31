@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Lorann/contract/src/main/java"/>
+	<classpathentry kind="src" path="Lorann/contract/src/test/java"/>
+	<classpathentry kind="src" path="Lorann/controller/src/main/java"/>
+	<classpathentry kind="src" path="Lorann/main/src/main/java"/>
+	<classpathentry kind="src" path="Lorann/model/src/main/java"/>
+	<classpathentry kind="src" path="Lorann/showboard/src/main/java"/>
+	<classpathentry kind="src" path="Lorann/view/src/main/java"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
