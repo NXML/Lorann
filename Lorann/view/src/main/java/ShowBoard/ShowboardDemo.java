@@ -188,15 +188,6 @@ public class ShowboardDemo extends Observable implements Runnable, KeyListener {
            }
     }
 
-    private void setRoad(final IRoad road) throws IOException {
-        this.road = road;
-        for (int x = 0; x < this.getRoad().getWidth(); x++) {
-            for (int y = 0; y < this.getRoad().getHeight(); y++) {
-                this.getRoad().getOnTheRoadXY(x, y).getSprite().loadImage();
-            }
-        }
-    }
-
 
 
 	@Override
