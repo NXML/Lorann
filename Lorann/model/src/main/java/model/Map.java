@@ -9,7 +9,7 @@ import model.elements.Hero;
 
 
 public class Map implements IMap{
-private int ID=5;
+private int ID=0;
 private boolean finished = false;
 private boolean exit = false;
 private ArrayList<IEntity> entities = new ArrayList<IEntity>();
