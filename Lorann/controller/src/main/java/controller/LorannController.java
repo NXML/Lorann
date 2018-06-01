@@ -16,7 +16,7 @@ import view.IView;
 public class LorannController implements IOrderPerformer, IController {
 	
 	/** The Constant speed. */
-	private static final int TIME_SLEEP = 100;
+	private static final int TIME_SLEEP = 300;
 	
 	/** The view. */
 	private IView view;

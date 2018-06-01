@@ -7,7 +7,7 @@ import javax.imageio.ImageIO;
 public class Gif extends Sprite{
 	private Image images[] = new Image[8];
 	private int state = 0;
-	private int spritecount;
+	private int spritecount=0;
 
 	/*
 	 * <p> This class allow you to set multiple sprite to an element</p>
@@ -16,13 +16,9 @@ public class Gif extends Sprite{
 	 * 
 	 */
 	public Gif(String paths[])  {
-
 		super(paths[0]);
-		
-
 		for (String path : paths) 
 		{
-			
 			spritecount++;
 				int i = 0;
 				try {
@@ -31,6 +27,7 @@ public class Gif extends Sprite{
 				} catch (IOException ex) {
 				    ex.printStackTrace();
 				}	
+				i++;
 		}
 	}
 	/*
@@ -38,7 +35,6 @@ public class Gif extends Sprite{
 	 * @return void
 	 */
 	public void next() {this.state=(state+1)%spritecount;}
-
 	/*
 	 *Return the image at the current state of this sprite 
 	 * 
