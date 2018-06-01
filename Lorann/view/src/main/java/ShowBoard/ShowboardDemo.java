@@ -117,9 +117,9 @@ public class ShowboardDemo extends Observable implements Runnable, KeyListener {
         for (int x = 0; x < width; x++) {
            for (int y = 0; y < height; y++) {
         	   
-        	   this.map.getHero().getSprite().getImage();
+        	   //this.map.getHero().getSprite().getImage();
         	   
-        	   this.map.getElementXY(x, y).getSprite().getImage();
+        	   //this.map.getElementXY(x, y).getSprite().getImage();
         	  
         	   for(int i = 0 ; i < map.getEntity().size(); i++) {
         		   
@@ -127,7 +127,7 @@ public class ShowboardDemo extends Observable implements Runnable, KeyListener {
         	   
                // if ((x == 0) || (x == (width - 1)) || (y == 0) || (y == (height - 1))) { //Fait la bordure extérieure droite et bas
                 //	frame.addSquare(this.whiteTile, x, y);
-                //    frame.addSquare(this.lightGrayTile, x, y);
+                   // frame.addSquare(this.lightGrayTile, x, y);
                
                 // else if (((x + y) % 2) == 0) {                                 //fait damier pair
             //   frame.addSquare(this.lightGrayTile, x, y);
