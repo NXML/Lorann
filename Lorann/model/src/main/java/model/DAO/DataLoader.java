@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import model.ElementFactory;
 import model.Map;
+import model.elements.CristalBall;
 import model.elements.Cross;
 import model.elements.Demon;
 import model.elements.Door;
@@ -98,7 +99,8 @@ public class DataLoader extends AbstractLoader{
 						if(Bufferchar == Ogre.charSprite){map.addEntity(new Ogre(result.getInt("CoordX"), result.getInt("CoordY"),map));}
 						if(Bufferchar == Masked.charSprite){map.addEntity(new Masked(result.getInt("CoordX"), result.getInt("CoordY"),map));}
 						if(Bufferchar == Zombie.charSprite){map.addEntity(new Zombie(result.getInt("CoordX"), result.getInt("CoordY"),map));}
-						}
+						if(Bufferchar == CristalBall.charSprite){map.addEntity(new CristalBall(result.getInt("CoordX"), result.getInt("CoordY"),map));}
+					}
 					while(result.next());
 					
 				
