@@ -45,7 +45,7 @@ public class Element extends Observable implements IElement {
 
 	/*
 	 * Return permeability of an element
-	 * @return Bolean Permeability
+	 * @return Boolean Permeability
 	 * 
 	 */
 	@Override

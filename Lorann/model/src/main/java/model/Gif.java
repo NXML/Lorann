@@ -17,10 +17,11 @@ public class Gif extends Sprite{
 	 */
 	public Gif(String paths[])  {
 		super(paths[0]);
+		int i = 0;
 		for (String path : paths) 
 		{
 			spritecount++;
-				int i = 0;
+				
 				try {
 				    File pathToFile = new File("..\\model\\Sprite\\"+path);
 				    this.images[i] = ImageIO.read(pathToFile);
@@ -41,9 +42,10 @@ public class Gif extends Sprite{
 	 */
 	public Image getImage() {
 		
-		this.image=images[state];
+		
 		this.next();
-		return this.image;
+		
+		return this.image=images[state];
 		
 	}
 

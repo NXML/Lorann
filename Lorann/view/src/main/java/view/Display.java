@@ -56,7 +56,7 @@ public class Display extends JPanel
 			  
 			  
 			  
-
+			Thread.sleep(100);
 			this.repaint();
 		}
 			  
