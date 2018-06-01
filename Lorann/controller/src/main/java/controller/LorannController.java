@@ -12,7 +12,7 @@ import view.IView;
  * @version 1.0
  * @see IOrderPerfomer
  */
-public class LorannController extends ControllerFacade implements IOrderPerformer {
+public class LorannController implements IOrderPerformer, IController {
 	
 	/** The Constant speed. */
 	private static final int TIME_SLEEP = 30;
@@ -35,7 +35,9 @@ public class LorannController extends ControllerFacade implements IOrderPerforme
 	 * 			the model
 	 */
 	public LorannController(IView view, IModel model) {
-		super(view, model);
+		super();
+		this.view = view;
+		this.model = model;
 		this.clearUserOrder();
 		
 	}

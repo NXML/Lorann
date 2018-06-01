@@ -1,10 +1,9 @@
 package main;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import ShowBoard.ShowboardDemo;
-import controller.ControllerFacade;
+import controller.LorannController;
 import model.Model;
 import view.ViewFacade;
 
@@ -24,7 +23,7 @@ public abstract class Main {
      * @throws InterruptedException 
      */
     public static void main(final String[] args) throws InterruptedException, IOException {
-        final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new Model());
+        final LorannController controller = new LorannController(new ViewFacade(), new Model());
         final ShowboardDemo pepsi = new ShowboardDemo();//
         controller.play();
         
