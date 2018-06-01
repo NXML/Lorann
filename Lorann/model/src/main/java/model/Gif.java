@@ -8,16 +8,21 @@ public class Gif extends Sprite{
 	private Image images[] = new Image[8];
 	private int state = 0;
 	private int spritecount;
+
 	/*
 	 * <p> This class allow you to set multiple sprite to an element</p>
 	 * 
 	 * @param Table ofImage paths
 	 * 
 	 */
-	public Gif(String paths[]) {
+	public Gif(String paths[])  {
+
 		super(paths[0]);
+		
+
 		for (String path : paths) 
 		{
+			
 			spritecount++;
 				int i = 0;
 				try {
@@ -39,9 +44,11 @@ public class Gif extends Sprite{
 	 * 
 	 */
 	public Image getImage() {
+		
 		this.image=images[state];
 		this.next();
 		return this.image;
+		
 	}
 
 		

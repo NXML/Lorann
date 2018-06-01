@@ -79,6 +79,31 @@ public class Frame extends JFrame implements KeyListener , IView
 			System.out.println("droite");
 			break;
 			
+
+			case KeyEvent.VK_NUMPAD7:
+				userOrder = UserOrder.TOP_LEFT;
+				model.getMap().getHero().moveUP_LEFT();
+				System.out.println("Top left");
+				break;
+				
+			case KeyEvent.VK_NUMPAD9:
+				userOrder = UserOrder.TOP_RIGHT;
+				model.getMap().getHero().moveUP_RIGHT();
+				System.out.println("Top left");
+				break;
+					
+				case KeyEvent.VK_NUMPAD1:
+					userOrder = UserOrder.BOTTOM_LEFT;
+					model.getMap().getHero().moveDOWN_LEFT();
+					System.out.println("Top left");
+					break;
+					
+				case KeyEvent.VK_NUMPAD3:
+					userOrder = UserOrder.BOTTOM_RIGHT;
+					model.getMap().getHero().moveDOWN_RIGHT();
+					System.out.println("Top left");
+					break;
+				
 			case KeyEvent.VK_SPACE:
 			userOrder = UserOrder.MAGIC;
 			System.out.println("espace");
