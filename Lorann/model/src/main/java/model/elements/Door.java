@@ -16,7 +16,7 @@ public class Door extends Entity{
 
 	public Door(int x , int y , Map map) {
 		super(x, x, imagePath, map);
-		// TODO Auto-generated constructor stub
+		this.permeable=true;
 	}
 
 	
