@@ -6,7 +6,7 @@ import java.io.IOException;
 import controller.LorannController;
 import model.IModel;
 import model.Model;
-import view.Display;
+
 import view.Frame;
 
 /**
