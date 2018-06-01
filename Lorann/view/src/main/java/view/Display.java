@@ -11,7 +11,7 @@ import model.IModel;
 
 public class Display extends JPanel
 {
-
+	
 
 	/**
 	 * 
@@ -49,6 +49,7 @@ public class Display extends JPanel
 					  g.drawImage(model.getMap().getElementXY(x,y).getSprite().getImage(), x*32, y*32, this);
 				  }   
 			  }  
+			  
 			  for (IEntity entity : model.getMap().getEntity()) {
 				  g.drawImage(entity.getSprite().getImage(), entity.getX()*32, entity.getY()*32, this);
 			}
