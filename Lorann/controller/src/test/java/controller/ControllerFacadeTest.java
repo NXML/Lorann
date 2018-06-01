@@ -8,7 +8,13 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import model.IModel;
+import view.IView;
+
 public class ControllerFacadeTest {
+	private ControllerFacade controllerFacade;
+	private IView view;
+	private IModel model;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -20,6 +26,8 @@ public class ControllerFacadeTest {
 
 	@Before
 	public void setUp() throws Exception {
+		controllerFacade = new ControllerFacade(view, model);
+		
 	}
 
 	@After
@@ -27,18 +35,24 @@ public class ControllerFacadeTest {
 	}
 
 	@Test
-	public void testPlay() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testGetView() {
-		fail("Not yet implemented");
+		final IView expected = view;
+		assertEquals(expected, this.controllerFacade.getView());
+		
 	}
 
 	@Test
 	public void testGetModel() {
-		fail("Not yet implemented");
+		final IModel expected = model;
+		assertEquals(expected, this.controllerFacade.getModel());
+		
+	}
+	
+	@Test
+	public void testGetOrderPerformer() {
+		final IOrderPerformer expected = null;
+		assertEquals(expected, this.controllerFacade.getOrderPerformer());
+		
 	}
 
 }
