@@ -12,7 +12,7 @@ public class Map implements IMap{
 private int ID=0;
 private boolean finished = false;
 private boolean exit = false;
-private ArrayList<IEntity> entities = new ArrayList<IEntity>();
+private  ArrayList<IEntity> entities = new ArrayList<IEntity>();
 private IElement elements[][] = new IElement[20][12];
 
 private IHero hero;

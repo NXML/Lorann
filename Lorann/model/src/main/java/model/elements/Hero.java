@@ -1,5 +1,6 @@
 package model.elements;
 
+import model.IEntity;
 import model.IHero;
 import model.Map;
 /**
@@ -88,6 +89,30 @@ public class Hero extends Entity implements IHero{
 	public void Move() {
 		super.Move();
 		
+	}
+	/*
+	 * 
+	 * Rewrite Move to to interact with elements
+	 * @see model.elements.Entity#moveTo(int, int)
+	 */
+	public void moveTo(int x,int y) {
+		
+		for (IEntity entity : map.getEntity()) {
+			if(entity.getX()==this.x && entity.getY()== this.y) {
+				if(entity instanceof Monster){
+					this.setAlive(false);
+				}
+				if(entity instanceof Purse){
+					this.setScore(score+100);
+					map.removeEntity(entity);
+				}
+				
+				
+				
+				super.moveTo(x, y);
+				
+			}
+		}
 	}
 
 

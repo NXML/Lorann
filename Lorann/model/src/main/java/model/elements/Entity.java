@@ -54,7 +54,6 @@ public class Entity extends Element implements IEntity{
 		this.y=y;
 		this.setChanged();
 		this.notifyObservers();
-
 	}
 	/*
 	 * 
@@ -149,7 +148,7 @@ public class Entity extends Element implements IEntity{
 	}
 
 	public void Move() {
-		// TODO Auto-generated method stub
+		moveTo(x,y);
 		
 	}
 
