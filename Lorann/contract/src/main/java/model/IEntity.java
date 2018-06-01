@@ -1,7 +1,7 @@
 package model;
 
 public interface IEntity extends IElement{
-	public void move();
+	public void Move();
 	public void moveUP();
 	public void moveDOWN();
 	public void moveRIGHT();

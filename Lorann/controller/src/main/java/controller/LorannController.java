@@ -58,7 +58,7 @@ public class LorannController implements IOrderPerformer, IController {
 			
 			for (IEntity entity : model.getMap().getEntity()) {
 				
-				entity.move();	
+				entity.Move();	
 				
 			}
 		

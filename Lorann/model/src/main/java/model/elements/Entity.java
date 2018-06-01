@@ -132,11 +132,6 @@ public class Entity extends Element implements IEntity{
 		
 	}
 
-	@Override
-	public void move() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	@Override
 	public ISprite getSprite() {
@@ -152,6 +147,13 @@ public class Entity extends Element implements IEntity{
 	public int getY() {
 		return y;
 	}
+
+	public void Move() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 	
 	
 	

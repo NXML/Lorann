@@ -85,8 +85,8 @@ public class Hero extends Entity implements IHero{
 
 
 	@Override
-	public void move() {
-		super.move();
+	public void Move() {
+		super.Move();
 		
 	}
 
