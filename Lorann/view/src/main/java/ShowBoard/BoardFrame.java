@@ -6,6 +6,8 @@ import java.util.Observer;
 
 import javax.swing.JFrame;
 
+import model.ISprite;
+
 /**
  * <h1>The Class BoardFrame.</h1>
  * <p>
@@ -89,7 +91,7 @@ public class BoardFrame extends JFrame implements IBoard {
      * @see fr.exia.showboard.IBoard#addSquare(fr.exia.showboard.ISquare, int, int)
      */
     @Override
-    public final void addSquare(final ISquare square, final int x, final int y) {
+    public final void addSquare(final ISprite square, final int x, final int y) {
         this.getBoardPanel().addSquare(square, x, y);
     }
 

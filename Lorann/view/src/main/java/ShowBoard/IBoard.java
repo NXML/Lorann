@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.util.Observer;
 
+import model.ISprite;
+
 /**
  * <h1>The Interface IBoard.</h1>
  *
@@ -26,7 +28,7 @@ public interface IBoard {
      * @param y
      *            the y
      */
-    void addSquare(ISquare square, int x, int y);
+    void addSquare(ISprite square, int x, int y);
 
     /**
      * Adds the pawn.

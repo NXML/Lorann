@@ -1,6 +1,7 @@
 package model.elements;
 
 import model.Map;
+import model.Sprite;
 /**
  * <h1>The Class Door.</h1>
  * 
@@ -10,6 +11,7 @@ import model.Map;
 public class Door extends Entity{
 	public static char charSprite = 'Q';
 	public static String imagePath = "gate_closed.png";
+	public static String imagePath2 = "gate_open.png";
 	private boolean open = false;
 
 	public Door(int x , int y , Map map) {
@@ -24,6 +26,8 @@ public class Door extends Entity{
 	}
 
 	public void setOpen(boolean open) {
+		if(open) this.sprite = new Sprite(imagePath2);
+		if(!open) this.sprite = new Sprite(imagePath);
 		this.open = open;
 	}
 	
