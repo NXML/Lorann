@@ -2,10 +2,12 @@ package main;
 
 import java.io.IOException;
 
-import ShowBoard.ShowboardDemo;
+
 import controller.LorannController;
+import model.IModel;
 import model.Model;
-import view.ViewFacade;
+import view.Display;
+import view.Frame;
 
 /**
  * <h1>The Class Main.</h1>
@@ -23,7 +25,8 @@ public abstract class Main {
      * @throws InterruptedException 
      */
     public static void main(final String[] args) throws InterruptedException, IOException {
-        final LorannController controller = new LorannController(new ViewFacade(), new Model());
+    	IModel model =new Model();
+        final LorannController controller = new LorannController(new Frame(model), model);
         controller.play();
         
     }
