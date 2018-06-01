@@ -104,7 +104,7 @@ public class Frame extends JFrame implements KeyListener , IView
 					System.out.println("bottom right");
 					break;
 				
-			case KeyEvent.VK_SPACE:
+			case KeyEvent.VK_NUMPAD5:
 			userOrder = UserOrder.MAGIC;
 			System.out.println("espace");
 			break;
