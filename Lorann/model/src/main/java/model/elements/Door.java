@@ -15,7 +15,7 @@ public class Door extends Entity{
 	private boolean open = false;
 
 	public Door(int x , int y , Map map) {
-		super(x, x, imagePath, map);
+		super(x, y, imagePath, map);
 		this.permeable=true;
 	}
 

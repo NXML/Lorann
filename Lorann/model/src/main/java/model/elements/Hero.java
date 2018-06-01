@@ -106,6 +106,9 @@ public class Hero extends Entity implements IHero{
 					this.setScore(score+100);
 					map.removeEntity(entity);
 				}
+				if(entity instanceof Door ){
+					if(((Door) entity).isOpen()==false) {this.setAlive(false);}
+				}
 				
 				
 				
