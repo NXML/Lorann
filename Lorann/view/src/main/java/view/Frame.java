@@ -52,28 +52,28 @@ public class Frame extends JFrame implements KeyListener , IView
 	{
 		switch(keyEvent.getKeyCode())
 		{
-			case KeyEvent.VK_UP:
+			case KeyEvent.VK_NUMPAD8:
 			userOrder = UserOrder.UP;
 			model.getMap().getHero().moveUP();
 			System.out.println("haut");
 			break;
 			
 			
-			case KeyEvent.VK_DOWN:
+			case KeyEvent.VK_NUMPAD2:
 			userOrder = UserOrder.DOWN;
 			model.getMap().getHero().moveDOWN();
 			System.out.println("bas");
 			break;
 			
 			
-			case KeyEvent.VK_LEFT :
+			case KeyEvent.VK_NUMPAD4 :
 			userOrder = UserOrder.LEFT;
 			model.getMap().getHero().moveLEFT();
 			System.out.println("gauche");
 			break;
 			
 			
-			case KeyEvent.VK_RIGHT:
+			case KeyEvent.VK_NUMPAD6:
 			userOrder = UserOrder.RIGHT;
 			model.getMap().getHero().moveRIGHT();
 			System.out.println("droite");
@@ -89,19 +89,19 @@ public class Frame extends JFrame implements KeyListener , IView
 			case KeyEvent.VK_NUMPAD9:
 				userOrder = UserOrder.TOP_RIGHT;
 				model.getMap().getHero().moveUP_RIGHT();
-				System.out.println("Top left");
+				System.out.println("Top right");
 				break;
 					
 				case KeyEvent.VK_NUMPAD1:
 					userOrder = UserOrder.BOTTOM_LEFT;
 					model.getMap().getHero().moveDOWN_LEFT();
-					System.out.println("Top left");
+					System.out.println("bottom left");
 					break;
 					
 				case KeyEvent.VK_NUMPAD3:
 					userOrder = UserOrder.BOTTOM_RIGHT;
 					model.getMap().getHero().moveDOWN_RIGHT();
-					System.out.println("Top left");
+					System.out.println("bottom right");
 					break;
 				
 			case KeyEvent.VK_SPACE:
