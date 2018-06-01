@@ -24,7 +24,6 @@ public abstract class Main {
      */
     public static void main(final String[] args) throws InterruptedException, IOException {
         final LorannController controller = new LorannController(new ViewFacade(), new Model());
-        final ShowboardDemo pepsi = new ShowboardDemo();//
         controller.play();
         
     }
