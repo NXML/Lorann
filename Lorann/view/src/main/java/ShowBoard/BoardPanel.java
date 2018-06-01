@@ -58,7 +58,7 @@ class BoardPanel extends JPanel implements Observer {
     private static final long   serialVersionUID = -3618605287900763008L;
 
     /** The squares represents the square of the board. */
-    private ISprite[][]         squares;
+    private ISquare[][]         squares;
 
     /** The pawns represents a list of all the pawns on the board. */
     private final List<IPawn>   pawns;
@@ -135,10 +135,12 @@ class BoardPanel extends JPanel implements Observer {
      * @param y
      *            the y
      */
-    public final void addSquare(final ISprite square, final int x, final int y) {
-        this.squares[x][y] = square;
-    }
-
+    
+    public void addSquare(final ISquare square, int x, int y) {
+		this.squares[x][y] = square;
+		
+	}
+    
     /**
      * Adds the pawn.
      *
@@ -232,7 +234,7 @@ class BoardPanel extends JPanel implements Observer {
      */
     public final void setDimension(final Dimension dimension) {
         this.dimension = dimension;
-        this.squares = new ISprite[this.getDimension().width][this.getDimension().height];
+        this.squares = new ISquare[this.getDimension().width][this.getDimension().height];
     }
 
     /**
@@ -440,5 +442,7 @@ class BoardPanel extends JPanel implements Observer {
     private int getSquareSizeHeight() {
         return this.getHeight() / this.getDisplayFrame().height;
     }
+
+	
 
 }
