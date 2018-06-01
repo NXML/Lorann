@@ -40,14 +40,14 @@ public class FireBall extends AI{
 		default :normalVectorX=0;normalVectorY=0; break;
 		};
 		
-		this.move();
+		this.Move();
 	}
 	/*
 	 * Function that define the IA for fireball
 	 * 
 	 */
 	@Override
-	public void move() {
+	public void Move() {
 		
 		if(canMoveTo(this.x+normalVectorX,this.y+normalVectorY)) {
 			moveTo(this.x+normalVectorX,this.y+normalVectorY);	

@@ -26,6 +26,8 @@ public class Zombie extends Monster{
 	 * Function that define the move pattern of this Monster
 	 * vertical deplacement in the map
 	 */
+	
+	@Override
 public void Move() {
 		
 		if(canMoveTo(x, y+(1*movementVector))) {

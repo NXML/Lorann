@@ -12,7 +12,7 @@ import model.Map;
 public class Ogre extends Monster{
 	public static char charSprite = '4';
 	public static String imagePath = "monster_4.png";
-	int randomX,randomY;
+	public int movementVector = 1;
 	
 	
 	/*Constructor of a Ogre which is a monster using super constructor
@@ -28,18 +28,16 @@ public class Ogre extends Monster{
 	 * Function that define the move patern of this Monster
 	 * this monster teleport in all the map
 	 */
-	public void Move() {
-		int counter=0;
-		do {
-		 randomX = new Random().nextInt((0 - 20) + 1) + 0;
-		 randomY = new Random().nextInt((0 - 12) + 1) + 0;
-		 if(canMoveTo(randomX,randomY)) {
-			 moveTo(randomX,y+randomY);
-		 }
+public void Move() {
 		
+		if(canMoveTo(x, y+(1*movementVector))) {
+			moveTo(x, y+(1*movementVector));
 		}
-		while(!canMoveTo(randomX,randomY) | counter<20);
-			
+		else if(canMoveTo(x, y-(1*movementVector))){
+			movementVector *= -1;
+		}
+		
+		
 	}
 
 }

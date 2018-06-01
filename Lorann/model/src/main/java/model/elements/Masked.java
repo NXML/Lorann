@@ -12,7 +12,7 @@ import model.Map;
 public class Masked extends Monster{
 	public static char charSprite = '3';
 	public static String imagePath = "monster_3.png";
-	private int offsetX , offsetY;
+	private int movementVector =1;
 	
 	/*Constructor of a Masked which is a monster using super constructor
 	 * @param int x
@@ -27,20 +27,16 @@ public class Masked extends Monster{
 	 * Function that define the move patern of this Monster
 	 * random direction each step
 	 */
-	public void Move() {
-		int counter=0;
-		int[] array = {-1,0,1};
+public void Move() {
 		
-		do {
-		 offsetX = array[new Random().nextInt(array.length)];
-		 offsetY = array[new Random().nextInt(array.length)];
-		 if(canMoveTo(x+offsetX,y+offsetY)) {
-			 moveTo(x+offsetX,y+offsetY);
-		 }
-		
+		if(canMoveTo(x+(1*movementVector), y)) {
+			moveTo(x+(1*movementVector), y);
 		}
-		while(!canMoveTo(x+offsetX,y+offsetY) | counter<20);
-			
+		else if(canMoveTo(x-(1*movementVector), y)){
+			movementVector *= -1;
+		}
+		
+		
 	}
 
 }
