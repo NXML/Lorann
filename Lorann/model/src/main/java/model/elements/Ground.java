@@ -10,6 +10,7 @@ public class Ground extends MotionlessElement{
 	public static char spriteChar = '*';
 	public static String imagePath = "ground.png";
 	
+	
 	/*Sprite/
 	 * 
 	 * Constructor using superconstructor
@@ -17,6 +18,7 @@ public class Ground extends MotionlessElement{
 	 */
 	public Ground() {
 		super(imagePath);
+		this.permeable=true;
 		// TODO Auto-generated constructor stub
 	}
 

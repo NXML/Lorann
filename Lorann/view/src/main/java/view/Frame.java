@@ -7,6 +7,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import controller.IController;
+import controller.UserOrder;
 import model.IModel;
 
 
@@ -21,7 +22,7 @@ public class Frame extends JFrame implements KeyListener , IView
 	private Display Display;
 	private IController controller;
 	private IModel model;
-	
+	private UserOrder userOrder;
 	
 	public Frame(IModel model)
 	{
@@ -52,30 +53,31 @@ public class Frame extends JFrame implements KeyListener , IView
 		switch(keyEvent.getKeyCode())
 		{
 			case KeyEvent.VK_UP:
-		
+			userOrder = UserOrder.UP;
 			System.out.println("haut");
 			break;
 			
 			
 			case KeyEvent.VK_DOWN:
-			
+			userOrder = UserOrder.DOWN;
 			System.out.println("bas");
 			break;
 			
 			
 			case KeyEvent.VK_LEFT :
-			
+			userOrder = UserOrder.LEFT;
 			System.out.println("gauche");
 			break;
 			
 			
 			case KeyEvent.VK_RIGHT:
-			
+			userOrder = UserOrder.RIGHT;
+			model.getMap().getHero().moveRIGHT();
 			System.out.println("droite");
 			break;
 			
 			case KeyEvent.VK_SPACE:
-			
+			userOrder = UserOrder.MAGIC;
 			System.out.println("espace");
 			break;
 				
@@ -122,7 +124,7 @@ public class Frame extends JFrame implements KeyListener , IView
 
 	public void keyTyped(KeyEvent keyEvent) 
 	{
-
+			
 	}
 	
 	
