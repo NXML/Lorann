@@ -54,18 +54,21 @@ public class Frame extends JFrame implements KeyListener , IView
 		{
 			case KeyEvent.VK_UP:
 			userOrder = UserOrder.UP;
+			model.getMap().getHero().moveUP();
 			System.out.println("haut");
 			break;
 			
 			
 			case KeyEvent.VK_DOWN:
 			userOrder = UserOrder.DOWN;
+			model.getMap().getHero().moveDOWN();
 			System.out.println("bas");
 			break;
 			
 			
 			case KeyEvent.VK_LEFT :
 			userOrder = UserOrder.LEFT;
+			model.getMap().getHero().moveLEFT();
 			System.out.println("gauche");
 			break;
 			
@@ -87,37 +90,7 @@ public class Frame extends JFrame implements KeyListener , IView
 
 	public void keyReleased(KeyEvent keyEvent) 
 	{
-		switch(keyEvent.getKeyCode())
-		{
-			case KeyEvent.VK_UP:
-			
-			System.out.println("haut relache");
-			break;
-			
-			
-			case KeyEvent.VK_DOWN:
-			
-			System.out.println("bas relache");
-			break;
-			
-			
-			case KeyEvent.VK_LEFT :
-			
-			System.out.println("gauche relache");
-			break;
-			
-			
-			case KeyEvent.VK_RIGHT:
-			
-			System.out.println("droite relache");
-			break;
-			
-			case KeyEvent.VK_SPACE:
-			
-			System.out.println("espace relache");
-			break;
-				
-		}
+		
 	}
 
 
