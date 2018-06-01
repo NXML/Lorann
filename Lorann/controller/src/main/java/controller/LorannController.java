@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 
+import model.IEntity;
 import model.IModel;
 import view.IView;
 
@@ -15,7 +16,7 @@ import view.IView;
 public class LorannController implements IOrderPerformer, IController {
 	
 	/** The Constant speed. */
-	private static final int TIME_SLEEP = 300;
+	private static final int TIME_SLEEP = 100;
 	
 	/** The view. */
 	private IView view;
@@ -48,8 +49,19 @@ public class LorannController implements IOrderPerformer, IController {
 	 */
 	@Override
 	public void play() throws InterruptedException {
+		
+		
+		
 		while(this.getModel().getMap().getHero().isAlive()) {
+			
 			Thread.sleep(TIME_SLEEP);
+			
+			for (IEntity entity : model.getMap().getEntity()) {
+				
+				entity.move();						
+			}
+		
+			
 			switch(this.userOrder) {
 			case UP:
 				this.getModel().getMap().getHero().moveUP();

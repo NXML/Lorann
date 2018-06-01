@@ -19,7 +19,8 @@ public class Ground extends MotionlessElement{
 	public Ground() {
 		super(imagePath);
 		this.permeable=true;
-		// TODO Auto-generated constructor stub
+		this.permeable = true;
+		// TODO uto-generated constructor stub
 	}
 
 }
