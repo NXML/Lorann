@@ -83,7 +83,7 @@ public class Frame extends JFrame implements KeyListener , IView
 			userOrder = UserOrder.MAGIC;
 			System.out.println("espace");
 			break;
-				
+			
 		}
 	}
 
