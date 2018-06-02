@@ -98,7 +98,7 @@ public class Hero extends Entity implements IHero{
 	 */
 	public void moveTo(int x,int y) {
 		super.moveTo(x, y);
-		for (IEntity entity : map.getEntity()) {
+		for (IEntity entity : (ArrayList<IEntity>) map.getEntity().clone()) {
 			//kill loran
 			if(entity.getX()==x && entity.getY()== y) {
 				if(entity instanceof Monster){
@@ -106,8 +106,9 @@ public class Hero extends Entity implements IHero{
 				}
 				//get score from purse
 				if(entity instanceof Purse){
-					this.setScore(score+100);
+					this.setScore(score+ ((Purse)entity).getValue());
 					map.removeEntity(entity);
+					System.out.println(map.getHero().getScore());
 				}
 				//Die From closed door
 				if(entity instanceof Door ){
