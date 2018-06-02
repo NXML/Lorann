@@ -11,7 +11,12 @@ public class Purse extends Item{
 	
 	public static char charSprite = '$';
 	public static String imagePath = "purse.png";
+	private int value = 100;
 	
+	public int getValue() {
+		return value;
+	}
+
 	/*
 	 * 
 	 * Constructor using super constructor
