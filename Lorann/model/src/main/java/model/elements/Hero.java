@@ -98,14 +98,18 @@ public class Hero extends Entity implements IHero{
 	public void moveTo(int x,int y) {
 		
 		for (IEntity entity : map.getEntity()) {
+			//kill loran
 			if(entity.getX()==this.x && entity.getY()== this.y) {
 				if(entity instanceof Monster){
 					this.setAlive(false);
 				}
+				
+				//get score from purse
 				if(entity instanceof Purse){
 					this.setScore(score+100);
 					map.removeEntity(entity);
 				}
+				//Die From closed door
 				if(entity instanceof Door ){
 					if(((Door) entity).isOpen()==false) {this.setAlive(false);}
 					else {map.setFinished(true);}
@@ -117,13 +121,10 @@ public class Hero extends Entity implements IHero{
 						if(subentyty instanceof Door) {
 							((Door) subentyty).setOpen(true);
 						}
-						
 					}
 					map.removeEntity(entity);
 				}
-				
-				
-				
+	
 				super.moveTo(x, y);
 				
 			}
