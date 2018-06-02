@@ -1,5 +1,7 @@
 package model.elements;
 
+import java.util.ArrayList;
+
 import model.IEntity;
 import model.IHero;
 import model.Map;
@@ -88,7 +90,6 @@ public class Hero extends Entity implements IHero{
 	@Override
 	public void Move() {
 		super.Move();
-		
 	}
 	/*
 	 * 
@@ -96,14 +97,13 @@ public class Hero extends Entity implements IHero{
 	 * @see model.elements.Entity#moveTo(int, int)
 	 */
 	public void moveTo(int x,int y) {
-		
+		super.moveTo(x, y);
 		for (IEntity entity : map.getEntity()) {
 			//kill loran
-			if(entity.getX()==this.x && entity.getY()== this.y) {
+			if(entity.getX()==x && entity.getY()== y) {
 				if(entity instanceof Monster){
 					this.setAlive(false);
 				}
-				
 				//get score from purse
 				if(entity instanceof Purse){
 					this.setScore(score+100);
@@ -114,7 +114,6 @@ public class Hero extends Entity implements IHero{
 					if(((Door) entity).isOpen()==false) {this.setAlive(false);}
 					else {map.setFinished(true);}
 				}
-				
 				// open the door when cristall ball taken
 				if(entity instanceof CristalBall ){
 					for (IEntity subentyty : map.getEntity()) {
@@ -123,12 +122,10 @@ public class Hero extends Entity implements IHero{
 						}
 					}
 					map.removeEntity(entity);
-				}
-	
-				super.moveTo(x, y);
-				
-			}
-		}
+				}//end cristalball interaction
+			}//end if position test
+		}// end du foreach entity
+		
 	}
 
 
