@@ -98,8 +98,8 @@ public class Hero extends Entity implements IHero{
 	 */
 	public void moveTo(int x,int y) {
 		super.moveTo(x, y);
-		for (IEntity entity : (ArrayList<IEntity>) map.getEntity().clone()) {
-			//kill loran
+		for (IEntity entity : (ArrayList<IEntity>) map.getEntities().clone()) {
+			//kill lorann
 			if(entity.getX()==x && entity.getY()== y) {
 				if(entity instanceof Monster){
 					this.setAlive(false);

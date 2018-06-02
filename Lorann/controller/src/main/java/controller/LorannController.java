@@ -56,9 +56,9 @@ public class LorannController implements IOrderPerformer, IController {
 			
 			Thread.sleep(TIME_SLEEP);
 			
-			for (IEntity entity : model.getMap().getEntity()) {
+			for (IEntity entity : model.getMap().getEntities()) {
 				
-				entity.Move();	
+				entity.move();	
 				
 			}
 		

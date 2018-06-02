@@ -3,7 +3,8 @@ package view;
 /**
  * <h1>The Interface IView.</h1>
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
+ * @author Nicolas
+ * @author Riadjy
  * @version 1.0
  */
 public interface IView {

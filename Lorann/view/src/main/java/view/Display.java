@@ -50,7 +50,7 @@ public class Display extends JPanel
 				  }   
 			  }  
 			  
-			  for (IEntity entity : model.getMap().getEntity()) {
+			  for (IEntity entity : model.getMap().getEntities()) {
 				  g.drawImage(entity.getSprite().getImage(), entity.getX()*32, entity.getY()*32, this);
 			}
 			  

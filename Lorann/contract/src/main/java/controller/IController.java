@@ -18,7 +18,7 @@ public interface IController {
 	void play() throws InterruptedException;
 	
 	/**
-	 * Gets the order performer.
+	 * Get the order performer.
 	 * 
 	 * @return the order performer
 	 */
