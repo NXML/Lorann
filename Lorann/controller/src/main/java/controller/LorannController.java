@@ -9,13 +9,14 @@ import view.IView;
 /**
  * <h1>The Class LorannController.</h1>
  * 
- * @author Loïc BOLLENBACH loic.bollenbach@viacesi.fr
+ * @author Loïc
  * @version 1.0
  * @see IOrderPerfomer
+ * @see IController
  */
 public class LorannController implements IOrderPerformer, IController {
 	
-	/** The Constant speed. */
+	/** The constant speed. */
 	private static final int TIME_SLEEP = 300;
 	
 	/** The view. */
@@ -28,7 +29,7 @@ public class LorannController implements IOrderPerformer, IController {
 	private UserOrder userOrder;
 
 	/**
-	 * Instantiates a new Lorann controller.
+	 * Instantiate a new Lorann controller.
 	 * 
 	 * @param view
 	 * 			the view
@@ -49,19 +50,8 @@ public class LorannController implements IOrderPerformer, IController {
 	 */
 	@Override
 	public void play() throws InterruptedException {
-		
-		
-		
 		while(this.getModel().getMap().getHero().isAlive()) {
-			
 			Thread.sleep(TIME_SLEEP);
-			
-			for (IEntity entity : model.getMap().getEntities()) {
-				
-				entity.move();	
-				
-			}
-		
 			
 			switch(this.userOrder) {
 			case UP:
@@ -93,12 +83,17 @@ public class LorannController implements IOrderPerformer, IController {
 					this.launchFireball();
 				} catch (IOException e) {
 					e.printStackTrace();
-				}	
+				}
+				break;
 			case NOP:
 			default:
 				break;
 			}
 			this.clearUserOrder();
+			
+			for (IEntity entity : model.getMap().getEntities()) {
+				entity.move();	
+			}
 			
 		}
 		this.getView().displayMessage("Game Over");
@@ -106,7 +101,7 @@ public class LorannController implements IOrderPerformer, IController {
 	}
 	
 	/**
-	 * Gets the model.
+	 * Get the model.
 	 * 
 	 * @return the model
 	 */
@@ -116,7 +111,7 @@ public class LorannController implements IOrderPerformer, IController {
 	}
 	
 	/**
-	 * Gets the view.
+	 * Get the view.
 	 * 
 	 * @return the view
 	 */
@@ -136,7 +131,7 @@ public class LorannController implements IOrderPerformer, IController {
 	}
 	
 	/**
-	 * Gets the user order.
+	 * Get the user order.
 	 * 
 	 * @return the user order
 	 */
@@ -146,7 +141,7 @@ public class LorannController implements IOrderPerformer, IController {
 	}
 	
 	/**
-	 * Sets the user order.
+	 * Set the user order.
 	 * 
 	 * @param userOrder
 	 * 			the user order to set
@@ -165,7 +160,7 @@ public class LorannController implements IOrderPerformer, IController {
 	}
 	
 	/**
-	 * Sets the view.
+	 * Set the view.
 	 * 
 	 * @param view
 	 * 			the view to set
@@ -176,7 +171,7 @@ public class LorannController implements IOrderPerformer, IController {
 	}
 	
 	/**
-	 * Sets the model.
+	 * Set the model.
 	 * 
 	 * @param model
 	 * 			the model to set

@@ -6,36 +6,54 @@ import model.Map;
  * 
  * @author Arthur-Michel 
  * @version 1.0
+ * @see IEntity
  */
-public class Demon extends Monster{
+public class Demon extends Monster {
+	
+	/**
+	 * The char sprite.
+	 */
 	public static char charSprite = '1';
+	
+	/**
+	 * The image path.
+	 */
 	public static String imagePath = "monster_1.png";
+	
+	/**
+	 * The movement vector.
+	 */
 	private int movementVector =1;
 	
-	
-	/*Constructor of a Demon which is a monster using super constructor
-	 * @param int x
-	 * @param int y
-	 * @param Map map
+	/**
+	 * Instantiate a new demon.
+	 * 
+	 * @param x
+	 * 			x
+	 * @param y
+	 * 			y
+	 * @param map
+	 * 			the map
 	 */
 	public Demon(int x, int y, Map map) {
 		super(x, y, imagePath, map);
-		// TODO Auto-generated constructor stub
-	}
-	/*
-	 * Function that define the move pattern of this Monster
-	 * horizontal deplacement in the map
-	 * 
-	 */
-	public void Move() {
 		
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see model.elements.Entity#move()
+	 */
+	@Override
+	public void move() {
 		if(canMoveTo(x+(1*movementVector), y)) {
 			moveTo(x+(1*movementVector), y);
+			
 		}
 		else if(canMoveTo(x-(1*movementVector), y)){
 			movementVector *= -1;
-		}
-		
+			
+		}	
 		
 	}
 

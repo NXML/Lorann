@@ -1,11 +1,13 @@
 package model;
 
 /**
+ * <h1>The Interface IEntity.</h1>
  * 
  * @author Arthur-Michel
  * @version 1.0
+ * @see IElement
  */
-public interface IEntity extends IElement{
+public interface IEntity extends IElement {
 	
 	/**
 	 * Move.

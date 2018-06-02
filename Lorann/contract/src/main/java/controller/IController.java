@@ -3,7 +3,7 @@ package controller;
 /**
  * <h1>The Interface IController.</h1>
  * 
- * @author Loïc BOLLENBACH loic.bollenbach@viacesi.fr
+ * @author Loïc
  * @version 1.0
  * @see IOrderPerformer
  */

@@ -5,7 +5,7 @@ import java.io.IOException;
 /**
  * <h1>The Interface IOrderPerformer.</h1>
  * 
- * @author Loïc BOLLENBACH loic.bollenbach@viacesi.fr
+ * @author Loïc
  * @version 1.0
  */
 public interface IOrderPerformer {

@@ -10,127 +10,159 @@ import model.Map;
  * 
  * @author Arthur-Michel 
  * @version 1.0
+ * @see IHero
  */
-public class Hero extends Entity implements IHero{
+public class Hero extends Entity implements IHero {
 	
+	/**
+	 * The char sprite.
+	 */
 	public static final char charSprite = '@';
-	static final String imagesPaths[]= {"lorann_b.png","lorann_bl.png","lorann_l.png","lorann_ul.png","lorann_u.png","lorann_ur.png","lorann_r.png","lorann_br.png"};
+	
+	/**
+	 * The image paths.
+	 */
+	static final String imagePaths[]= {"lorann_b.png","lorann_bl.png","lorann_l.png","lorann_ul.png","lorann_u.png","lorann_ur.png","lorann_r.png","lorann_br.png"};
 
-
-
+	/**
+	 * The spell.
+	 */
 	private boolean spell = true;
+	
+	/**
+	 * The score.
+	 */
 	private int     score = 0;
+	
+	/**
+	 * The life.
+	 */
 	private boolean alive = true;
 	
-	/*
-	 * Constructor using superconstructor
+	/**
+	 * Instantiate a new hero.
 	 * 
+	 * @param x
+	 * 			x
+	 * @param y
+	 * 			y
+	 * @param map
+	 * 			the map
 	 */
 	public Hero(int x, int y, Map map) {
-		super(x, y, imagesPaths, map);
-		// TODO Auto-generated constructor stub
+		super(x, y, imagePaths, map);
+		
 	}
 	
-	
 	/*
-	 * Say if the Hero canSpell or not
-	 * 
+	 * (non-Javadoc)
+	 * @see model.IHero#canSpell()
 	 */
 	@Override
 	public boolean canSpell() {
 		return spell;
+		
 	}
 
-/*
- * 
- * set the value of hero's spell
- * @param boolean
- */
+	/*
+	 * (non-Javadoc)
+	 * @see model.IHero#setSpell(boolean)
+	 */
 	@Override
 	public void setSpell(boolean spell) {
 		this.spell = spell;
+		
 	}
 
-/*
- * get Hero's Score
- *@return hero's score
- */	@Override
+	/*
+	 * (non-Javadoc)
+	 * @see model.IHero#getScore()
+	 */
+	@Override
 	public int getScore() {
 		return score;
+		
 	}
 
-/*
- * set Hero's score
- * @param int Score
- */
+	/*
+	 * (non-Javadoc)
+	 * @see model.IHero#setScore(int)
+	 */
  	@Override
 	public void setScore(int score) {
 		this.score = score;
+		
 	}
 
-/*
- * @return player alive status boolean
- * 
- */
+ 	/*
+ 	 * (non-Javadoc)
+ 	 * @see model.IHero#isAlive()
+ 	 */
  	@Override
 	public boolean isAlive() {
 		return alive;
+		
 	}
 
-/*
- * Set player Alive status
- * @param alive boolean
- */
+ 	/*
+ 	 * (non-Javadoc)
+ 	 * @see model.IHero#setAlive(boolean)
+ 	 */
  	@Override
 	public void setAlive(boolean alive) {
 		this.alive = alive;
+		
 	}
 
-
+ 	/*
+ 	 * (non-Javadoc)
+ 	 * @see model.elements.Entity#move()
+ 	 */
 	@Override
-	public void Move() {
-		super.Move();
+	public void move() {
+		super.move();
+		
 	}
+	
 	/*
-	 * 
-	 * Rewrite Move to to interact with elements
+	 * (non-Javadoc)
 	 * @see model.elements.Entity#moveTo(int, int)
 	 */
 	public void moveTo(int x,int y) {
 		super.moveTo(x, y);
 		for (IEntity entity : (ArrayList<IEntity>) map.getEntities().clone()) {
-			//kill lorann
 			if(entity.getX()==x && entity.getY()== y) {
 				if(entity instanceof Monster){
 					this.setAlive(false);
+					
 				}
-				//get score from purse
-				if(entity instanceof Purse){
+				if(entity instanceof Purse) {
 					this.setScore(score+ ((Purse)entity).getValue());
 					map.removeEntity(entity);
 					System.out.println(map.getHero().getScore());
+					
 				}
-				//Die From closed door
-				if(entity instanceof Door ){
+				if(entity instanceof Door) {
 					if(((Door) entity).isOpen()==false) {this.setAlive(false);}
 					else {map.setFinished(true);}
+					
 				}
-				// open the door when cristall ball taken
-				if(entity instanceof CristalBall ){
-					for (IEntity subentyty : map.getEntity()) {
+				if(entity instanceof CristalBall) {
+					for (IEntity subentyty : map.getEntities()) {
 						if(subentyty instanceof Door) {
 							((Door) subentyty).setOpen(true);
+							
 						}
+						
 					}
 					map.removeEntity(entity);
-				}//end cristalball interaction
-			}//end if position test
-		}// end du foreach entity
+					
+				}
+				
+			}
+			
+		}
 		
 	}
-
-
-	
-	
 
 }

@@ -1,6 +1,7 @@
 package model;
 
 /**
+ * <h1>The Interface IElement.</h1>
  * 
  * @author Arthur-Michel
  * @version 1.0

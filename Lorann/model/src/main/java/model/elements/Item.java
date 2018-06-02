@@ -7,22 +7,40 @@ import model.Map;
  * @author Arthur-Michel 
  * @version 1.0
  */
-public abstract class Item extends Entity{
-	/*
-	 * Constructor using super constructor for 1 image
+public abstract class Item extends Entity {
+	
+	/**
+	 * Instantiate an item with an image.
 	 * 
+	 * @param x
+	 * 			x
+	 * @param y
+	 * 			y
+	 * @param image
+	 * 			the image
+	 * @param map
+	 * 			the map
 	 */
 	public Item(int x, int y, String image, Map map) {
 		super(x, y, image, map);
-		// TODO Auto-generated constructor stub
+		
 	}
-	/*
-	 * Constructor using super construcor for items with many images
+
+	/**
+	 * Instantiate an item with images.
 	 * 
+	 * @param x
+	 * 			x
+	 * @param y
+	 * 			y
+	 * @param images
+	 * 			the table of images
+	 * @param map
+	 * 			the map
 	 */
 	public Item(int x, int y, String images[], Map map) {
 		super(x, y, images, map);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 }

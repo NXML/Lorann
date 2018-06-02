@@ -5,14 +5,24 @@ package model.elements;
  * @author Arthur-Michel 
  * @version 1.0
  */
-public class HWall extends Wall{
+public class HWall extends Wall {
+	
+	/**
+	 * The image path.
+	 */
 	private final static  String imagePath="horizontal_bone.png";
+	
+	/**
+	 * The char sprite.
+	 */
 	public static char charSprite = '-';
-	/*
-	 * Constructor using superconstructor
+	
+	/**
+	 * Instantiate a new horizontal wall.
 	 */
 	public HWall() {
 		super(imagePath);
+		
 	}
 
 }

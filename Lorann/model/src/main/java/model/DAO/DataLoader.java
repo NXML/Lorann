@@ -16,6 +16,7 @@ import model.elements.Ogre;
 import model.elements.Purse;
 import model.elements.VWall;
 import model.elements.Zombie;
+
 /**
  * <h1>The Class DataLoader.</h1>
  * 
@@ -24,29 +25,42 @@ import model.elements.Zombie;
  */
 public class DataLoader extends AbstractLoader{
 	
+	/**
+	 * The constant query get map by ID.
+	 */
 	private final static String sqlGetMapByID ="{call FindMapByID(?)}";
+	
+	/**
+	 * The map.
+	 */
 	private Map map;
+	
+	/**
+	 * The elementFactory.
+	 */
 	private ElementFactory elementFactory;
 	
+	/**
+	 * Instantiate a new dataloader.
+	 * 
+	 * @param map
+	 * 			the map
+	 */
 	public DataLoader(Map map) {
 		this.map=map;
 		this.elementFactory = new ElementFactory(map);
 		
 	}
 	
-	/*
-	 * <h2> Load elements from database<h2>
-	 * using LoranBDDConnector
+	/**
+	 * Set element at [x:y] on the map.
 	 * 
-	 * @Author Arthur Michel
-	 * @param int MapID
-	 * 
-	 * 
-	 * 
+	 * @param ID
+	 * 			the ID
 	 */
 	public void setMapElementsByID(int ID) {
 		final CallableStatement callStatement = prepareCall(sqlGetMapByID);
-	     try {
+	    try {
 			callStatement.setInt(1, ID);
 			if (callStatement.execute()) {
 				final ResultSet result = callStatement.getResultSet();
@@ -59,34 +73,31 @@ public class DataLoader extends AbstractLoader{
 						else if(Bufferchar == VWall.charSprite) {Bufferelement = elementFactory.getvWall();}
 						else {Bufferelement = elementFactory.getGround();}
 						map.setElementXY(result.getInt("CoordX"), result.getInt("CoordY"), Bufferelement);
-						}
-						while(result.next());
+						
 					}
-				result.close();
+					while(result.next());
+					
 				}
+				result.close();
+				
+			}
+			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
 		}
+	     
 	}
 	
-	
-	
-	
-	/*
-	 * <h2> Load array from database<h2>
-	 * using LoranBDDConnector
+	/**
+	 * Set entity on the map.
 	 * 
-	 * @Author Arthur Michel
-	 * @param int MapID
-	 * 
-	 * 
-	 * 
+	 * @param ID
+	 * 			the ID
 	 */
-	
 	public void setMapEntityByID(int ID){
 		final CallableStatement callStatement = prepareCall(sqlGetMapByID);
-	     try {
+	    try {
 			callStatement.setInt(1, ID);
 			if (callStatement.execute()) {
 				final ResultSet result = callStatement.getResultSet();
@@ -100,37 +111,31 @@ public class DataLoader extends AbstractLoader{
 						if(Bufferchar == Masked.charSprite){map.addEntity(new Masked(result.getInt("CoordX"), result.getInt("CoordY"),map));}
 						if(Bufferchar == Zombie.charSprite){map.addEntity(new Zombie(result.getInt("CoordX"), result.getInt("CoordY"),map));}
 						if(Bufferchar == CristalBall.charSprite){map.addEntity(new CristalBall(result.getInt("CoordX"), result.getInt("CoordY"),map));}
+						
 					}
 					while(result.next());
-					
-				
 				
 				}
 				result.close();
-				}
+				
+			}
+			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
 		}
+	     
 	}
 	
-	
-	
-	
-	/*
-	 * <h2> Load hero from database<h2>
-	 * using LoranBDDConnector
+	/**
+	 * Set hero on the map.
 	 * 
-	 * @Author Arthur Michel
-	 * @param int MapID
-	 * 
-	 * 
-	 * 
+	 * @param ID
+	 * 			the ID
 	 */
-	
 	public void setMapHeroByID(int ID){
 		final CallableStatement callStatement = prepareCall(sqlGetMapByID);
-	     try {
+	    try {
 			callStatement.setInt(1, ID);
 			if (callStatement.execute()) {
 				final ResultSet result = callStatement.getResultSet();
@@ -141,44 +146,31 @@ public class DataLoader extends AbstractLoader{
 							Hero BufferedHero= new Hero(result.getInt("CoordX"), result.getInt("CoordY"),map);
 							map.addEntity(BufferedHero);
 							map.setHero(BufferedHero);
+							
 						}
+						
 					}
 					while(result.next());
 					
 				}
 				result.close();
+				
 				}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
 		}
 		
 	}
-
-
 	
-	
-	
-	
-	
-	/*
-	 * Function that run all function for load Elements
-	 * 
+	/**
+	 * Load.
 	 */
-	
-	
 	public void load() {
 		setMapElementsByID(map.getID());
 		setMapEntityByID(map.getID());
 		setMapHeroByID(map.getID());
+		
 	} 
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

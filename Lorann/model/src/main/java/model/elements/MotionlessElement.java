@@ -5,13 +5,17 @@ package model.elements;
  * @author Arthur-Michel 
  * @version 1.0
  */
-public abstract class MotionlessElement extends Element{
-/*
- * Constructor using super constructor
- */
+public abstract class MotionlessElement extends Element {
+
+	/**
+	 * Instantiate a motionless element.
+	 * 
+	 * @param image
+	 * 			the image
+	 */
 	public MotionlessElement(String image) {
 		super(image);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 }

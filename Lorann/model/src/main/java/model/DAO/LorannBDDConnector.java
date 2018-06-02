@@ -9,7 +9,7 @@ import java.sql.Statement;
 /**
  * <h1>The Class LoranBDDConnector.</h1>
  *
- * @author Michel Artur 
+ * @author Arthur-Michel
  * @version 1.0
  */
 final class LorannBDDConnector {
@@ -33,10 +33,11 @@ final class LorannBDDConnector {
     private Statement                      statement;
 
     /**
-     * Instantiates a new boulder dash BDD connector.
+     * Instantiates a new Lorann BDD connector.
      */
     private LorannBDDConnector() {
         this.open();
+        
     }
 
     /**
@@ -47,8 +48,10 @@ final class LorannBDDConnector {
     public static LorannBDDConnector getInstance() {
         if (instance == null) {
             setInstance(new LorannBDDConnector());
+            
         }
         return instance;
+        
     }
 
     /**
@@ -59,6 +62,7 @@ final class LorannBDDConnector {
      */
     private static void setInstance(final LorannBDDConnector instance) {
         LorannBDDConnector.instance = instance;
+        
     }
 
     /**
@@ -72,10 +76,13 @@ final class LorannBDDConnector {
                     LorannBDDConnector.password);
             this.statement = this.connection.createStatement();
             return true;
+            
         } catch (final SQLException exception) {
             exception.printStackTrace();
+            
         }
         return false;
+        
     }
 
     /**
@@ -88,10 +95,13 @@ final class LorannBDDConnector {
     public ResultSet executeQuery(final String query) {
         try {
             return this.getStatement().executeQuery(query);
+            
         } catch (final SQLException e) {
             e.printStackTrace();
+            
         }
         return null;
+        
     }
 
     /**
@@ -104,10 +114,13 @@ final class LorannBDDConnector {
     public java.sql.CallableStatement prepareCall(final String query) {
         try {
             return this.getConnection().prepareCall(query);
+            
         } catch (final SQLException e) {
             e.printStackTrace();
+            
         }
         return null;
+        
     }
 
     /**
@@ -120,10 +133,13 @@ final class LorannBDDConnector {
     public int executeUpdate(final String query) {
         try {
             return this.statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+            
         } catch (final SQLException e) {
             e.printStackTrace();
+            
         }
         return 0;
+        
     }
 
     /**
@@ -133,6 +149,7 @@ final class LorannBDDConnector {
      */
     public Connection getConnection() {
         return this.connection;
+        
     }
 
     /**
@@ -143,6 +160,7 @@ final class LorannBDDConnector {
      */
     public void setConnection(final Connection connection) {
         this.connection = connection;
+        
     }
 
     /**
@@ -152,6 +170,7 @@ final class LorannBDDConnector {
      */
     public Statement getStatement() {
         return this.statement;
+        
     }
 
     /**
@@ -162,6 +181,7 @@ final class LorannBDDConnector {
      */
     public void setStatement(final Statement statement) {
         this.statement = statement;
+        
     }
 
 }

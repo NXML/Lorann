@@ -13,46 +13,65 @@ import model.Sprite;
  * 
  * @author Arthur-Michel 
  * @version 1.0
+ * @see IElement
  */
 public class Element extends Observable implements IElement {
 
+	/**
+	 * The permeable.
+	 */
 	protected boolean permeable;
+	
+	/**
+	 * The sprite.
+	 */
 	protected ISprite sprite;
 
-	/*
+	/**
+	 * Instantiate a new element with an image.
 	 * 
-	 * Constructor Element using a path to an image
-	 * 
+	 * @param image
+	 * 			the image
 	 */
-	public Element(String image){
-	this.sprite = new Sprite(image);
+	public Element(String image) {
+		this.sprite = new Sprite(image);
+	
 	}
-	/*
+	
+	/**
+	 * Instantiate a new element with images.
 	 * 
-	 * Overloading Constructor to make an element with many sprites
-	 * 
+	 * @param images
+	 * 			the table of images
 	 */
-	public Element(String images[]){
+	public Element(String images[]) {
 		this.sprite = new Gif(images);
-		}
+	}
 
-
+	/*
+	 * (non-Javadoc)
+	 * @see model.IElement#getSprite()
+	 */
 	@Override
 	public ISprite getSprite() {
-		// TODO Auto-generated method stub
 		return sprite;
+		
 	}
 
 	/*
-	 * Return permeability of an element
-	 * @return Boolean Permeability
-	 * 
+	 * (non-Javadoc)
+	 * @see model.IElement#isPermeable()
 	 */
 	@Override
 	public boolean isPermeable() {
 		return permeable;
+		
 	}
 	
+	/*
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	public String toString() {
 		return "This is an element";
 		

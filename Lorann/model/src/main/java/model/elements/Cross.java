@@ -6,18 +6,24 @@ package model.elements;
  * @author Arthur-Michel 
  * @version 1.0
  */
-public class Cross extends Wall{
+public class Cross extends Wall {
 	
-	public static String imagePath="bone.png";
+	/**
+	 * The image path.
+	 */
+	public static String imagePath = "bone.png";
+	
+	/**
+	 * The char sprite.
+	 */
 	public static char charSprite = 'O';
 	
-	/*
-	 * Constructor a cross wall using superconstructor
-	 * 
-	 * 
+	/**
+	 * Instantiate a new cross.
 	 */
 	public Cross() {
 		super(imagePath);
+		
 	}
 
 }

@@ -5,13 +5,24 @@ package model.elements;
  * @author Arthur-Michel 
  * @version 1.0
  */
-public class VWall extends Wall{
+public class VWall extends Wall {
+	
+	/**
+	 * The char sprite.
+	 */
 	public static char charSprite = '|';
-	private final static  String imagePath="vertical_bone.png";
 	
+	/**
+	 * The image path.
+	 */
+	private final static String imagePath="vertical_bone.png";
 	
+	/**
+	 * Instantiate a new vertical wall.
+	 */
 	public VWall() {
 		super(imagePath);
+		
 	}
 
 }

@@ -5,15 +5,22 @@ package model.elements;
  * @author Arthur-Michel 
  * @version 1.0
  */
-public abstract class Wall extends MotionlessElement{
+public abstract class Wall extends MotionlessElement {
 	
-	/*
-	 * Constructor using super constructor
+	/**
+	 * Instantiate a wall.
+	 * 
+	 * @param image
+	 * 			the image
 	 */
 	public Wall(String image) {
 		super(image);
-		// TODO Auto-generated constructor stub
+		
 	}
 
+	/**
+	 * The permeable.
+	 */
 	protected boolean permeable = false;
+	
 }

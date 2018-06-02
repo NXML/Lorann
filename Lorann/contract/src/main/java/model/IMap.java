@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 
 /**
+ * <h1>The Interface IMap.</h1>
  * 
  * @author Arthur-Michel
  * @version 1.0

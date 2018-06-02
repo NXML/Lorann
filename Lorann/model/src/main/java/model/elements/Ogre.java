@@ -3,40 +3,59 @@ package model.elements;
 import java.util.Random;
 
 import model.Map;
+
 /**
  * <h1>The Class Ogre.</h1>
  * 
  * @author Arthur-Michel 
  * @version 1.0
  */
-public class Ogre extends Monster{
+public class Ogre extends Monster {
+	
+	/**
+	 * The char sprite.
+	 */
 	public static char charSprite = '4';
+	
+	/**
+	 * The image path.
+	 */
 	public static String imagePath = "monster_4.png";
+	
+	/**
+	 * The movement vector.
+	 */
 	public int movementVector = 1;
 	
-	
-	/*Constructor of a Ogre which is a monster using super constructor
-	 * @param int x
-	 * @param int y
-	 * @param Map map
+	/**
+	 * Instantiate a new ogre.
+	 * 
+	 * @param x
+	 * 			x
+	 * @param y
+	 * 			y
+	 * @param map
+	 * 			the map
 	 */
 	public Ogre(int x, int y,  Map map) {
 		super(x, y, imagePath, map);
-		// TODO Auto-generated constructor stub
-	}
-	/*
-	 * Function that define the move patern of this Monster
-	 * this monster teleport in all the map
-	 */
-public void Move() {
 		
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see model.elements.Entity#move()
+	 */
+	@Override
+	public void move() {
 		if(canMoveTo(x, y+(1*movementVector))) {
 			moveTo(x, y+(1*movementVector));
+			
 		}
 		else if(canMoveTo(x, y-(1*movementVector))){
 			movementVector *= -1;
+			
 		}
-		
 		
 	}
 

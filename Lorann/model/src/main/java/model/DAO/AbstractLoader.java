@@ -2,13 +2,15 @@ package model.DAO;
 
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
+
 /**
- * <h1>The Class AbstractDAO.</h1>
+ * <h1>The Class AbstractLoader.</h1>
  * 
  * @author Arthur-Michel 
  * @version 1.0
  */
 public class AbstractLoader {
+	
 	 /**
      * Execute query.
      *
@@ -18,6 +20,7 @@ public class AbstractLoader {
      */
     protected static ResultSet executeQuery(final String query) {
         return LorannBDDConnector.getInstance().executeQuery(query);
+        
     }
 
     /**
@@ -29,6 +32,7 @@ public class AbstractLoader {
      */
     protected static int executeUpdate(final String query) {
         return LorannBDDConnector.getInstance().executeUpdate(query);
+        
     }
 
     /**
@@ -40,5 +44,7 @@ public class AbstractLoader {
      */
     protected static CallableStatement prepareCall(final String query) {
         return LorannBDDConnector.getInstance().prepareCall(query);
+        
     }
+    
 }

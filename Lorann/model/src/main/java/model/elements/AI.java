@@ -8,27 +8,39 @@ import model.Map;
  * @version 1.0
  */
 public abstract class AI extends Entity{
-	/*
-	 * Create an AI with coordinates an image path and a map
+	
+	/**
+	 * Instantiate an AI with an image.
+	 * 
 	 * @param x
+	 * 			x
 	 * @param y
-	 * @param String imagepath
-	 * @Map map
+	 * 			y
+	 * @param image
+	 * 			the image
+	 * @param map
+	 * 			the map
 	 */
 	public AI(int x, int y, String image, Map map) {
 		super(x, y, image, map);
-		// TODO Auto-generated constructor stub
+		
 	}
-	/*
-	 * Create an AI with coordinates an image path and a map
+	
+	/**
+	 * Instantiate an AI with images.
+	 * 
 	 * @param x
+	 * 			x
 	 * @param y
-	 * @param String[] of image paths 
-	 * @Map map
+	 * 			y
+	 * @param images
+	 * 			the table of images
+	 * @param map
+	 * 			the map
 	 */
 	public AI(int x, int y, String images[], Map map) {
 		super(x, y, images, map);
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 }

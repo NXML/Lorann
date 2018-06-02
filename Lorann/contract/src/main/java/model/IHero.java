@@ -1,11 +1,13 @@
 package model;
 
 /**
+ * <h1>The Interface IHero.</h1>
  * 
  * @author Arthur-Michel
  * @version 1.0
+ * @see IEntity
  */
-public interface IHero extends IEntity{
+public interface IHero extends IEntity {
 	
 	/**
 	 * Check whether it's alive.

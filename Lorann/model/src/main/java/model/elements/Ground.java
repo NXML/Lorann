@@ -5,22 +5,26 @@ package model.elements;
  * @author Arthur-Michel 
  * @version 1.0
  */
-public class Ground extends MotionlessElement{
+public class Ground extends MotionlessElement {
 	
-	public static char spriteChar = '*';
+	/**
+	 * The char sprite
+	 */
+	public static char charSprite = '*';
+	
+	/**
+	 * The image path.
+	 */
 	public static String imagePath = "ground.png";
 	
-	
-	/*Sprite/
-	 * 
-	 * Constructor using superconstructor
-	 * 
+	/**
+	 * Instantiate a new ground.
 	 */
 	public Ground() {
 		super(imagePath);
 		this.permeable=true;
 		this.permeable = true;
-		// TODO uto-generated constructor stub
+		
 	}
 
 }

@@ -9,33 +9,52 @@ import model.Map;
  * @author Arthur-Michel 
  * @version 1.0
  */
-public class Masked extends Monster{
+public class Masked extends Monster {
+	
+	/**
+	 * The char sprite.
+	 */
 	public static char charSprite = '3';
+	
+	/**
+	 * The image path.
+	 */
 	public static String imagePath = "monster_3.png";
+	
+	/**
+	 * The movement vector.
+	 */
 	private int movementVector =1;
 	
-	/*Constructor of a Masked which is a monster using super constructor
-	 * @param int x
-	 * @param int y
-	 * @param Map map
+	/**
+	 * Instantiate a new masked.
+	 * 
+	 * @param x
+	 * 			x
+	 * @param y
+	 * 			y
+	 * @param map
+	 * 			the map
 	 */
 	public Masked(int x, int y, Map map) {
 		super(x, y, imagePath, map);
-		// TODO Auto-generated constructor stub
-	}
-	/*
-	 * Function that define the move patern of this Monster
-	 * random direction each step
-	 */
-public void Move() {
 		
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * @see model.elements.Entity#move()
+	 */
+	@Override
+	public void move() {
 		if(canMoveTo(x+(1*movementVector), y)) {
 			moveTo(x+(1*movementVector), y);
+			
 		}
 		else if(canMoveTo(x-(1*movementVector), y)){
 			movementVector *= -1;
+			
 		}
-		
 		
 	}
 
