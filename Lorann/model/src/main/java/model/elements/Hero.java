@@ -108,6 +108,18 @@ public class Hero extends Entity implements IHero{
 				}
 				if(entity instanceof Door ){
 					if(((Door) entity).isOpen()==false) {this.setAlive(false);}
+					else {map.setFinished(true);}
+				}
+				
+				// open the door when cristall ball taken
+				if(entity instanceof CristalBall ){
+					for (IEntity subentyty : map.getEntity()) {
+						if(subentyty instanceof Door) {
+							((Door) subentyty).setOpen(true);
+						}
+						
+					}
+					map.removeEntity(entity);
 				}
 				
 				
