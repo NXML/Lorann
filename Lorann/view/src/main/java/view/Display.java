@@ -5,42 +5,45 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.util.Observable;
+import java.util.Observer;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import model.IEntity;
 import model.IModel;
-
-public class Display extends JPanel
+import model.ISprite;
+/**
+ * <h1>The Class Display</h1>
+ * 
+ * @author Arthur-Michel
+ * @version 1.0
+ * @see Jpanel , Observer
+ */
+public class Display extends JPanel implements Observer
 {
 	
 
 	/**
-	 * 
+	 * Initiates attributes
 	 */
 	private static final long serialVersionUID = 1L;
-
 	private IModel model;
-	
-	private boolean           placement    = true;
 	private Image score1,score2,score3,score4,score5,score6,score7,score8,score9,score0,score;
 
 
-	
-	
-	
 	public Display(IModel model)
 	{
 		this.setBackground(Color.BLACK);
 		this.setVisible(true);
 		System.out.println("Affichage");
 		this.model = model;
-	
-		
-		
-		
-		
+		for (IEntity entity : model.getMap().getEntities()) {
+			((Observable) entity).addObserver(this);
+		}
+
+		/*Score  digits loading*/
 		try {
 			 score1 = ImageIO.read(new File("..\\model\\Sprite\\1.png"));
 			 score2 = ImageIO.read(new File("..\\model\\Sprite\\2.png"));
@@ -53,7 +56,6 @@ public class Display extends JPanel
 			 score9 = ImageIO.read(new File("..\\model\\Sprite\\9.png"));
 			 score0 = ImageIO.read(new File("..\\model\\Sprite\\0.png"));
 			 score = ImageIO.read(new File("..\\model\\Sprite\\SCORE.png"));
-		
 		} catch (IOException e) {
 		    e.printStackTrace();
 		    
@@ -70,25 +72,23 @@ public class Display extends JPanel
 	 
 	public void drawMap(Graphics g) throws IOException, InterruptedException
 		{	  
-		
 		/* Display elements on the map*/
-			  for(int x = 0; x < 20; x++)
-			  {
+			  for(int x = 0; x < 20; x++){
 				  for(int y = 0; y < 12; y++){
 					  g.drawImage(model.getMap().getElementXY(x,y).getSprite().getImage(), x*32, y*32, this);
 				  }   
 			  }  
-			  
-			  for (IEntity entity : model.getMap().getEntities()) {
+			  /*Display all entities on the map*/
+			  for (IEntity entity : model.getMap().getEntities()){
 				  g.drawImage(entity.getSprite().getImage(), entity.getX()*32, entity.getY()*32, this);
-			}
+			  }
 			  /*g.setColor(Color.WHITE);
-			  g.drawString("Score : "+model.getMap().getHero().getScore(), 20, 32*12+10);
+			    g.drawString("Score : "+model.getMap().getHero().getScore(), 20, 32*12+10);
 			  */
+			  //Display players score
 			  String scorevalue = ""+model.getMap().getHero().getScore();
 			  g.drawImage(this.score, 10, 30*13+10, this);
-			  
-			  for (int i = 0; i < scorevalue.length(); i++) {
+			  for (int i = 0; i < scorevalue.length(); i++){
 				Image digit = null;
 				switch(scorevalue.charAt(i)) {
 				case '0': digit=score0; break;
@@ -104,8 +104,8 @@ public class Display extends JPanel
 				}
 				g.drawImage(digit, 10+20+5*32+32*i, 30*13+10, this);
 			  	}			  
-			Thread.sleep(100);
-			this.repaint();
+			//Thread.sleep(100);
+			//this.repaint();
 		}
 			  
 			  
@@ -117,21 +117,23 @@ public class Display extends JPanel
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
-	    if (placement){
 			 try {drawMap(g);} 
 			 catch (IOException e1) {e1.printStackTrace();} 
 			 catch (InterruptedException e) {e.printStackTrace();}
-	     }
+	     
 	}
 	
 	
-	
-	
-	
-	
-	public void update() 
-	{
+
+
+
+
+
+	//refresh on update observer
+	@Override
+	public void update(Observable o, Object arg) {
 		this.repaint();
+		
 	}
 	
 }

@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Observer;
+
 /**
  * <h1>The Interface IElement.</h1>
  * 
@@ -22,5 +24,7 @@ public interface IElement {
 	 * @return true or false
 	 */
 	boolean isPermeable();
+	
+	void addObserver(Observer o);
 	
 }
