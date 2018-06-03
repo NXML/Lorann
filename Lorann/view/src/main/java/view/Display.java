@@ -2,8 +2,11 @@ package view;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
 import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import model.IEntity;
@@ -21,7 +24,11 @@ public class Display extends JPanel
 	private IModel model;
 	
 	private boolean           placement    = true;
+	private Image score1,score2,score3,score4,score5,score6,score7,score8,score9,score0,score;
 
+
+	
+	
 	
 	public Display(IModel model)
 	{
@@ -29,6 +36,28 @@ public class Display extends JPanel
 		this.setVisible(true);
 		System.out.println("Affichage");
 		this.model = model;
+	
+		
+		
+		
+		
+		try {
+			 score1 = ImageIO.read(new File("..\\model\\Sprite\\1.png"));
+			 score2 = ImageIO.read(new File("..\\model\\Sprite\\2.png"));
+			 score3 = ImageIO.read(new File("..\\model\\Sprite\\3.png"));
+			 score4 = ImageIO.read(new File("..\\model\\Sprite\\4.png"));
+			 score5 = ImageIO.read(new File("..\\model\\Sprite\\5.png"));
+			 score6 = ImageIO.read(new File("..\\model\\Sprite\\6.png"));
+			 score7 = ImageIO.read(new File("..\\model\\Sprite\\7.png"));
+			 score8 = ImageIO.read(new File("..\\model\\Sprite\\8.png"));
+			 score9 = ImageIO.read(new File("..\\model\\Sprite\\9.png"));
+			 score0 = ImageIO.read(new File("..\\model\\Sprite\\0.png"));
+			 score = ImageIO.read(new File("..\\model\\Sprite\\SCORE.png"));
+		
+		} catch (IOException e) {
+		    e.printStackTrace();
+		    
+		}
 		
 	}
 	
@@ -42,7 +71,7 @@ public class Display extends JPanel
 	public void drawMap(Graphics g) throws IOException, InterruptedException
 		{	  
 		
-		/* Afficher les elements de la map*/
+		/* Display elements on the map*/
 			  for(int x = 0; x < 20; x++)
 			  {
 				  for(int y = 0; y < 12; y++){
@@ -53,9 +82,28 @@ public class Display extends JPanel
 			  for (IEntity entity : model.getMap().getEntities()) {
 				  g.drawImage(entity.getSprite().getImage(), entity.getX()*32, entity.getY()*32, this);
 			}
+			  /*g.setColor(Color.WHITE);
+			  g.drawString("Score : "+model.getMap().getHero().getScore(), 20, 32*12+10);
+			  */
+			  String scorevalue = ""+model.getMap().getHero().getScore();
+			  g.drawImage(this.score, 10, 30*13+10, this);
 			  
-			  
-			  
+			  for (int i = 0; i < scorevalue.length(); i++) {
+				Image digit = null;
+				switch(scorevalue.charAt(i)) {
+				case '0': digit=score0; break;
+				case '1': digit=score1; break;
+				case '2': digit=score2; break;
+				case '3': digit=score3; break;
+				case '4': digit=score4; break;
+				case '5': digit=score5; break;
+				case '6': digit=score6; break;
+				case '7': digit=score7; break;
+				case '8': digit=score8; break;
+				case '9': digit=score9; break;
+				}
+				g.drawImage(digit, 10+20+5*32+32*i, 30*13+10, this);
+			  	}			  
 			Thread.sleep(100);
 			this.repaint();
 		}
