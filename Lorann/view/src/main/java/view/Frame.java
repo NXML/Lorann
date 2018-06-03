@@ -1,16 +1,17 @@
-
-
-
 package view;
-
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 import controller.IController;
 import controller.UserOrder;
 import model.IModel;
-
-
+/**
+ * <h1>The Class Frame</h1>
+ * 
+ * @author Arthur-Michel
+ * @version 1.0
+ * @see Jpanel , Cotroler
+ */
 public class Frame extends JFrame implements KeyListener , IView
 {
 	
