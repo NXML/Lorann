@@ -69,8 +69,8 @@ public class DataLoader extends AbstractLoader{
 						model.elements.Element  Bufferelement = null;
 						char Bufferchar = result.getString("CharSprite").charAt(0);
 						if(Bufferchar == Cross.charSprite) {Bufferelement = elementFactory.getCross();}
-						else if(Bufferchar == HWall.charSprite) {Bufferelement = elementFactory.gethWall();}
-						else if(Bufferchar == VWall.charSprite) {Bufferelement = elementFactory.getvWall();}
+						else if(Bufferchar == HWall.charSprite) {Bufferelement = elementFactory.getHWall();}
+						else if(Bufferchar == VWall.charSprite) {Bufferelement = elementFactory.getVWall();}
 						else {Bufferelement = elementFactory.getGround();}
 						map.setElementXY(result.getInt("CoordX"), result.getInt("CoordY"), Bufferelement);
 						

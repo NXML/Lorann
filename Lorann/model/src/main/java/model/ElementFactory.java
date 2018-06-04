@@ -64,14 +64,14 @@ public class ElementFactory {
 	 * 
 	 * @return the vertical wall
 	 */
-	public Element getvWall() {return vWall;}
+	public Element getVWall() {return vWall;}
 
 	/**
 	 * Get the horizontal wall.
 	 * 
 	 * @return the horizontal wall
 	 */
-	public Element gethWall() {return hWall;}
+	public Element getHWall() {return hWall;}
 
 	/**
 	 * Get the cross.
