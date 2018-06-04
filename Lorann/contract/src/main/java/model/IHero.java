@@ -53,6 +53,8 @@ public interface IHero extends IEntity {
 	 * 			the score
 	 */
 	void setScore(int score);
+
+	void launchFireBall();
 	
 	
 	
