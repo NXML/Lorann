@@ -49,7 +49,7 @@ public class LorannController implements IOrderPerformer, IController {
 	 * @see controller.ControllerFacade#play()
 	 */
 	@Override
-	public void play() throws InterruptedException {
+	public  void play() throws InterruptedException {
 		
 		while(this.getModel().getMap().getHero().isAlive()) {
 			

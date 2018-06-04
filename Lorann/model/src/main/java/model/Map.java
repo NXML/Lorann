@@ -101,7 +101,7 @@ public class Map implements IMap {
 	 * @see model.IMap#removeEntity(model.IEntity)
 	 */
 	@Override
-	public void removeEntity(IEntity entity) {entities.remove(entity);};
+	public  void  removeEntity(IEntity entity) {entities.remove(entity);};
 
 	/*
 	 * (non-Javadoc)
