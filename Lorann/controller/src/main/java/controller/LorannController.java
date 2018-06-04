@@ -109,10 +109,12 @@ public class LorannController implements IOrderPerformer, IController {
 				entity.move();	
 			}
 			
+			
+			
 		//}
 		
-		this.getView().displayMessage("Game Over");
 		}
+		this.getView().displayMessage("Game Over");
 		
 	}
 	
