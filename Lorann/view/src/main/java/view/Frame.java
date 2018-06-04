@@ -264,7 +264,7 @@ public class Frame extends JFrame implements KeyListener, IView {
 	/**
 	 * Set the width.
 	 * 
-	 * @param Width
+	 * @param width
 	 * 			the width to set
 	 */
 	public void setWidth(int width) {
@@ -296,7 +296,7 @@ public class Frame extends JFrame implements KeyListener, IView {
 	/**
 	 * Set the display.
 	 * 
-	 * @param display
+	 * @param Display
 	 * 			the display to set
 	 */
 	

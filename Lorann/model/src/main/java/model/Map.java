@@ -101,7 +101,7 @@ public class Map implements IMap {
 	 * @see model.IMap#removeEntity(model.IEntity)
 	 */
 	@Override
-	public void removeEntity(IEntity entity) {entities.remove(entity);};
+	public  void  removeEntity(IEntity entity) {entities.remove(entity);};
 
 	/*
 	 * (non-Javadoc)
@@ -147,10 +147,14 @@ public class Map implements IMap {
 	 */
 	public int getID() {return ID;}
 
+	/*
+	 * (non-Javadoc)
+	 * @see model.IMap#getFinished()
+	 */
 	@Override
 	public boolean getFinished() {
-		// TODO Auto-generated method stub
 		return this.finished;
+		
 	}
 
 }
