@@ -1,14 +1,17 @@
 package view;
 
 import java.awt.Color;
+
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 
 import javax.imageio.ImageIO;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import model.IEntity;
@@ -30,8 +33,7 @@ public class Display extends JPanel implements Observer
 	 */
 	private static final long serialVersionUID = 1L;
 	private IModel model;
-	private Image score1,score2,score3,score4,score5,score6,score7,score8,score9,score0,score;
-
+	private Image score1,score2,score3,score4,score5,score6,score7,score8,score9,score0,score;	
 
 	public Display(IModel model)
 	{
@@ -123,8 +125,6 @@ public class Display extends JPanel implements Observer
 	     
 	}
 	
-	
-
 
 
 
@@ -135,5 +135,6 @@ public class Display extends JPanel implements Observer
 		this.repaint();
 		
 	}
-	
+
+
 }

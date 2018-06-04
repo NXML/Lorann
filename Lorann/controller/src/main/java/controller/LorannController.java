@@ -96,7 +96,10 @@ public class LorannController implements IOrderPerformer, IController {
 			}
 			
 		}
-		this.getView().displayMessage("Game Over");
+
+
+		
+		view.displayMessage("GameOver");
 		
 	}
 	
