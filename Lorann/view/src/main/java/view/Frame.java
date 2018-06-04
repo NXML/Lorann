@@ -1,9 +1,13 @@
 package view;
+import java.awt.Window;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import controller.IController;
 import controller.IOrderPerformer;
 import controller.UserOrder;
@@ -40,6 +44,8 @@ public class Frame extends JFrame implements KeyListener , IView
 	
 	/** The userOrder. */
  	UserOrder userOrder;
+ 	
+ 	private Frame frame;
 	
 	/**
 	 * Instantiate a new Frame.
@@ -269,14 +275,15 @@ public class Frame extends JFrame implements KeyListener , IView
 	}
 
 
+	
 	/*
 	 * (non-Javadoc)
 	 * @see view.IView#displayMessage
 	 */
 	@Override
 	public void displayMessage(String message) {
-		// TODO Auto-generated method stub
-		
+		JOptionPane.showMessageDialog(null, message);
+		this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));	
 	}
 
 	@Override
