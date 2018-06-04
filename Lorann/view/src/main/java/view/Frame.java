@@ -174,17 +174,14 @@ public class Frame extends JFrame implements KeyListener , IView
 
 	public void keyTyped(KeyEvent keyEvent) {
 		// this.keyCodeToUserOrder(keyEvent.getKeyCode());
-
+	}
+	
 	/**
 	 * Invoked when a key is typed
 	 * 
 	 * @param keyEvent
 	 * 
 	 */
-	public void keyTyped(KeyEvent keyEvent) 
-	{
-		// this.keyCodeToUserOrder(keyEvent.getKeyCode());	
-	}
 	
 	 public UserOrder getUserOrder() {
 	    	return this.userOrder;
@@ -277,6 +274,12 @@ public class Frame extends JFrame implements KeyListener , IView
 	 */
 	@Override
 	public void displayMessage(String message) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
