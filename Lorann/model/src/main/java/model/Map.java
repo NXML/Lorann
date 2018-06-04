@@ -19,7 +19,7 @@ public class Map implements IMap {
 	/**
 	 * The ID.
 	 */
-	private int ID = 5;
+	private int ID = 0;
 	
 	/**
 	 * The end.
@@ -146,5 +146,11 @@ public class Map implements IMap {
 	 * @return the ID
 	 */
 	public int getID() {return ID;}
+
+	@Override
+	public boolean getFinished() {
+		// TODO Auto-generated method stub
+		return this.finished;
+	}
 
 }

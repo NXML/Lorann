@@ -53,5 +53,7 @@ public interface IMap {
 	 * 			the entity
 	 */
 	void removeEntity(IEntity entity);
+
+	boolean getFinished();
 	
 }

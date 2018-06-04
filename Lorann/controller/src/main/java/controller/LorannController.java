@@ -98,6 +98,8 @@ public class LorannController implements IOrderPerformer, IController {
 				
 				
 			}*/
+				
+				
 			
 				this.clearUserOrder();
 			
