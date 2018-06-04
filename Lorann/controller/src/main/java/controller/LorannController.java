@@ -191,7 +191,7 @@ public class LorannController implements IOrderPerformer, IController {
 	 * 			Signals that an I/O exception has occurred
 	 */
 	private void launchFireball() throws IOException {
-		
+				
 	}
 	
 	/*
