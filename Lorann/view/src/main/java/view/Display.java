@@ -24,7 +24,6 @@ import model.ISprite;
  * 
  * @author Arthur-Michel
  * @version 1.0
- * @see Jpanel
  * @see Observer
  */
 public class Display extends JPanel implements Observer {
@@ -79,6 +78,8 @@ public class Display extends JPanel implements Observer {
 	 * Draw and display the different elements on the map.
 	 * 
 	 * @param g
+	 * 		the Graphics
+	 * 
 	 * @throws IOException
 	 * 			Signals that an I/O exception has occurred.
 	 * @throws InterruptedException
@@ -132,6 +133,7 @@ public class Display extends JPanel implements Observer {
 	 * Draw the components.
 	 * 
 	 * @param g 
+	 * 		the Graphics
 	 */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
