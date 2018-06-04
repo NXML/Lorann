@@ -133,6 +133,12 @@ public class Hero extends Entity implements IHero {
 	public  void launchFireBall() {
 		if(canSpell())
 		map.addEntity(new FireBall(this.x,this.y,this.direction,this.map));
+		else {
+			for (int i = 0; i < map.getEntities().size(); i++) {
+				if(map.getEntities().get(i) instanceof FireBall)
+				map.getEntities().get(i).setMod(2);
+			}
+		}
 	}
 	
 	
@@ -141,6 +147,7 @@ public class Hero extends Entity implements IHero {
 	 * (non-Javadoc)
 	 * @see model.elements.Entity#moveTo(int, int)
 	 */
+	@SuppressWarnings("unchecked")
 	public void moveTo(int x,int y) {
 		super.moveTo(x, y);
 		for (IEntity entity : (ArrayList<IEntity>) map.getEntities().clone()) {
