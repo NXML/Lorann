@@ -29,7 +29,7 @@ import model.ISprite;
  */
 public class Display extends JPanel implements Observer {
 	
-	/** The version. */
+	/** The serial version. */
 	private static final long serialVersionUID = 1L;
 	
 	/** The model. */

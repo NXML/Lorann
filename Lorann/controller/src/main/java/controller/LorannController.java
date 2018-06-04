@@ -176,28 +176,6 @@ public class LorannController implements IOrderPerformer, IController {
 	}
 	
 	/**
-	 * Set the view.
-	 * 
-	 * @param view
-	 * 			the view to set
-	 */
-	private void setView(IView view) {
-		this.view = view;
-		
-	}
-	
-	/**
-	 * Set the model.
-	 * 
-	 * @param model
-	 * 			the model to set
-	 */
-	private void setModel(IModel model) {
-		this.model = model;
-		
-	}
-	
-	/**
 	 * Launch a fireball.
 	 * 
 	 * @throws IOException
