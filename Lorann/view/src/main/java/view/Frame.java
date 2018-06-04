@@ -8,16 +8,19 @@ import controller.IController;
 import controller.IOrderPerformer;
 import controller.UserOrder;
 import model.IModel;
+
 /**
  * <h1>The Class Frame</h1>
  * 
  * @author Arthur-Michel
  * @version 1.0
- * @see Jpanel , Cotroler
+ * @see JFrame
+ * @see KeyListener
+ * @see IView
  */
-public class Frame extends JFrame implements KeyListener , IView
-{
-	/** the serial version */
+public class Frame extends JFrame implements KeyListener, IView {
+	
+	/** The serial version. */
 	private static final long serialVersionUID = -7393744101067014109L;
 	
 	/** The width of the frame. */
@@ -27,7 +30,7 @@ public class Frame extends JFrame implements KeyListener , IView
 	private int height = 484;
 	
 	/** The display. */
-	private Display Display;
+	private Display display;
 	
 	/** The controller. */
 	private IController controller;
@@ -42,18 +45,17 @@ public class Frame extends JFrame implements KeyListener , IView
  	UserOrder userOrder;
 	
 	/**
-	 * Instantiate a new Frame.
+	 * Instantiate a new frame.
 	 *
 	 * @param model
 	 * 			the model
 	 */
-	public Frame(IModel model)
-	{
+	public Frame(IModel model) {
 		this.model = model;
-		this.Display = new Display(this.model);
+		this.display = new Display(this.model);
 		
 		this.setTitle("Lorran");
-	    this.setContentPane(this.Display);
+	    this.setContentPane(this.display);
 	    this.setSize(width, height);
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
@@ -61,22 +63,24 @@ public class Frame extends JFrame implements KeyListener , IView
 	    this.addKeyListener(this);
 		this.setVisible(true);
 
-
 	}
 	
 	/**
-	 * Get the Controller.
+	 * Get the controller.
 	 * 
 	 * @return the controller
 	 */
-	
-	private IController getController()
-	{
+	private IController getController() {
 		return controller;
+		
 	}
 
-	
-	  
+	/**
+	 * Convert the key code to the user order.
+	 * 
+	 * @param keyCode
+	 * 			the key code
+	 */
   private void keyCodeToUserOrder(final int keyCode) {
     	
     	System.out.println(keyCode);
@@ -86,7 +90,6 @@ public class Frame extends JFrame implements KeyListener , IView
 			case KeyEvent.VK_NUMPAD8:
 				userOrder = UserOrder.UP;
 				model.getMap().getHero().moveUP();
-				 
 				break;
 				
 			case KeyEvent.VK_NUMPAD2:
@@ -132,21 +135,21 @@ public class Frame extends JFrame implements KeyListener , IView
 			default:
 				userOrder = UserOrder.NOP;
 				break;
+				
 		}
     	
-
     }
 
 	/**
-	 * Invoked when a key is released
+	 * Invoked when a key is pressed.
 	 * 
 	 * @param keyEvent
-	 * 
+	 * 			the key event 
 	 */
-    
 	public final void keyPressed(final KeyEvent keyEvent) {
 		 this.keyCodeToUserOrder(keyEvent.getKeyCode());
-	    }
+		 
+	}
 	
 	 
 	/*private UserOrder keyCodeToUserOrder(final int keyCode) {
@@ -178,106 +181,124 @@ public class Frame extends JFrame implements KeyListener , IView
     	return this.orderPerformer;
     }
 */
-	public void keyReleased(int keyEvent) {
-		System.out.println("lol");
-	}
-
-	public void keyTyped(KeyEvent keyEvent) {
-		// this.keyCodeToUserOrder(keyEvent.getKeyCode());
-	}
 	
 	/**
-	 * Invoked when a key is typed
+	 * Invoked when a key is released.
 	 * 
 	 * @param keyEvent
-	 * 
+	 * 			the key event
 	 */
+	public void keyReleased(int keyEvent) {
+		System.out.println("lol");
+		
+	}
+
+	/**
+	 * Invoked when a key is typed.
+	 * 
+	 * @param keyEvent
+	 * 			the key event
+	 */
+	public void keyTyped(KeyEvent keyEvent) {
+		// this.keyCodeToUserOrder(keyEvent.getKeyCode());
+		
+	}
 	
+	/**
+	 * Get the user order.
+	 * 
+	 * @return the user order
+	 */
 	 public UserOrder getUserOrder() {
 	    	return this.userOrder;
-	    }
+	    	
+	 }
 	    
 	/**
-	 * Repaint the components
+	 * Repaint the components.
 	 */ 
-	public void repaint()
-	{
-		this.Display.repaint();
+	public void repaint() {
+		this.display.repaint();
+		
 	}
 
 	
 	/**
-	 * Get the Display.
+	 * Get the display.
 	 * 
 	 * @return the display
 	 */
 	public Display getDisplay() {
-		return Display;
+		return display;
+		
 	}
 	
 
 	/**
-	 * Set the Controller.
+	 * Set the controller.
 	 * 
 	 * @param controller
 	 * 			the controller to set
 	 */
-	public void setController(IController controller)
-	{
+	public void setController(IController controller) {
 		this.controller = controller;
+		
 	}
 	
 	/**
-	 * Get the Width.
+	 * Get the width.
 	 * 
 	 * @return the width
 	 */
 	public int getWidth() {
 		return width;
+		
 	}
 
 	
 	/**
-	 * Set the Width.
+	 * Set the width.
 	 * 
 	 * @param Width
 	 * 			the width to set
 	 */
 	public void setWidth(int width) {
 		this.width = width;
+		
 	}
 
 	/**
-	 * Get the Height.
+	 * Get the height.
 	 * 
 	 * @return the Height
 	 */
 	public int getHeight() {
 		return height;
+		
 	}
 	
 	/**
-	 * Set the Height.
+	 * Set the height.
 	 * 
 	 * @param height
 	 * 			the height to set
 	 */
 	public void setHeight(int height) {
 		this.height = height;
+		
 	}
 
-	
 	/**
-	 * Set the Display.
+	 * Set the display.
 	 * 
 	 * @param display
 	 * 			the display to set
 	 */
 	
 	public void setDisplay(Display Display) {
-		this.Display = Display;
+		this.display = Display;
+		
 	}
-
 
 	/*
 	 * (non-Javadoc)
@@ -289,6 +310,10 @@ public class Frame extends JFrame implements KeyListener , IView
 		
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
