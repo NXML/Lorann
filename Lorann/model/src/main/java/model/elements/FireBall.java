@@ -1,6 +1,9 @@
 package model.elements;
 
+import java.util.ArrayList;
+
 import model.Direction;
+import model.IEntity;
 import model.Map;
 
 /**
@@ -41,7 +44,7 @@ public class FireBall extends AI {
 	public FireBall(int x, int y,Direction direction, Map map) {
 		super(x, y, imagePaths, map);
 		this.direction=direction;
-		
+		map.getHero().setSpell(false);
 		switch(direction) {
 		case UP: normalVectorX=0;normalVectorY=1;break;
 		case TOP_RIGHT:normalVectorX=-1;normalVectorY=1;break;
@@ -73,7 +76,22 @@ public class FireBall extends AI {
 			normalVectorY*=-1;
 			if(canMoveTo(this.x+normalVectorX,this.y+normalVectorY)) {
 				moveTo(this.x+normalVectorX,this.y+normalVectorY);	}
-			
+		}
+		
+		for (IEntity entity : (ArrayList<IEntity>) map.getEntities().clone()) {
+			if(entity.getX()==x && entity.getY()== y) {
+				if(entity instanceof Monster) {
+					map.removeEntity(entity);
+					map.getHero().setSpell(true);
+					map.removeEntity(this);
+				}
+				if(entity instanceof Hero) {
+					map.getHero().setSpell(true);
+					map.removeEntity(this);
+				}
+			}
+		
+		
 		}
 			
 	}
