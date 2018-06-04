@@ -147,18 +147,4 @@ public class Map implements IMap {
 	 */
 	public int getID() {return ID;}
 
-	/**
-	 * Get the width.
-	 * 
-	 * @return the width
-	 */
-	public int getWidth() {return width;}
-
-	/**
-	 * Get the height.
-	 * 
-	 * @return the height
-	 */
-	public int getHeight(){return height;}
-
 }

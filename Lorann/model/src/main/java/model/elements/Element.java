@@ -68,18 +68,4 @@ public class Element extends Observable implements IElement {
 		
 	}
 	
-	/*
-	 * (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	public String toString() {
-		return "This is an element";
-		
-	}
-
-	
-	
-	
-	
-	
 }

@@ -121,7 +121,7 @@ public class LorannController implements IOrderPerformer, IController {
 	 * 
 	 * @return the model
 	 */
-	public IModel getModel() {
+	private IModel getModel() {
 		return this.model;
 		
 	}
@@ -131,7 +131,7 @@ public class LorannController implements IOrderPerformer, IController {
 	 * 
 	 * @return the view
 	 */
-	public IView getView() {
+	private IView getView() {
 		return this.view;
 		
 	}

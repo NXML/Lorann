@@ -54,7 +54,7 @@ public class Ogre extends Monster {
 		
 		for(int i=-1; i<=1; i++) {
 			for(int j =-1; j<=1; j++) {
-				double bufferedDistance=ditstance(this.x+i,this.y-j,map.getHero().getX(),map.getHero().getY());
+				double bufferedDistance=distance(this.x+i,this.y-j,map.getHero().getX(),map.getHero().getY());
 					if(bufferedDistance<minDistance) {
 						xOffset=i;
 						yOffset=-j;
@@ -71,7 +71,7 @@ public class Ogre extends Monster {
 		
 	
 	
-	double ditstance(int entityX,int entityY,int entity2X,int entity2Y) {
+	private double distance(int entityX,int entityY,int entity2X,int entity2Y) {
 		return java.lang.Math.sqrt(java.lang.Math.pow((entity2X-entityX),2)+java.lang.Math.pow((entityY-entity2Y),2));
 	}
 

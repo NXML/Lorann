@@ -147,7 +147,7 @@ final class LorannBDDConnector {
      *
      * @return the connection
      */
-    public Connection getConnection() {
+    private Connection getConnection() {
         return this.connection;
         
     }
@@ -168,7 +168,7 @@ final class LorannBDDConnector {
      *
      * @return the statement
      */
-    public Statement getStatement() {
+    private Statement getStatement() {
         return this.statement;
         
     }
