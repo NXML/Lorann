@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 import model.IEntity;
 import model.IModel;
@@ -103,8 +104,9 @@ public class LorannController implements IOrderPerformer, IController {
 			
 				this.clearUserOrder();
 			
-			for (IEntity entity : model.getMap().getEntities()) {
-				entity.move();	
+			for (int i=0 ; i<model.getMap().getEntities().size();i++) {
+				
+				model.getMap().getEntities().get(i).move();
 			}
 			
 			
