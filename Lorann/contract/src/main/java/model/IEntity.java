@@ -77,6 +77,8 @@ public interface IEntity extends IElement {
 	default void addObserver(Observer o) {
 		// TODO Auto-generated method stub
 	}
+
+	void setMod(int i);
 	
 
 	

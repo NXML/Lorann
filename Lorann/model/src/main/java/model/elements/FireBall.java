@@ -28,7 +28,15 @@ public class FireBall extends AI {
 	 * The normal vector y.
 	 */
 	public int normalVectorY;
-	
+	/**
+	 * 
+	 * different way to move the ball
+	 */
+	private int mod=1;
+	public void setMod(int mod) {
+		this.mod = mod;
+	}
+
 	/**
 	 * Instantiate a new fireball.
 	 * 
@@ -65,19 +73,40 @@ public class FireBall extends AI {
 	 * (non-Javadoc)
 	 * @see model.elements.Entity#move()
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void move() {
-		if(canMoveTo(this.x+normalVectorX,this.y+normalVectorY)) {
-			moveTo(this.x+normalVectorX,this.y+normalVectorY);	
-			
+		if(this.mod==1) {
+			if(canMoveTo(this.x+normalVectorX,this.y+normalVectorY)) {
+				moveTo(this.x+normalVectorX,this.y+normalVectorY);		
+			}
+			else {
+				normalVectorX*=-1;
+				normalVectorY*=-1;
+				if(canMoveTo(this.x+normalVectorX,this.y+normalVectorY)) {
+					moveTo(this.x+normalVectorX,this.y+normalVectorY);	}
+			}
+
 		}
 		else {
-			normalVectorX*=-1;
-			normalVectorY*=-1;
-			if(canMoveTo(this.x+normalVectorX,this.y+normalVectorY)) {
-				moveTo(this.x+normalVectorX,this.y+normalVectorY);	}
+			int xOffset =0;
+			int yOffset =0;
+			double minDistance=1000;
+			for(int i=-1; i<=1; i++) {
+				for(int j =-1; j<=1; j++) {
+					double bufferedDistance=distance(this.x+i,this.y-j,map.getHero().getX(),map.getHero().getY());
+						if(bufferedDistance<minDistance) {
+							xOffset=i;
+							yOffset=-j;
+							minDistance=bufferedDistance;
+						}
+				}
+			}
+
+			if(canMoveTo(this.x+xOffset,this.y+yOffset)) {
+				moveTo(this.x+xOffset,this.y+yOffset);
+			}
 		}
-		
 		for (IEntity entity : (ArrayList<IEntity>) map.getEntities().clone()) {
 			if(entity.getX()==x && entity.getY()== y) {
 				if(entity instanceof Monster) {
@@ -90,10 +119,9 @@ public class FireBall extends AI {
 					map.removeEntity(this);
 				}
 			}
-		
-		
 		}
-			
 	}
-
+	private double distance(int entityX,int entityY,int entity2X,int entity2Y) {
+		return java.lang.Math.sqrt(java.lang.Math.pow((entity2X-entityX),2)+java.lang.Math.pow((entityY-entity2Y),2));
+	}
 }
