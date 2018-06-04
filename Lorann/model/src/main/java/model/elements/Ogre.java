@@ -48,15 +48,31 @@ public class Ogre extends Monster {
 	 */
 	@Override
 	public void move() {
-		if(canMoveTo(x+(1*movementVector), y+(1*movementVector))) {
-			moveTo(x+(1*movementVector), y+(1*movementVector));
-			
-		}
-		else if(canMoveTo(x-(1*movementVector), y-(1*movementVector))){
-			movementVector *= -1;
-			
-		}
+		int xOffset =0;
+		int yOffset =0;
+		double minDistance=1000;
 		
+		for(int i=-1; i<=1; i++) {
+			for(int j =-1; j<=1; j++) {
+				double bufferedDistance=ditstance(this.x+i,this.y-j,map.getHero().getX(),map.getHero().getY());
+					if(bufferedDistance<minDistance) {
+						xOffset=i;
+						yOffset=-j;
+						minDistance=bufferedDistance;
+					}
+			}
+		}
+
+		if(canMoveTo(this.x+xOffset,this.y+yOffset)) {
+			moveTo(this.x+xOffset,this.y+yOffset);
+		}
+	}
+	
+		
+	
+	
+	double ditstance(int entityX,int entityY,int entity2X,int entity2Y) {
+		return java.lang.Math.sqrt(java.lang.Math.pow((entity2X-entityX),2)+java.lang.Math.pow((entityY-entity2Y),2));
 	}
 
 }
