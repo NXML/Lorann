@@ -14,6 +14,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import controller.IController;
 import model.IEntity;
 import model.IModel;
 import model.ISprite;
@@ -29,12 +30,32 @@ public class Display extends JPanel implements Observer
 	
 
 	/**
-	 * Initiates attributes
+	 * <h1>The Class LorannController.</h1>
+	 * 
+	 * @author 
+	 * @version 1.0
+	 * @see IOrderPerfomer
+	 * @see IController
 	 */
+	
+	/** The Version. */
+
 	private static final long serialVersionUID = 1L;
+	
+	/** The model. */
 	private IModel model;
+	
+	/** The different score sprite */
 	private Image score1,score2,score3,score4,score5,score6,score7,score8,score9,score0,score;	
 
+	
+	
+	/**
+	 * Instantiate a new Display.
+	 *
+	 * @param model
+	 * 			the model
+	 */
 	public Display(IModel model)
 	{
 		this.setBackground(Color.BLACK);
@@ -71,7 +92,14 @@ public class Display extends JPanel implements Observer
 			
 
 	 
-	 
+	/**
+	 * Draw and display the different element on the map
+	 * 
+	 * 
+	 * @param g
+	 * @throws IOException
+	 * @throws InterruptedException
+	 */
 	public void drawMap(Graphics g) throws IOException, InterruptedException
 		{	  
 		/* Display elements on the map*/
@@ -115,7 +143,11 @@ public class Display extends JPanel implements Observer
         
 	
 	
-	
+	/**
+	 * 
+	 * 
+	 * @param g 
+	 */
 	public void paintComponent(Graphics g)
 	{
 		super.paintComponent(g);
