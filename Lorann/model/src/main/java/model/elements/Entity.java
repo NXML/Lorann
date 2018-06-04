@@ -71,6 +71,7 @@ public class Entity extends Element implements IEntity {
 		this.x=x;
 		this.y=y;
 		this.map=map;
+		this.direction=Direction.UP;
 		
 	}
 	
@@ -111,6 +112,7 @@ public class Entity extends Element implements IEntity {
 	@Override
 	public void moveUP() {
 		if(canMoveTo(this.x ,this.y-1)) {moveTo(this.x ,this.y-1);}
+		this.direction=Direction.UP;
 		
 	}
 	
@@ -121,7 +123,7 @@ public class Entity extends Element implements IEntity {
 	@Override
 	public void moveDOWN() {
 		if(canMoveTo(this.x ,this.y+1)) {moveTo(this.x ,this.y+1);}
-		
+		this.direction=Direction.DOWN;
 	}
 	
 	/*
@@ -131,7 +133,7 @@ public class Entity extends Element implements IEntity {
 	@Override
 	public void moveRIGHT() {
 		if(canMoveTo(this.x+1 ,this.y)) {moveTo(this.x+1 ,this.y);}
-		
+		this.direction=Direction.RIGHT;
 	}
 	
 	/*
@@ -141,7 +143,7 @@ public class Entity extends Element implements IEntity {
 	@Override
 	public void moveLEFT() {
 		if(canMoveTo(this.x-1 ,this.y)) {moveTo(this.x-1 ,this.y);}
-		
+		this.direction=Direction.LEFT;
 	}
 	
 	/*
@@ -151,7 +153,7 @@ public class Entity extends Element implements IEntity {
 	@Override
 	public void moveUP_RIGHT() {
 		if(canMoveTo(this.x+1 ,this.y-1)) {moveTo(this.x+1 ,this.y-1);}
-		
+		this.direction=Direction.TOP_RIGHT;
 	}
 	
 	/*
@@ -161,7 +163,7 @@ public class Entity extends Element implements IEntity {
 	@Override
 	public void moveUP_LEFT() {
 		if(canMoveTo(this.x-1 ,this.y-1)) {moveTo(this.x-1 ,this.y-1);}
-		
+		this.direction=Direction.TOP_LEFT;
 	}
 	
 	
@@ -172,7 +174,7 @@ public class Entity extends Element implements IEntity {
 	@Override
 	public void moveDOWN_LEFT() {
 		if(canMoveTo(this.x-1 ,this.y+1)) {moveTo(this.x-1 ,this.y+1);}
-		
+		this.direction=Direction.BOTTOM_LEFT;
 	}
 	
 	/*
@@ -182,7 +184,7 @@ public class Entity extends Element implements IEntity {
 	@Override
 	public void moveDOWN_RIGHT() {
 		if(canMoveTo(this.x+1 ,this.y+1)) {moveTo(this.x+1 ,this.y+1);}
-		
+		this.direction=Direction.BOTTOM_LEFT;
 	}
 
 	/*
