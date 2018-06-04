@@ -126,6 +126,7 @@ public class Frame extends JFrame implements KeyListener , IView
 				
 			case KeyEvent.VK_NUMPAD5:
 				userOrder = UserOrder.MAGIC;
+				//FireBall fireball = new FireBall();
 				break;
 			
 			default:
