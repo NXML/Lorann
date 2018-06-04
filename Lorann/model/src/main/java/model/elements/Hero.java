@@ -29,6 +29,8 @@ public class Hero extends Entity implements IHero {
 	 */
 	private boolean spell = true;
 	
+	private boolean finished = false;
+	
 	/**
 	 * The score.
 	 */
@@ -185,5 +187,13 @@ public class Hero extends Entity implements IHero {
 		}
 		
 	}
+	
+	
+	@Override
+	public boolean getFinished() {
+		// TODO Auto-generated method stub
+	return this.finished;
+		}
+
 
 }
