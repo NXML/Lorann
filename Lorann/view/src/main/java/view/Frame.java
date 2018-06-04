@@ -263,6 +263,7 @@ public class Frame extends JFrame implements KeyListener , IView
 	 * @param display
 	 * 			the display to set
 	 */
+	
 	public void setDisplay(Display Display) {
 		this.Display = Display;
 	}
