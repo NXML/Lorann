@@ -57,7 +57,7 @@ public class FireBall extends AI {
 		default :normalVectorX=0;normalVectorY=0; break;
 		
 		}
-		this.move();
+		
 		
 	}
 	
