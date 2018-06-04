@@ -85,34 +85,43 @@ public class Frame extends JFrame implements KeyListener , IView
 		{
 			case KeyEvent.VK_NUMPAD8:
 				userOrder = UserOrder.UP;
+				model.getMap().getHero().moveUP();
+				 
 				break;
 				
 			case KeyEvent.VK_NUMPAD2:
 				userOrder = UserOrder.DOWN;
+				model.getMap().getHero().moveDOWN();
 				break;
 				
 			case KeyEvent.VK_NUMPAD4 :
 				userOrder = UserOrder.LEFT;
+				model.getMap().getHero().moveLEFT();
 				break;
 				
 			case KeyEvent.VK_NUMPAD6:
 				userOrder = UserOrder.RIGHT;
+				model.getMap().getHero().moveRIGHT();
 				break;
 			
 			case KeyEvent.VK_NUMPAD7:
 				userOrder = UserOrder.TOP_LEFT;
+				model.getMap().getHero().moveUP_LEFT();
 				break;
 			
 			case KeyEvent.VK_NUMPAD9:
 				userOrder = UserOrder.TOP_RIGHT;
+				model.getMap().getHero().moveUP_RIGHT();
 				break;	
 				
 			case KeyEvent.VK_NUMPAD1:
 				userOrder = UserOrder.BOTTOM_LEFT;
+				model.getMap().getHero().moveDOWN_LEFT();
 				break;	
 				
 			case KeyEvent.VK_NUMPAD3:
 				userOrder = UserOrder.BOTTOM_RIGHT;
+				model.getMap().getHero().moveDOWN_RIGHT();
 				break;	
 				
 			case KeyEvent.VK_NUMPAD5:
@@ -169,7 +178,7 @@ public class Frame extends JFrame implements KeyListener , IView
     }
 */
 	public void keyReleased(int keyEvent) {
-		
+		System.out.println("lol");
 	}
 
 	public void keyTyped(KeyEvent keyEvent) {

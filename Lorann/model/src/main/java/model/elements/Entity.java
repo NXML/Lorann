@@ -224,5 +224,17 @@ public class Entity extends Element implements IEntity {
 		moveTo(x,y);
 		
 	}
+	
+	
+	public Direction getDirection() {
+		return direction;
+	}
+
+	
+	public void setDirection(Direction direction) {
+		this.direction = direction;
+	}
+
+	
 
 }

@@ -71,7 +71,7 @@ public class LorannController implements IOrderPerformer, IController {
 						break;
 					case LEFT:
 						this.getModel().getMap().getHero().moveLEFT();
-						break;
+					break;
 					case RIGHT:
 						this.getModel().getMap().getHero().moveRIGHT();
 						break;

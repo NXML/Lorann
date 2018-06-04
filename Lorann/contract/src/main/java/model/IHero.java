@@ -54,4 +54,7 @@ public interface IHero extends IEntity {
 	 */
 	void setScore(int score);
 	
+	
+	
+	
 }
