@@ -147,10 +147,14 @@ public class Map implements IMap {
 	 */
 	public int getID() {return ID;}
 
+	/*
+	 * (non-Javadoc)
+	 * @see model.IMap#getFinished()
+	 */
 	@Override
 	public boolean getFinished() {
-		// TODO Auto-generated method stub
 		return this.finished;
+		
 	}
 
 }
