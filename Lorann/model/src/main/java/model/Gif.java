@@ -57,7 +57,7 @@ public class Gif extends Sprite {
 	/**
 	 * Set the state of this sprite his next state.
 	 */
-	public void next() {this.state=(state+1)%spriteCount;}
+	private void next() {this.state=(state+1)%spriteCount;}
 	
 	/**
 	 * Get the image.

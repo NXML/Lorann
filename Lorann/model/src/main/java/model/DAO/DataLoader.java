@@ -58,7 +58,7 @@ public class DataLoader extends AbstractLoader{
 	 * @param ID
 	 * 			the ID
 	 */
-	public void setMapElementsByID(int ID) {
+	private void setMapElementsByID(int ID) {
 		final CallableStatement callStatement = prepareCall(sqlGetMapByID);
 	    try {
 			callStatement.setInt(1, ID);
@@ -95,7 +95,7 @@ public class DataLoader extends AbstractLoader{
 	 * @param ID
 	 * 			the ID
 	 */
-	public void setMapEntityByID(int ID){
+	private void setMapEntityByID(int ID){
 		final CallableStatement callStatement = prepareCall(sqlGetMapByID);
 	    try {
 			callStatement.setInt(1, ID);
@@ -133,7 +133,7 @@ public class DataLoader extends AbstractLoader{
 	 * @param ID
 	 * 			the ID
 	 */
-	public void setMapHeroByID(int ID){
+	private void setMapHeroByID(int ID){
 		final CallableStatement callStatement = prepareCall(sqlGetMapByID);
 	    try {
 			callStatement.setInt(1, ID);

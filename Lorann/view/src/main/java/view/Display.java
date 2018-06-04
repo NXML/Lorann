@@ -100,7 +100,7 @@ public class Display extends JPanel implements Observer
 	 * @throws IOException
 	 * @throws InterruptedException
 	 */
-	public void drawMap(Graphics g) throws IOException, InterruptedException
+	private void drawMap(Graphics g) throws IOException, InterruptedException
 		{	  
 		/* Display elements on the map*/
 			  for(int x = 0; x < 20; x++){

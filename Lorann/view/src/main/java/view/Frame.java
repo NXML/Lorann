@@ -70,7 +70,7 @@ public class Frame extends JFrame implements KeyListener , IView
 	 * @return the controller
 	 */
 	
-	public IController getController()
+	private IController getController()
 	{
 		return controller;
 	}
