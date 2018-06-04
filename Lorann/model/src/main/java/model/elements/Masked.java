@@ -24,7 +24,9 @@ public class Masked extends Monster {
 	/**
 	 * The movement vector.
 	 */
-	private int movementVector =1;
+	private int movementVectorX =0;
+	private int movementVectorY=0;
+	private boolean moved = false;
 	
 	/**
 	 * Instantiate a new masked.
@@ -47,13 +49,23 @@ public class Masked extends Monster {
 	 */
 	@Override
 	public void move() {
-		if(canMoveTo(x+(1*movementVector), y)) {
-			moveTo(x+(1*movementVector), y);
-			
-		}
-		else if(canMoveTo(x-(1*movementVector), y)){
-			movementVector *= -1;
-			
+		int[] array = {-1,0,1};
+		movementVectorX=0;
+		movementVectorY=0;
+		moved=false;
+		while((movementVectorX==0 && movementVectorY == 0) || !moved) {
+			movementVectorX= array[new Random().nextInt(array.length)];
+			movementVectorY= array[new Random().nextInt(array.length)];
+			if(canMoveTo(x+(1*movementVectorX), y+(1*movementVectorY))) {
+				moveTo(x+(1*movementVectorX), y+(1*movementVectorY));
+				moved=true;
+				
+			}
+			else if(canMoveTo(x-(1*movementVectorX), y-(1*movementVectorY))){
+				movementVectorX *= -1;
+				movementVectorY *= -1;
+				moved=true;
+			}
 		}
 		
 	}
