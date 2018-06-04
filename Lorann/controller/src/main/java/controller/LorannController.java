@@ -57,14 +57,14 @@ public class LorannController implements IOrderPerformer, IController {
 			
 			System.out.println(view.getUserOrder());
 			
-			UserOrder ordre = view.getUserOrder();
 			
-			if (ordre != null) {
-				
-				switch(ordre) {
+			/*if(view.getUserOrder() != null) {
+			
+				switch(view.getUserOrder()) {
 				
 					case UP:
 						this.getModel().getMap().getHero().moveUP();
+						
 						break;
 					case DOWN:
 						this.getModel().getMap().getHero().moveDOWN();
@@ -88,22 +88,18 @@ public class LorannController implements IOrderPerformer, IController {
 						this.getModel().getMap().getHero().moveDOWN_RIGHT();
 						break;
 					case MAGIC:
-						try {
-							this.launchFireball();
-						} catch (IOException e) {
-							e.printStackTrace();
-						}
+							this.getModel().getMap().getHero().launchFireBall();			
 						break;
 					default:
-						System.out.println("default");
+						setUserOrder(UserOrder.NOP);
 						break;
 						
-					}
+				}
 				
+				
+			}*/
 			
 				this.clearUserOrder();
-			}
-			
 			
 			for (IEntity entity : model.getMap().getEntities()) {
 				entity.move();	
@@ -123,7 +119,7 @@ public class LorannController implements IOrderPerformer, IController {
 	 * 
 	 * @return the model
 	 */
-	private IModel getModel() {
+	public IModel getModel() {
 		return this.model;
 		
 	}

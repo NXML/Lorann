@@ -1,5 +1,7 @@
 package controller;
 
+import model.IModel;
+
 /**
  * <h1>The Interface IController.</h1>
  * 
@@ -23,5 +25,11 @@ public interface IController {
 	 * @return the order performer
 	 */
 	IOrderPerformer getOrderPerformer();
+
+	IModel getModel();
+
+	
+	
+	
 
 }

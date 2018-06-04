@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+
 import controller.IController;
 import controller.IOrderPerformer;
 import controller.UserOrder;
@@ -49,6 +50,9 @@ public class Frame extends JFrame implements KeyListener, IView {
  	UserOrder userOrder;
  	
  	private Frame frame;
+ 	
+ 	
+ 	
 	
 	/**
 	 * Instantiate a new frame.
@@ -59,7 +63,6 @@ public class Frame extends JFrame implements KeyListener, IView {
 	public Frame(IModel model) {
 		this.model = model;
 		this.display = new Display(this.model);
-		
 		this.setTitle("Lorran");
 	    this.setContentPane(this.display);
 	    this.setSize(width, height);
@@ -95,46 +98,56 @@ public class Frame extends JFrame implements KeyListener, IView {
 		{
 			case KeyEvent.VK_NUMPAD8:
 				userOrder = UserOrder.UP;
+			//	this.getController().getModel().getMap().getHero().moveUP();
 				model.getMap().getHero().moveUP();
 				break;
 				
 			case KeyEvent.VK_NUMPAD2:
 				userOrder = UserOrder.DOWN;
+			//	this.getController().getModel().getMap().getHero().moveDOWN();
 				model.getMap().getHero().moveDOWN();
 				break;
 				
 			case KeyEvent.VK_NUMPAD4 :
 				userOrder = UserOrder.LEFT;
+			//	this.getController().getModel().getMap().getHero().moveLEFT();
 				model.getMap().getHero().moveLEFT();
 				break;
 				
 			case KeyEvent.VK_NUMPAD6:
 				userOrder = UserOrder.RIGHT;
+			//	this.getController().getModel().getMap().getHero().moveRIGHT();
 				model.getMap().getHero().moveRIGHT();
 				break;
 			
 			case KeyEvent.VK_NUMPAD7:
 				userOrder = UserOrder.TOP_LEFT;
+			//	this.getController().getModel().getMap().getHero().moveUP_LEFT();
 				model.getMap().getHero().moveUP_LEFT();
 				break;
 			
 			case KeyEvent.VK_NUMPAD9:
 				userOrder = UserOrder.TOP_RIGHT;
+			//	this.getController().getModel().getMap().getHero().moveUP_RIGHT();
 				model.getMap().getHero().moveUP_RIGHT();
 				break;	
 				
 			case KeyEvent.VK_NUMPAD1:
 				userOrder = UserOrder.BOTTOM_LEFT;
+			//	this.getController().getModel().getMap().getHero().moveDOWN_LEFT();
 				model.getMap().getHero().moveDOWN_LEFT();
 				break;	
 				
 			case KeyEvent.VK_NUMPAD3:
 				userOrder = UserOrder.BOTTOM_RIGHT;
+			//	this.getController().getModel().getMap().getHero().moveDOWN_RIGHT();
 				model.getMap().getHero().moveDOWN_RIGHT();
 				break;	
 				
 			case KeyEvent.VK_NUMPAD5:
 				userOrder = UserOrder.MAGIC;
+			//	this.getController().getModel().getMap().getHero().launchFireBall();
+				model.getMap().getHero().launchFireBall();
 				break;
 			
 			default:
@@ -151,8 +164,9 @@ public class Frame extends JFrame implements KeyListener, IView {
 	 * @param keyEvent
 	 * 			the key event 
 	 */
-	public final void keyPressed(final KeyEvent keyEvent) {
-		 this.keyCodeToUserOrder(keyEvent.getKeyCode());
+	
+  	public final void keyPressed(final KeyEvent keyEvent) {
+  		keyCodeToUserOrder(keyEvent.getKeyCode());
 		 
 	}
 	
@@ -181,11 +195,11 @@ public class Frame extends JFrame implements KeyListener, IView {
 			e.printStackTrace();
 		}
     }
-    
+    */
     private IOrderPerformer getOrderPerformer() {
     	return this.orderPerformer;
     }
-*/
+
 	
 	/**
 	 * Invoked when a key is released.
@@ -194,7 +208,7 @@ public class Frame extends JFrame implements KeyListener, IView {
 	 * 			the key event
 	 */
 	public void keyReleased(int keyEvent) {
-		System.out.println("lol");
+		this.userOrder = UserOrder.NOP;
 		
 	}
 
@@ -316,14 +330,16 @@ public class Frame extends JFrame implements KeyListener, IView {
 		this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));	
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
-	 */
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
+	 */
+	
 	
 }
