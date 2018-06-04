@@ -123,8 +123,15 @@ public class Hero extends Entity implements IHero {
 		super.move();
 		
 	}
+	/*
+	 * 
+	 * 
+	 * (non-Javadoc)
+	 * @see model.IHero#launchFireBall()
+	 */
 	@Override
 	public  void launchFireBall() {
+		if(canSpell())
 		map.addEntity(new FireBall(this.x,this.y,this.direction,this.map));
 	}
 	
