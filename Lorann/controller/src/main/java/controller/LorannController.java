@@ -71,7 +71,7 @@ public class LorannController implements IOrderPerformer, IController {
 						break;
 					case LEFT:
 						this.getModel().getMap().getHero().moveLEFT();
-						break;
+					break;
 					case RIGHT:
 						this.getModel().getMap().getHero().moveRIGHT();
 						break;
@@ -174,28 +174,6 @@ public class LorannController implements IOrderPerformer, IController {
 	 */
 	private void clearUserOrder() {
 		this.userOrder = UserOrder.NOP;
-		
-	}
-	
-	/**
-	 * Set the view.
-	 * 
-	 * @param view
-	 * 			the view to set
-	 */
-	private void setView(IView view) {
-		this.view = view;
-		
-	}
-	
-	/**
-	 * Set the model.
-	 * 
-	 * @param model
-	 * 			the model to set
-	 */
-	private void setModel(IModel model) {
-		this.model = model;
 		
 	}
 	

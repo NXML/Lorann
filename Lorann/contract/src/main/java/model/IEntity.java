@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Observer;
+
 /**
  * <h1>The Interface IEntity.</h1>
  * 
@@ -67,5 +69,15 @@ public interface IEntity extends IElement {
 	 * @return y
 	 */
 	int getY();
+	
+
+	
+
+	@Override
+	default void addObserver(Observer o) {
+		// TODO Auto-generated method stub
+	}
+	
+
 	
 }

@@ -18,54 +18,42 @@ import controller.IController;
 import model.IEntity;
 import model.IModel;
 import model.ISprite;
+
 /**
- * <h1>The Class Display</h1>
+ * <h1>The Class Display.</h1>
  * 
  * @author Arthur-Michel
  * @version 1.0
- * @see Jpanel , Observer
+ * @see Jpanel
+ * @see Observer
  */
-public class Display extends JPanel implements Observer
-{
+public class Display extends JPanel implements Observer {
 	
-
-	/**
-	 * <h1>The Class LorannController.</h1>
-	 * 
-	 * @author 
-	 * @version 1.0
-	 * @see IOrderPerfomer
-	 * @see IController
-	 */
-	
-	/** The Version. */
-
+	/** The serial version. */
 	private static final long serialVersionUID = 1L;
 	
 	/** The model. */
 	private IModel model;
 	
-	/** The different score sprite */
+	/** The different scores sprite. */
 	private Image score1,score2,score3,score4,score5,score6,score7,score8,score9,score0,score;	
 
-	
-	
 	/**
-	 * Instantiate a new Display.
+	 * Instantiate a new display.
 	 *
 	 * @param model
 	 * 			the model
 	 */
-	public Display(IModel model)
-	{
+	public Display(IModel model) {
 		this.setBackground(Color.BLACK);
 		this.setVisible(true);
 		System.out.println("Affichage");
 		this.model = model;
+		
 		for (IEntity entity : model.getMap().getEntities()) {
 			((Observable) entity).addObserver(this);
+			
 		}
-
 		/*Score  digits loading*/
 		try {
 			 score1 = ImageIO.read(new File("..\\model\\Sprite\\1.png"));
@@ -79,6 +67,7 @@ public class Display extends JPanel implements Observer
 			 score9 = ImageIO.read(new File("..\\model\\Sprite\\9.png"));
 			 score0 = ImageIO.read(new File("..\\model\\Sprite\\0.png"));
 			 score = ImageIO.read(new File("..\\model\\Sprite\\SCORE.png"));
+			 
 		} catch (IOException e) {
 		    e.printStackTrace();
 		    
@@ -86,39 +75,39 @@ public class Display extends JPanel implements Observer
 		
 	}
 	
-	
-
-		    
-			
-
-	 
 	/**
-	 * Draw and display the different element on the map
-	 * 
+	 * Draw and display the different elements on the map.
 	 * 
 	 * @param g
 	 * @throws IOException
+	 * 			Signals that an I/O exception has occurred.
 	 * @throws InterruptedException
+	 * 			Signals that an interrupted exception has occurred.
 	 */
-	private void drawMap(Graphics g) throws IOException, InterruptedException
-		{	  
+	private void drawMap(Graphics g) throws IOException, InterruptedException {
+		
 		/* Display elements on the map*/
-			  for(int x = 0; x < 20; x++){
-				  for(int y = 0; y < 12; y++){
-					  g.drawImage(model.getMap().getElementXY(x,y).getSprite().getImage(), x*32, y*32, this);
-				  }   
-			  }  
-			  /*Display all entities on the map*/
-			  for (IEntity entity : model.getMap().getEntities()){
-				  g.drawImage(entity.getSprite().getImage(), entity.getX()*32, entity.getY()*32, this);
-			  }
-			  /*g.setColor(Color.WHITE);
-			    g.drawString("Score : "+model.getMap().getHero().getScore(), 20, 32*12+10);
-			  */
-			  //Display players score
-			  String scorevalue = ""+model.getMap().getHero().getScore();
-			  g.drawImage(this.score, 10, 30*13+10, this);
-			  for (int i = 0; i < scorevalue.length(); i++){
+		for(int x = 0; x < 20; x++) {
+			for(int y = 0; y < 12; y++) {
+				g.drawImage(model.getMap().getElementXY(x,y).getSprite().getImage(), x*32, y*32, this);
+				
+			}   
+			
+		}  
+		
+		/*Display all entities on the map*/
+		for (IEntity entity : model.getMap().getEntities()) {
+			g.drawImage(entity.getSprite().getImage(), entity.getX()*32, entity.getY()*32, this);
+			
+		}
+		
+		/*g.setColor(Color.WHITE);
+		  g.drawString("Score : "+model.getMap().getHero().getScore(), 20, 32*12+10);
+		*/
+		//Display players score
+		String scorevalue = ""+model.getMap().getHero().getScore();
+		g.drawImage(this.score, 10, 30*13+10, this);
+		for (int i = 0; i < scorevalue.length(); i++) {
 				Image digit = null;
 				switch(scorevalue.charAt(i)) {
 				case '0': digit=score0; break;
@@ -131,25 +120,20 @@ public class Display extends JPanel implements Observer
 				case '7': digit=score7; break;
 				case '8': digit=score8; break;
 				case '9': digit=score9; break;
+				
 				}
 				g.drawImage(digit, 10+20+5*32+32*i, 30*13+10, this);
-			  	}			  
-			//Thread.sleep(100);
-			//this.repaint();
+				
 		}
-			  
-			  
-          
-        
-	
+		
+	}
 	
 	/**
-	 * 
+	 * Draw the components.
 	 * 
 	 * @param g 
 	 */
-	public void paintComponent(Graphics g)
-	{
+	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 			 try {drawMap(g);} 
 			 catch (IOException e1) {e1.printStackTrace();} 
@@ -157,16 +141,14 @@ public class Display extends JPanel implements Observer
 	     
 	}
 	
-
-
-
-
-	//refresh on update observer
+	/*
+	 * (non-Javadoc)
+	 * @see java.util.Observer#update(java.util.Observable, java.lang.Object)
+	 */
 	@Override
 	public void update(Observable o, Object arg) {
 		this.repaint();
 		
 	}
-
 
 }
