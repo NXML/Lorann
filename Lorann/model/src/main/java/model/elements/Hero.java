@@ -131,6 +131,7 @@ public class Hero extends Entity implements IHero {
 	 */
 	@Override
 	public  void launchFireBall() {
+		if(canSpell())
 		map.addEntity(new FireBall(this.x,this.y,this.direction,this.map));
 	}
 	
