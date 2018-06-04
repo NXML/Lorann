@@ -134,6 +134,7 @@ public class Hero extends Entity implements IHero {
 			if(entity.getX()==x && entity.getY()== y) {
 				if(entity instanceof Monster){
 					this.setAlive(false);
+					//map.removeEntity(this);
 					
 				}
 				if(entity instanceof Purse) {
