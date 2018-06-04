@@ -48,11 +48,11 @@ public class Ogre extends Monster {
 	 */
 	@Override
 	public void move() {
-		if(canMoveTo(x, y+(1*movementVector))) {
-			moveTo(x, y+(1*movementVector));
+		if(canMoveTo(x+(1*movementVector), y+(1*movementVector))) {
+			moveTo(x+(1*movementVector), y+(1*movementVector));
 			
 		}
-		else if(canMoveTo(x, y-(1*movementVector))){
+		else if(canMoveTo(x-(1*movementVector), y-(1*movementVector))){
 			movementVector *= -1;
 			
 		}

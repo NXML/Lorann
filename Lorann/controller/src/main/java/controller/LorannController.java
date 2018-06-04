@@ -27,8 +27,6 @@ public class LorannController implements IOrderPerformer, IController {
 	
 	/** The user order. */
 	private UserOrder userOrder;
-	
-	
 
 	/**
 	 * Instantiate a new Lorann controller.
