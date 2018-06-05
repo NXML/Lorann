@@ -166,6 +166,9 @@ public class Map implements IMap {
 		}
 	}
 
+	public void should_trow_exception() throws Exception {
+		
+	}
 
 }
 
