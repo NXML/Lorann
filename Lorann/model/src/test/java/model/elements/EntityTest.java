@@ -14,7 +14,7 @@ public class EntityTest extends ElementTest {
 	
 	private int X;
 	private int Y;
-	private Entity entity;
+	private Map map;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -26,8 +26,9 @@ public class EntityTest extends ElementTest {
 
 	@Before
 	public void setUp() throws Exception {
-		this.X = 5 ;
-		this.Y=20 ;
+		super.elementToTest = new Entity(10, 5, this.image, map);
+		this.X = 5;
+		this.Y = 20;
 	}
 
 
@@ -68,19 +69,17 @@ public class EntityTest extends ElementTest {
 		assertEquals(expectedX, this.X);
 		assertEquals(expectedY, this.Y);
 	}
-
+	
+	/*
+	 * (non-Javadoc)
+	 * @see model.elements.ElementTest#testGetSprite()
+	 */
+	@Override
 	@Test
-	public void testGetX() {
-		final int expected = 5;
-		assertEquals(expected, entity.getX());
-
-	}
-
-	@Test
-	public void testGetY() {
-		final int expected = 20;
-		assertEquals(expected, entity.getY());
-
+	public void testGetSprite() {
+		ISprite expected = super.elementToTest.sprite;
+		assertEquals(expected, super.elementToTest.getSprite());
+		
 	}
 
 }
