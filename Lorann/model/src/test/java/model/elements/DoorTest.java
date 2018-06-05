@@ -2,39 +2,25 @@ package model.elements;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import model.Map;
 
+/**
+ * <h1>The Class DoorTest.</h1>
+ * 
+ * @author Nicolas
+ * @version 1.0
+ * @see Door
+ */
 public class DoorTest {
 	
-	
-	/**
-	 * <h1>The Class ElementFactoryTest.</h1>
-	 * 
-	 * @author Nicolas
-	 * @version 1.0
-	 * @see ElementFactory
-	 */
-	
-	/**	 The Door for the test 	 */
+	/**	The Door for the test. */
 	private Door doorTest;
 	
-	/**	 The map for the test 	 */
+	/**	The map for the test. */
 	private Map map;
-	
-	
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
 
 	/**
 	 * Set up the test configuration.
@@ -48,22 +34,24 @@ public class DoorTest {
 	}
 
 	/**
-	 * Test of the isOpen method
+	 * Test of the method isOpen().
 	 */
 	@Test
 	public void testIsOpen() {
 		boolean expected = false;
 		assertEquals(expected , this.doorTest.isOpen());
+		
 	}
 
 	/**
-	 * Test of the setOpen method
+	 * Test of the method setOpen().
 	 */
 	@Test
 	public void testSetOpen() {
-		boolean expected =true;
+		boolean expected = true;
 		this.doorTest.setOpen(true);
-		assertEquals(expected,true);
+		assertEquals(expected, this.doorTest.isOpen());
+		
 	}
 
 }
