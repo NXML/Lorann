@@ -227,22 +227,34 @@ public class Entity extends Element implements IEntity {
 		
 	}
 	
-	
+	/**
+	 * Get the direction.
+	 * 
+	 * @return the direction
+	 */
 	public Direction getDirection() {
 		return direction;
-	}
-
-	
-	public void setDirection(Direction direction) {
-		this.direction = direction;
-	}
-
-	@Override
-	public void setMod(int i) {
-		// TODO Auto-generated method stub
 		
 	}
 
-	
+	/**
+	 * Set the direction.
+	 * 
+	 * @param direction
+	 * 			the direction
+	 */
+	public void setDirection(Direction direction) {
+		this.direction = direction;
+		
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see model.IEntity#setMod(int)
+	 */
+	@Override
+	public void setMod(int i) {
+		
+	}
 
 }
