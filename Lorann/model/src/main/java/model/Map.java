@@ -1,5 +1,8 @@
 package model;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import javax.lang.model.element.Element;
@@ -159,16 +162,15 @@ public class Map implements IMap {
 	}*/
 	
 	public void setID(int ID) {
-		if (ID >= 5) {
-			throw new IllegalArgumentException();
-		}else {
-			this.ID = ID;
+		try {
+			if(this.ID > 5) {
+				fail("Should throw exception when Map > 5");
+			}
+		} catch (final Exception e) {
+			assertEquals("Map out of range", e.getMessage());
 		}
 	}
 
-	public void should_trow_exception() throws Exception {
-		
-	}
 
 }
 

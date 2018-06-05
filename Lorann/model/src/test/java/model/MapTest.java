@@ -17,12 +17,12 @@ public class MapTest {
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}
-	private int asList[] = {0,1};
+	
 	private int ID;
 
 	@Before
 	public void setUp() throws Exception {
-		this.ID = 6;
+		this.ID = 5;
 	}
 
 	@After
@@ -30,12 +30,13 @@ public class MapTest {
 	}
 
 	@Test
-	public void testSetID() throws Exception { 
-		
-	
-	
-	
-	
-
-}
+	public void setID() throws Exception {
+		try {
+			if(this.ID > 5) {
+				fail("Should throw exception when Map > 5");
+			}
+		} catch (final Exception e) {
+			assertEquals("Map out of range", e.getMessage());
+		}
+	}
 }
