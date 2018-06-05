@@ -3,13 +3,12 @@ package model;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
-import java.awt.event.WindowEvent;
+
 import java.util.ArrayList;
-import javax.lang.model.element.Element;
+
 
 import model.DAO.DataLoader;
-import model.elements.Entity;
-import model.elements.Hero;
+
 
 /**
  * <h1>The Class Map.</h1>
@@ -35,6 +34,7 @@ public class Map implements IMap {
 	/**
 	 * The exit.
 	 */
+	@SuppressWarnings("unused")
 	private boolean exit = false;
 	
 	/**
@@ -55,11 +55,13 @@ public class Map implements IMap {
 	/**
 	 * The width.
 	 */
+	@SuppressWarnings("unused")
 	private int width;
 	
 	/**
 	 * The height.
 	 */
+	@SuppressWarnings("unused")
 	private int height;
 	
 	/**
