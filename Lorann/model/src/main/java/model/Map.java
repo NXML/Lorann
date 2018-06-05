@@ -1,5 +1,6 @@
 package model;
 
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import javax.lang.model.element.Element;
 
@@ -19,13 +20,15 @@ public class Map implements IMap {
 	/**
 	 * The ID.
 	 */
-	private int ID = 0;
+	private int ID;
 	
 	/**
 	 * The end.
 	 */
 	private boolean finished = false;
 	
+
+
 	/**
 	 * The exit.
 	 */
@@ -66,7 +69,7 @@ public class Map implements IMap {
 	 */
 	public Map(){
 		this.dataLoader = new DataLoader(this);
-		this.dataLoader.load();
+		this.dataLoader.load();		
 	
 	}
 
@@ -139,11 +142,9 @@ public class Map implements IMap {
 	 */
 	public void setFinished(boolean finished) {this.finished = finished;}
 
-	/**
-	 * Get the ID.
-	 * 
-	 * @return the ID
-	 */
-	public int getID() {return ID;}
+
 
 }
+
+
+

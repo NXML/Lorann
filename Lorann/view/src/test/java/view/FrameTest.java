@@ -28,6 +28,12 @@ public class FrameTest {
 	
 	/** The Frame to test. */
 	private Frame frame;
+	
+	private int X;
+	
+	private int Y;
+	
+	private int userorder;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -50,6 +56,7 @@ public class FrameTest {
 		this.height = 5;
 		this.keyCode = 5;
 		this.message = "Hello";
+		
 	}
 
 	@After
@@ -96,6 +103,7 @@ public class FrameTest {
 		final String expected = "Hello";
 		assertEquals(expected, this.message);
 	}
+
 
 
 
