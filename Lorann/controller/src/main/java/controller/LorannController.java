@@ -110,6 +110,11 @@ public class LorannController implements IOrderPerformer, IController {
 			}
 			
 			
+			if(model.getMap().getFinished()) {
+							this.getView().displayMessage("Good job ! You win !\n Your score is : " + model.getMap().getHero().getScore());
+			
+						}
+			
 			
 		//}
 		

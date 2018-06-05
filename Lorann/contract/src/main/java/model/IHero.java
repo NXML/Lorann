@@ -1,5 +1,7 @@
 package model;
 
+import view.IView;
+
 /**
  * <h1>The Interface IHero.</h1>
  * 
@@ -55,7 +57,10 @@ public interface IHero extends IEntity {
 	void setScore(int score);
 
 	void launchFireBall();
-	
+
+
+
+	boolean getFinished();
 	
 	
 	
