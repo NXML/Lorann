@@ -21,8 +21,13 @@ public class DoorTest {
 	 * @see ElementFactory
 	 */
 	
+	/**	 The Door for the test 	 */
 	private Door doorTest;
+	
+	/**	 The map for the test 	 */
 	private Map map;
+	
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -31,21 +36,29 @@ public class DoorTest {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	/**
+	 * Set up the test configuration.
+	 * 
+	 * @throws Exception
+	 * 			Signals that an exception has occurred
+	 */
 	@Before
 	public void setUp() throws Exception {
 		doorTest = new Door(1,1,map);
 	}
 
-	@After
-	public void tearDown() throws Exception {
-	}
-
+	/**
+	 * Test of the isOpen method
+	 */
 	@Test
 	public void testIsOpen() {
 		boolean expected = false;
 		assertEquals(expected , this.doorTest.isOpen());
 	}
 
+	/**
+	 * Test of the setOpen method
+	 */
 	@Test
 	public void testSetOpen() {
 		boolean expected =true;
