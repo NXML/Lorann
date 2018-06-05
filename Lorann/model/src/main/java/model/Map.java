@@ -166,12 +166,15 @@ public class Map implements IMap {
 	public void setID(int ID) throws Exception {
 		try {
 			if(this.ID < 5) {
+				throw new Exception("Map out of range");
+				
 			}
 		} catch (final Exception e) {
-			assertEquals("Map out of range", e.getMessage());
+			e.printStackTrace();
+			
 		}
+		
 	}
-
 
 }
 
