@@ -125,10 +125,9 @@ public class Map implements IMap {
 	 */
 	public void setHero(IHero hero){this.hero = hero;}
 
-	/**
-	 * Check whether it's finished.
-	 * 
-	 * @return true or false
+	/*
+	 * (non-Javadoc)
+	 * @see model.IMap#isFinished()
 	 */
 	public boolean isFinished() {return finished;}
 
@@ -146,15 +145,5 @@ public class Map implements IMap {
 	 * @return the ID
 	 */
 	public int getID() {return ID;}
-
-	/*
-	 * (non-Javadoc)
-	 * @see model.IMap#getFinished()
-	 */
-	@Override
-	public boolean getFinished() {
-		return this.finished;
-		
-	}
 
 }

@@ -54,6 +54,11 @@ public interface IMap {
 	 */
 	void removeEntity(IEntity entity);
 
-	boolean getFinished();
+	/**
+	 * Check whether it's finished.
+	 * 
+	 * @return true or false
+	 */
+	boolean isFinished();
 	
 }
