@@ -25,7 +25,7 @@ public abstract class Main {
      * @throws InterruptedException 
      */
     public static void main(final String[] args) throws InterruptedException, IOException {
-    	IModel model =new Model();
+    	IModel model = new Model();
         final LorannController controller = new LorannController(new Frame(model), model);
         controller.play();
         
