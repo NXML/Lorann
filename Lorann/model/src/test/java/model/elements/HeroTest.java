@@ -2,33 +2,20 @@ package model.elements;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ * <h1>The Class HeroTest.</h1>
+ * 
+ * @author Nicolas
+ * @version 1.0
+ * @see Hero
+ */
 public class HeroTest {
 	
-	/**
-	 * <h1>The Class ElementFactoryTest.</h1>
-	 * 
-	 * @author Nicolas
-	 * @version 1.0
-	 * @see ElementFactory
-	 */
-	
-	
-	/**	 The Hero for the test 	 */
+	/**	The hero for the test. */
 	private Hero hero;
-
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
 
 	/**
 	 * Set up the test configuration.
@@ -45,82 +32,76 @@ public class HeroTest {
 		
 	}
 
-	@After
-	public void tearDown() throws Exception {
-	}
-
-
 	/**
-	 * Test of the canSpell method
+	 * Test of the method canSpell().
 	 */
 	@Test
 	public void testCanSpell() {
 		final boolean expected = true;
-		assertEquals(expected , hero.canSpell());
+		assertEquals(expected, hero.canSpell());
+		
 	}
 
 	/**
-	 * Test of the setSpell method
+	 * Test of the method setSpell().
 	 */
 	@Test
 	public void testSetSpell() {
 		final boolean expected = true;
 		this.hero.setSpell(true);
-		assertEquals(expected , hero.canSpell());
+		assertEquals(expected, hero.canSpell());
 
 	}
 
-	
 	/**
 	 * Test of the getScore method
 	 */
 	@Test
 	public void testGetScore() {
 		final int expected = 100;
-		assertEquals(expected , hero.getScore());
+		assertEquals(expected, hero.getScore());
 	}
 
-	
 	/**
-	 * Test of the setScore method
+	 * Test of the method setScore().
 	 */
 	@Test
 	public void testSetScore() {
 		final int expected = 200;
 		this.hero.setScore(200);
-		assertEquals(expected , hero.getScore());
+		assertEquals(expected, hero.getScore());
+		
 	}
 
-	
 	/**
-	 * Test of the isAlive method
+	 * Test of the method isAlive().
 	 */
 	@Test
 	public void testIsAlive() {
 		final boolean expected = true;
-		assertEquals(expected , hero.isAlive());
+		assertEquals(expected, hero.isAlive());
+		
 	}
 
 	/**
-	 * Test of the setAlive method
+	 * Test of the method setAlive().
 	 */
-	
 	@Test
 	public void testSetAlive() {
 		final boolean expected = true;
 		this.hero.setAlive(true);
 		assertEquals(expected, hero.isAlive());
+		
 	}
 
-	
 	/**
-	 * Test of the isFinished method
+	 * Test of the method isFinished().
 	 */
-
 	@Test
 	public void testIsFinished() {
 		final boolean expected = false;
 		assertEquals(expected, hero.isFinished());
+		
 	}
 
 }
