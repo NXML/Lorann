@@ -1,14 +1,8 @@
 package model;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
-
-
 import java.util.ArrayList;
 
-
 import model.DAO.DataLoader;
-
 
 /**
  * <h1>The Class Map.</h1>
