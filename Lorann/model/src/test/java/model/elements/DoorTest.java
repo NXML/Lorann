@@ -11,6 +11,16 @@ import org.junit.Test;
 import model.Map;
 
 public class DoorTest {
+	
+	
+	/**
+	 * <h1>The Class ElementFactoryTest.</h1>
+	 * 
+	 * @author Nicolas
+	 * @version 1.0
+	 * @see ElementFactory
+	 */
+	
 	private Door doorTest;
 	private Map map;
 	@BeforeClass
