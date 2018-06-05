@@ -49,42 +49,13 @@ public class FrameTest {
 	
 
 	@Test
-	public void testSetWidth() {
-		frame.setWidth(10);
-		int expected = frame.getWidth();
-		assertEquals(expected, this.width);
-	}
-
-	@Test
 	public void testGetHeight() {
 		final int expected = 5;
 		assertEquals(expected, this.height);
 
 	}
 
-	@Test
-	public void testRepaint() {
-		fail("Not yet implemented");
-	}
 
-	@Test
-	public void testKeyPressed() {
-		//final KeyEvent keyEvent = null;
-		//keyEvent.setKeyCode(5);
-		//assertEquals(keyEvent.getKeyCode(), keyCode);
-		fail("Not yet implemented");
-
-	}
-
-	@Test
-	public void testKeyReleasedInt() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testKeyTyped() {
-		fail("Not yet implemented");
-	}
 
 
 
@@ -95,9 +66,6 @@ public class FrameTest {
 		assertEquals(expected, this.message);
 	}
 
-	@Test
-	public void testKeyReleasedKeyEvent() {
-		fail("Not yet implemented");
-	}
+
 
 }

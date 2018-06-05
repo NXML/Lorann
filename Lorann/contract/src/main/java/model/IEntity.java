@@ -70,16 +70,19 @@ public interface IEntity extends IElement {
 	 */
 	int getY();
 	
-
-	
-
+	/*
+	 * (non-Javadoc)
+	 * @see model.IElement#addObserver(java.util.Observer)
+	 */
 	@Override
-	default void addObserver(Observer o) {
-		// TODO Auto-generated method stub
-	}
+	default void addObserver(Observer o) {}
 
+	/**
+	 * Set the mod.
+	 * 
+	 * @param i
+	 * 			the mod
+	 */
 	void setMod(int i);
-	
-
 	
 }

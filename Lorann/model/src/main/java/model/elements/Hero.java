@@ -188,12 +188,14 @@ public class Hero extends Entity implements IHero {
 		
 	}
 	
-	
+	/*
+	 * (non-Javadoc)
+	 * @see model.IHero#isFinished()
+	 */
 	@Override
-	public boolean getFinished() {
-		// TODO Auto-generated method stub
+	public boolean isFinished() {
 	return this.finished;
-		}
-
+	
+	}
 
 }

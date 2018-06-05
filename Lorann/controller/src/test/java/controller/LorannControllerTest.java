@@ -2,46 +2,54 @@ package controller;
 
 import static org.junit.Assert.*;
 
+import java.lang.reflect.Method;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import model.IModel;
+import view.IView;
+
+/**
+ * <h1>The Class LorannControllerTest.</h1>
+ * 
+ * @author Loïc
+ * @version 1.0
+ * @see LorannController
+ */
 public class LorannControllerTest {
+	
+	/** The Lorann controller to test. */
+	private LorannController controllerToTest;
+	
+	/** The view. */
+	private IView view;
+	
+	/** The model. */
+	private IModel model;
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
+	/**
+	 * Set up the test configuration.
+	 * 
+	 * @throws Exception
+	 * 			Signals that an exception has occurred
+	 */
 	@Before
 	public void setUp() throws Exception {
-		
-		
-		
+		controllerToTest = new LorannController(view, model);
 	}
 
-	@After
-	public void tearDown() throws Exception {
-	}
-
+	/**
+	 * The test of the method getModel().
+	 */
 	@Test
-	public void testPlay() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testOrderPerform() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetOrderPerformer() {
-		fail("Not yet implemented");
+	public void testGetModel() {
+		IModel expected = model;
+		assertEquals(expected, this.controllerToTest.getModel());
+		
 	}
 
 }
