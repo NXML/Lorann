@@ -2,6 +2,9 @@ package model.elements;
 
 
 
+import java.util.ArrayList;
+
+import model.IEntity;
 import model.Map;
 
 /**
@@ -46,6 +49,7 @@ public class Ogre extends Monster {
 	 * (non-Javadoc)
 	 * @see model.elements.Entity#move()
 	 */
+	@SuppressWarnings("unchecked")
 	public void move() {
 		int xOffset =0;
 		int yOffset =0;
@@ -61,7 +65,20 @@ public class Ogre extends Monster {
 					}
 			}
 		}
-
+		for (IEntity entity : (ArrayList<IEntity>) map.getEntities().clone()) {
+			if(entity.getX()==x && entity.getY()== y) {
+				if(entity instanceof FireBall) {
+					map.removeEntity(entity);
+					map.getHero().setSpell(true);
+					map.removeEntity(this);
+					
+				}
+				
+				
+			}
+			
+		}
+		
 		if(canMoveTo(this.x+xOffset,this.y+yOffset)) {
 			moveTo(this.x+xOffset,this.y+yOffset);
 		}

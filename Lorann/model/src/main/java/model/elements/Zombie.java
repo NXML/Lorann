@@ -1,5 +1,8 @@
 package model.elements;
 
+import java.util.ArrayList;
+
+import model.IEntity;
 import model.Map;
 /**
  * <h1>The Class Zombie.</h1>
@@ -43,7 +46,24 @@ public class Zombie extends Monster {
 	 * (non-Javadoc)
 	 * @see model.elements.Entity#move()
 	 */
+	@SuppressWarnings("unchecked")
 	public void move() {
+		
+		
+		for (IEntity entity : (ArrayList<IEntity>) map.getEntities().clone()) {
+			if(entity.getX()==x && entity.getY()== y) {
+				if(entity instanceof FireBall) {
+					map.removeEntity(entity);
+					map.getHero().setSpell(true);
+					map.removeEntity(this);
+					
+				}
+				
+				
+			}
+			
+		}
+		
 		if(canMoveTo(x, y+(1*movementVector))) {
 			moveTo(x, y+(1*movementVector));
 			
