@@ -26,9 +26,6 @@ public class EntityTest extends ElementTest {
 	public void tearDown() throws Exception {
 	}
 
-	@Test
-	public void testGetSprite() {
-		fail("Not yet implemented");
-	}
+
 
 }

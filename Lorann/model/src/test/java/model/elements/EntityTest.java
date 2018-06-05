@@ -48,7 +48,7 @@ public class EntityTest extends ElementTest {
 		final int expectedY = 19;
 		assertEquals(expectedX, this.X);
 		assertEquals(expectedY, this.Y);
-	}
+	};
 
 	@Test
 	public void testMoveRIGHT() {
