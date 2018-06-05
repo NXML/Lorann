@@ -21,8 +21,9 @@ public abstract class Main {
      * The main method.
      *
      * @param args
-     *            the arguments
-     * @throws InterruptedException 
+     *          the arguments
+     * @throws InterruptedException
+     * 			Signals that an interrupted exception has occurred
      */
     public static void main(final String[] args) throws InterruptedException, IOException {
     	IModel model = new Model();

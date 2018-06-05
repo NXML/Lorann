@@ -1,9 +1,5 @@
 package controller;
 
-import java.io.IOException;
-import java.util.Iterator;
-
-import model.IEntity;
 import model.IModel;
 import view.IView;
 
@@ -12,7 +8,6 @@ import view.IView;
  * 
  * @author Loïc
  * @version 1.0
- * @see IOrderPerfomer
  * @see IController
  */
 public class LorannController implements IOrderPerformer, IController {
@@ -26,9 +21,6 @@ public class LorannController implements IOrderPerformer, IController {
 	/** The model. */
 	private IModel model;
 	
-	/** The user order. */
-	private UserOrder userOrder;
-
 	/**
 	 * Instantiate a new Lorann controller.
 	 * 
@@ -107,7 +99,6 @@ public class LorannController implements IOrderPerformer, IController {
 	 * 			the user order to set
 	 */
 	private void setUserOrder(final UserOrder userOrder) {
-		this.userOrder = userOrder;
 		
 	}
 	
@@ -115,7 +106,6 @@ public class LorannController implements IOrderPerformer, IController {
 	 * Clear user order.
 	 */
 	private void clearUserOrder() {
-		this.userOrder = UserOrder.NOP;
 		
 	}
 	
