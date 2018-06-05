@@ -237,6 +237,12 @@ public class Entity extends Element implements IEntity {
 		this.direction = direction;
 	}
 
+	@Override
+	public void setMod(int i) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 
 }

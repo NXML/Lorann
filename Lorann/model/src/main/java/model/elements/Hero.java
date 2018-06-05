@@ -29,6 +29,8 @@ public class Hero extends Entity implements IHero {
 	 */
 	private boolean spell = true;
 	
+	private boolean finished = false;
+	
 	/**
 	 * The score.
 	 */
@@ -131,7 +133,14 @@ public class Hero extends Entity implements IHero {
 	 */
 	@Override
 	public  void launchFireBall() {
+		if(canSpell())
 		map.addEntity(new FireBall(this.x,this.y,this.direction,this.map));
+		else {
+			for (int i = 0; i < map.getEntities().size(); i++) {
+				if(map.getEntities().get(i) instanceof FireBall)
+				map.getEntities().get(i).setMod(2);
+			}
+		}
 	}
 	
 	
@@ -140,6 +149,7 @@ public class Hero extends Entity implements IHero {
 	 * (non-Javadoc)
 	 * @see model.elements.Entity#moveTo(int, int)
 	 */
+	@SuppressWarnings("unchecked")
 	public void moveTo(int x,int y) {
 		super.moveTo(x, y);
 		for (IEntity entity : (ArrayList<IEntity>) map.getEntities().clone()) {
@@ -177,5 +187,13 @@ public class Hero extends Entity implements IHero {
 		}
 		
 	}
+	
+	
+	@Override
+	public boolean getFinished() {
+		// TODO Auto-generated method stub
+	return this.finished;
+		}
+
 
 }
