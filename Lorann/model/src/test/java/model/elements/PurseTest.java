@@ -8,7 +8,18 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import model.ElementFactory;
+
 public class PurseTest {
+	
+	/**
+	 * <h1>The Class ElementFactoryTest.</h1>
+	 * 
+	 * @author Nicolas
+	 * @version 1.0
+	 * @see ElementFactory
+	 */
+	
 	
 	/** The value */
 	private int value;
