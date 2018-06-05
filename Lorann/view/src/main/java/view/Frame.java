@@ -93,7 +93,7 @@ public class Frame extends JFrame implements KeyListener, IView {
 	 */
   private void keyCodeToUserOrder(final int keyCode) {
     	
-    	System.out.println(keyCode);
+    	
     	
     	switch(keyCode)
 		{
