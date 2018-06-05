@@ -142,9 +142,7 @@ public class Map implements IMap {
 	 */
 	public void setFinished(boolean finished) {this.finished = finished;}
 
-<<<<<<< HEAD
 
-=======
 	/**
 	 * Get the ID.
 	 * 
@@ -167,7 +165,7 @@ public class Map implements IMap {
 			this.ID = ID;
 		}
 	}
->>>>>>> branch 'preprod' of https://github.com/EpsicrOnn/Lorann_project-V.2
+
 
 }
 
