@@ -8,7 +8,6 @@ import view.IView;
  * 
  * @author Loïc
  * @version 1.0
- * @see IOrderPerfomer
  * @see IController
  */
 public class LorannController implements IOrderPerformer, IController {
@@ -47,6 +46,9 @@ public class LorannController implements IOrderPerformer, IController {
 		while(this.getModel().getMap().getHero().isAlive()) {
 			Thread.sleep(TIME_SLEEP);
 			System.out.println(view.getUserOrder());
+				
+			
+				this.clearUserOrder();
 			
 			for (int i=0 ; i<model.getMap().getEntities().size();i++) {
 				model.getMap().getEntities().get(i).move();

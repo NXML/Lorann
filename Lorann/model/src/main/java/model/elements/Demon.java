@@ -6,7 +6,6 @@ import model.Map;
  * 
  * @author Arthur-Michel 
  * @version 1.0
- * @see IEntity
  */
 public class Demon extends Monster {
 	
