@@ -184,7 +184,7 @@ public class Entity extends Element implements IEntity {
 	@Override
 	public void moveDOWN_RIGHT() {
 		if(canMoveTo(this.x+1 ,this.y+1)) {moveTo(this.x+1 ,this.y+1);}
-		this.direction=Direction.BOTTOM_LEFT;
+		this.direction=Direction.BOTTOM_RIGHT;
 	}
 
 	/*
