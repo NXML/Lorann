@@ -11,15 +11,14 @@ import model.ISprite;
 import model.Map;
 
 public class EntityTest extends ElementTest {
-	
-	/** The X coordinate. */
-	private int X;
-	
-	/** The Y coordinate. */
-	private int Y;
-	
 	/** The entity for the test. */
 	private Entity entity;
+	
+	private Map map;
+	
+	private int X;
+	
+	private int Y;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -31,8 +30,10 @@ public class EntityTest extends ElementTest {
 
 	@Before
 	public void setUp() throws Exception {
-		this.X = 5 ;
-		this.Y=20 ;
+		this.map=new Map();
+		this.X=5;
+		this.Y=20;
+		this.entity=new Demon(5,20,map);
 	}
 
 
