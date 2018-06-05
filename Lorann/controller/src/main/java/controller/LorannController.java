@@ -57,49 +57,6 @@ public class LorannController implements IOrderPerformer, IController {
 			Thread.sleep(TIME_SLEEP);
 			
 			System.out.println(view.getUserOrder());
-			
-			
-			/*if(view.getUserOrder() != null) {
-			
-				switch(view.getUserOrder()) {
-				
-					case UP:
-						this.getModel().getMap().getHero().moveUP();
-						
-						break;
-					case DOWN:
-						this.getModel().getMap().getHero().moveDOWN();
-						break;
-					case LEFT:
-						this.getModel().getMap().getHero().moveLEFT();
-					break;
-					case RIGHT:
-						this.getModel().getMap().getHero().moveRIGHT();
-						break;
-					case TOP_LEFT:
-						this.getModel().getMap().getHero().moveUP_LEFT();
-						break;
-					case TOP_RIGHT:
-						this.getModel().getMap().getHero().moveUP_RIGHT();
-						break;
-					case BOTTOM_LEFT:
-						this.getModel().getMap().getHero().moveDOWN_LEFT();
-						break;
-					case BOTTOM_RIGHT:
-						this.getModel().getMap().getHero().moveDOWN_RIGHT();
-						break;
-					case MAGIC:
-							this.getModel().getMap().getHero().launchFireBall();			
-						break;
-					default:
-						setUserOrder(UserOrder.NOP);
-						break;
-						
-				}
-				
-				
-			}*/
-				
 				
 			
 				this.clearUserOrder();
