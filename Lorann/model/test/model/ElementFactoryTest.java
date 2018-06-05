@@ -2,11 +2,10 @@ package model;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
+
+import model.elements.Element;
 
 /**
  * <h1>The Class ElementFactoryTest.</h1>
@@ -17,43 +16,62 @@ import org.junit.Test;
  */
 public class ElementFactoryTest {
 	
-	/** */
-	private ElementFactory
-
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
+	/** The element factory to test. */
+	private ElementFactory elementFactoryToTest;
+	
+	/** The map. */
+	private Map map;
+	
+	/**
+	 * Set up the test configuration.
+	 * 
+	 * @throws Exception
+	 * 			Signals that an exception has occurred
+	 */
 	@Before
 	public void setUp() throws Exception {
+		elementFactoryToTest = new ElementFactory(map);
+		
 	}
 
-	@After
-	public void tearDown() throws Exception {
-	}
-
+	/**
+	 * The test of the method getVWall().
+	 */
 	@Test
 	public void testGetVWall() {
-		fail("Not yet implemented");
+		Element expected = this.elementFactoryToTest.vWall;
+		assertEquals(expected, this.elementFactoryToTest.getVWall());
+		
 	}
 
+	/**
+	 * The test of the method getHWall().
+	 */
 	@Test
 	public void testGetHWall() {
-		fail("Not yet implemented");
+		Element expected = this.elementFactoryToTest.hWall;
+		assertEquals(expected, this.elementFactoryToTest.getHWall());
+		
 	}
 
+	/**
+	 * The test of the method getCross().
+	 */
 	@Test
 	public void testGetCross() {
-		fail("Not yet implemented");
+		Element expected = this.elementFactoryToTest.cross;
+		assertEquals(expected, this.elementFactoryToTest.getCross());
+		
 	}
 
+	/**
+	 * The test of the method getGround().
+	 */
 	@Test
 	public void testGetGround() {
-		fail("Not yet implemented");
+		Element expected = this.elementFactoryToTest.ground;
+		assertEquals(expected, this.elementFactoryToTest.getGround());
+		
 	}
 
 }
