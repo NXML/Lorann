@@ -2,29 +2,14 @@ package model;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- * <h1>The Class MapTest.</h1>
- * 
- * @author Loïc
- * @version 1.0
- * @see Map
- */
 public class MapTest {
-	
-	/** The map to test. */
-	private Map mapToTest;
-	
-	/** The entities. */
-	private ArrayList<IEntity> entities = new ArrayList<IEntity>();
-	
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -32,11 +17,12 @@ public class MapTest {
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
 	}
+	private int asList[] = {0,1};
+	private int ID;
 
 	@Before
 	public void setUp() throws Exception {
-		this.mapToTest = new Map();
-		
+		this.ID = 6;
 	}
 
 	@After
@@ -44,16 +30,12 @@ public class MapTest {
 	}
 
 	@Test
-	public void testAddEntity() {
-		ArrayList<IEntity> expected = entities;
-		this.entities.removeAll(entities);
-		assertEquals(expected, this.mapToTest.getEntities());
+	public void testSetID() throws Exception { 
 		
-	}
+	
+	
+	
+	
 
-	@Test
-	public void testRemoveEntity() {
-		fail("Not yet implemented");
-	}
-
+}
 }
