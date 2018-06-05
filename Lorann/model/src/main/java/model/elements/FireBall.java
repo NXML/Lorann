@@ -80,7 +80,6 @@ public class FireBall extends AI {
 	 * @see model.elements.Entity#move()
 	 */
 	@SuppressWarnings("unchecked")
-	@Override
 	public void move() {
 		if(this.mod==1) {
 			if(canMoveTo(this.x+normalVectorX,this.y+normalVectorY)) {
