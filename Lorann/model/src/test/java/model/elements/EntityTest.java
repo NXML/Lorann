@@ -12,22 +12,9 @@ import model.Map;
 
 public class EntityTest extends ElementTest {
 	
-	/**
-	 * <h1>The Class ElementFactoryTest.</h1>
-	 * 
-	 * @author Nicolas
-	 * @version 1.0
-	 * @see ElementFactory
-	 */
-	
-	/** The X coordinate. */
 	private int X;
-	
-	/** The Y coordinate. */
 	private int Y;
-	
-	/** The entity for the test. */
-	private Entity entity;
+	private Map map;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -37,22 +24,14 @@ public class EntityTest extends ElementTest {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
-	/**
-	 * Set up the test configuration.
-	 * 
-	 * @throws Exception
-	 * 			Signals that an exception has occurred
-	 */
 	@Before
 	public void setUp() throws Exception {
-		this.X = 5 ;
-		this.Y=20 ;
+		super.elementToTest = new Entity(10, 5, this.image, map);
+		this.X = 5;
+		this.Y = 20;
 	}
 
 
-	/**
-	 * Test of the method moveUP().
-	 */
 	@Test
 	public void testMoveUP() {
 		this.Y = this.Y + 1 ;
@@ -63,9 +42,6 @@ public class EntityTest extends ElementTest {
 
 	}
 
-	/**
-	 * Test of the method moveDOWN ().
-	 */
 	@Test
 	public void testMoveDOWN() {
 		this.Y = this.Y - 1 ;
@@ -75,9 +51,6 @@ public class EntityTest extends ElementTest {
 		assertEquals(expectedY, this.Y);
 	};
 
-	/**
-	 * Test of the method moveRIGHT ().
-	 */
 	@Test
 	public void testMoveRIGHT() {
 		this.X = this.X + 1 ;
@@ -88,9 +61,6 @@ public class EntityTest extends ElementTest {
 ;
 	}
 
-	/**
-	 * Test of the method moveLEFT ().
-	 */
 	@Test
 	public void testMoveLEFT() {
 		this.X = this.X - 1 ;
@@ -99,25 +69,17 @@ public class EntityTest extends ElementTest {
 		assertEquals(expectedX, this.X);
 		assertEquals(expectedY, this.Y);
 	}
-
-	/**
-	 * Test of the method getX ().
+	
+	/*
+	 * (non-Javadoc)
+	 * @see model.elements.ElementTest#testGetSprite()
 	 */
+	@Override
 	@Test
-	public void testGetX() {
-		final int expected = 5;
-		assertEquals(expected, entity.getX());
-
-	}
-
-	/**
-	 * Test of the method getY ().
-	 */
-	@Test
-	public void testGetY() {
-		final int expected = 20;
-		assertEquals(expected, entity.getY());
-
+	public void testGetSprite() {
+		ISprite expected = super.elementToTest.sprite;
+		assertEquals(expected, super.elementToTest.getSprite());
+		
 	}
 
 }

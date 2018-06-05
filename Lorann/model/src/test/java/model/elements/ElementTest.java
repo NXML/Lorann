@@ -35,7 +35,7 @@ public class ElementTest {
 	}
 
 	/**
-	 * Test of the method getSprite().
+	 * Test of the method getSprite(). 
 	 */
 	@Test
 	public void testGetSprite() {
@@ -43,5 +43,7 @@ public class ElementTest {
 		assertEquals(expected, this.elementToTest.getSprite());
 		
 	}
+
+
 
 }
