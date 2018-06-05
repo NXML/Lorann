@@ -34,6 +34,16 @@ public class ElementTest {
 		
 	}
 
+	/**
+	 * Test of the method getSprite(). 
+	 */
+	@Test
+	public void testGetSprite() {
+		ISprite expected = this.elementToTest.sprite;
+		assertEquals(expected, this.elementToTest.getSprite());
+		
+	}
+
 
 
 }
