@@ -10,6 +10,15 @@ import org.junit.Test;
 
 public class HeroTest {
 	
+	/**
+	 * <h1>The Class ElementFactoryTest.</h1>
+	 * 
+	 * @author Nicolas
+	 * @version 1.0
+	 * @see ElementFactory
+	 */
+	
+	
 	/**	 The Hero for the test 	 */
 	private Hero hero;
 

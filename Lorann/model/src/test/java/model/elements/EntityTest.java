@@ -16,6 +16,14 @@ public class EntityTest extends ElementTest {
 	
 	private Map map;
 	
+	/**
+	 * <h1>The Class ElementFactoryTest.</h1>
+	 * 
+	 * @author Nicolas
+	 * @version 1.0
+	 * @see ElementFactory
+	 */
+	
 	private int X;
 	
 	private int Y;
@@ -28,6 +36,12 @@ public class EntityTest extends ElementTest {
 	public static void tearDownAfterClass() throws Exception {
 	}
 
+	/**
+	 * Set up the test configuration.
+	 * 
+	 * @throws Exception
+	 * 			Signals that an exception has occurred
+	 */
 	@Before
 	public void setUp() throws Exception {
 		this.map=new Map();
