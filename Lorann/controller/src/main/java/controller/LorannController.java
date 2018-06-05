@@ -8,7 +8,6 @@ import view.IView;
  * 
  * @author Loïc
  * @version 1.0
- * @see IOrderPerfomer
  * @see IController
  */
 public class LorannController implements IOrderPerformer, IController {
