@@ -30,7 +30,8 @@ public class DoorTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		doorTest = new Door(1,1,map);
+		doorTest = new Door(1, 1, map);
+		
 	}
 
 	/**
