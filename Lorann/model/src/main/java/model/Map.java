@@ -145,5 +145,21 @@ public class Map implements IMap {
 	 * @return the ID
 	 */
 	public int getID() {return ID;}
+	
+/*	public void existingMap () {
+		try {
+			
+		}catch{
+			
+		}
+	}*/
+	
+	public void setID(int ID) {
+		if (ID >= 5) {
+			throw new IllegalArgumentException();
+		}else {
+			this.ID = ID;
+		}
+	}
 
 }

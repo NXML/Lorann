@@ -15,5 +15,5 @@ public interface IModel {
 	 * @return the map
 	 */
 	IMap getMap();
-	
+
 }
