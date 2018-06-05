@@ -28,13 +28,20 @@ public class FireBall extends AI {
 	 * The normal vector y.
 	 */
 	public int normalVectorY;
+	
 	/**
-	 * 
-	 * different way to move the ball
+	 * The direction of the fireball.
 	 */
-	private int mod=1;
+	private int mod = 1;
+	
+	/*
+	 * (non-Javadoc)
+	 * @see model.elements.Entity#setMod(int)
+	 */
+	@Override
 	public void setMod(int mod) {
 		this.mod = mod;
+		
 	}
 
 	/**
@@ -66,7 +73,6 @@ public class FireBall extends AI {
 		
 		}
 		
-		
 	}
 	
 	/*
@@ -78,13 +84,15 @@ public class FireBall extends AI {
 	public void move() {
 		if(this.mod==1) {
 			if(canMoveTo(this.x+normalVectorX,this.y+normalVectorY)) {
-				moveTo(this.x+normalVectorX,this.y+normalVectorY);		
+				moveTo(this.x+normalVectorX,this.y+normalVectorY);
+				
 			}
 			else {
 				normalVectorX*=-1;
 				normalVectorY*=-1;
-				if(canMoveTo(this.x+normalVectorX,this.y+normalVectorY)) {
-					moveTo(this.x+normalVectorX,this.y+normalVectorY);	}
+				if(canMoveTo(this.x+normalVectorX,this.y+normalVectorY))
+					moveTo(this.x+normalVectorX,this.y+normalVectorY);
+				
 			}
 
 		}
@@ -100,12 +108,16 @@ public class FireBall extends AI {
 							yOffset=-j;
 							minDistance=bufferedDistance;
 						}
+						
 				}
+				
 			}
 
 			if(canMoveTo(this.x+xOffset,this.y+yOffset)) {
 				moveTo(this.x+xOffset,this.y+yOffset);
+				
 			}
+			
 		}
 		for (IEntity entity : (ArrayList<IEntity>) map.getEntities().clone()) {
 			if(entity.getX()==x && entity.getY()== y) {
@@ -113,15 +125,21 @@ public class FireBall extends AI {
 					map.removeEntity(entity);
 					map.getHero().setSpell(true);
 					map.removeEntity(this);
+					
 				}
 				if(entity instanceof Hero) {
 					map.getHero().setSpell(true);
 					map.removeEntity(this);
 				}
+				
 			}
+			
 		}
+		
 	}
 	private double distance(int entityX,int entityY,int entity2X,int entity2Y) {
 		return java.lang.Math.sqrt(java.lang.Math.pow((entity2X-entityX),2)+java.lang.Math.pow((entityY-entity2Y),2));
+		
 	}
+	
 }

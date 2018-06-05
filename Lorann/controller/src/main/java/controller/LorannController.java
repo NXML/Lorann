@@ -50,73 +50,18 @@ public class LorannController implements IOrderPerformer, IController {
 	 * @see controller.ControllerFacade#play()
 	 */
 	@Override
-	public  void play() throws InterruptedException {
-		
+	public void play() throws InterruptedException {
 		while(this.getModel().getMap().getHero().isAlive()) {
-			
 			Thread.sleep(TIME_SLEEP);
-			
 			System.out.println(view.getUserOrder());
 			
-			
-			/*if(view.getUserOrder() != null) {
-			
-				switch(view.getUserOrder()) {
-				
-					case UP:
-						this.getModel().getMap().getHero().moveUP();
-						
-						break;
-					case DOWN:
-						this.getModel().getMap().getHero().moveDOWN();
-						break;
-					case LEFT:
-						this.getModel().getMap().getHero().moveLEFT();
-					break;
-					case RIGHT:
-						this.getModel().getMap().getHero().moveRIGHT();
-						break;
-					case TOP_LEFT:
-						this.getModel().getMap().getHero().moveUP_LEFT();
-						break;
-					case TOP_RIGHT:
-						this.getModel().getMap().getHero().moveUP_RIGHT();
-						break;
-					case BOTTOM_LEFT:
-						this.getModel().getMap().getHero().moveDOWN_LEFT();
-						break;
-					case BOTTOM_RIGHT:
-						this.getModel().getMap().getHero().moveDOWN_RIGHT();
-						break;
-					case MAGIC:
-							this.getModel().getMap().getHero().launchFireBall();			
-						break;
-					default:
-						setUserOrder(UserOrder.NOP);
-						break;
-						
-				}
-				
-				
-			}*/
-				
-				
-			
-				this.clearUserOrder();
-			
 			for (int i=0 ; i<model.getMap().getEntities().size();i++) {
-				
 				model.getMap().getEntities().get(i).move();
 			}
-			
-			
 			if(model.getMap().getFinished()) {
-							this.getView().displayMessage("Good job ! You win !\n Your score is : " + model.getMap().getHero().getScore());
+				this.getView().displayMessage("Good job ! You win !\n Your score is : " + model.getMap().getHero().getScore());
 			
-						}
-			
-			
-		//}
+			}
 		
 		}
 		this.getView().displayMessage("Game Over");
@@ -153,16 +98,6 @@ public class LorannController implements IOrderPerformer, IController {
 	}
 	
 	/**
-	 * Get the user order.
-	 * 
-	 * @return the user order
-	 */
-	private UserOrder getUserOrder() {
-		return this.userOrder;
-		
-	}
-	
-	/**
 	 * Set the user order.
 	 * 
 	 * @param userOrder
@@ -178,16 +113,6 @@ public class LorannController implements IOrderPerformer, IController {
 	 */
 	private void clearUserOrder() {
 		this.userOrder = UserOrder.NOP;
-		
-	}
-	
-	/**
-	 * Launch a fireball.
-	 * 
-	 * @throws IOException
-	 * 			Signals that an I/O exception has occurred
-	 */
-	private void launchFireball() throws IOException {
 		
 	}
 	

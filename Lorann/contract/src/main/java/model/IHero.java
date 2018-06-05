@@ -56,12 +56,16 @@ public interface IHero extends IEntity {
 	 */
 	void setScore(int score);
 
+	/**
+	 * Launch a fireball.
+	 */
 	void launchFireBall();
 
-
-
-	boolean getFinished();
-	
-	
+	/**
+	 * Check whether it's finished.
+	 * 
+	 * @return true or false
+	 */
+	boolean isFinished();
 	
 }
