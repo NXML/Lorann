@@ -45,7 +45,7 @@ public class LorannController implements IOrderPerformer, IController {
 	public void play() throws InterruptedException {
 		while(this.getModel().getMap().getHero().isAlive()) {
 			Thread.sleep(TIME_SLEEP);
-			System.out.println(view.getUserOrder());
+			
 				
 			
 				this.clearUserOrder();
