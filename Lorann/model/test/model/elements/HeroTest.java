@@ -9,6 +9,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class HeroTest {
+	
+	private Hero hero;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -20,60 +22,63 @@ public class HeroTest {
 
 	@Before
 	public void setUp() throws Exception {
+		
+		this.hero = new Hero(0, 0, null);
+		hero.setAlive(true);
+		hero.setScore(100);
+		
 	}
 
 	@After
 	public void tearDown() throws Exception {
 	}
 
-	@Test
-	public void testMoveTo() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testMove() {
-		fail("Not yet implemented");
-	}
 
 	@Test
 	public void testCanSpell() {
-		fail("Not yet implemented");
+		final boolean expected = true;
+		assertEquals(expected , hero.canSpell());
 	}
 
 	@Test
 	public void testSetSpell() {
-		fail("Not yet implemented");
+		final boolean expected = true;
+		this.hero.setSpell(true);
+		assertEquals(expected , hero.canSpell());
+
 	}
 
 	@Test
 	public void testGetScore() {
-		fail("Not yet implemented");
+		final int expected = 100;
+		assertEquals(expected , hero.getScore());
 	}
 
 	@Test
 	public void testSetScore() {
-		fail("Not yet implemented");
+		final int expected = 200;
+		this.hero.setScore(200);
+		assertEquals(expected , hero.getScore());
 	}
 
 	@Test
 	public void testIsAlive() {
-		fail("Not yet implemented");
+		final boolean expected = true;
+		assertEquals(expected , hero.isAlive());
 	}
 
 	@Test
 	public void testSetAlive() {
-		fail("Not yet implemented");
+		final boolean expected = true;
+		this.hero.setAlive(true);
+		assertEquals(expected, hero.isAlive());
 	}
 
-	@Test
-	public void testLaunchFireBall() {
-		fail("Not yet implemented");
-	}
 
 	@Test
 	public void testIsFinished() {
-		fail("Not yet implemented");
+		final boolean expected = false;
+		assertEquals(expected, hero.isFinished());
 	}
 
 }
