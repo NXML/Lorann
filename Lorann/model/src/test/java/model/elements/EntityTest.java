@@ -12,8 +12,13 @@ import model.Map;
 
 public class EntityTest extends ElementTest {
 	
+	/** The X coordinate. */
 	private int X;
+	
+	/** The Y coordinate. */
 	private int Y;
+	
+	/** The entity for the test. */
 	private Entity entity;
 	
 	@BeforeClass
@@ -31,6 +36,9 @@ public class EntityTest extends ElementTest {
 	}
 
 
+	/**
+	 * Test of the method moveUP().
+	 */
 	@Test
 	public void testMoveUP() {
 		this.Y = this.Y + 1 ;
@@ -41,6 +49,9 @@ public class EntityTest extends ElementTest {
 
 	}
 
+	/**
+	 * Test of the method moveDOWN ().
+	 */
 	@Test
 	public void testMoveDOWN() {
 		this.Y = this.Y - 1 ;
@@ -50,6 +61,9 @@ public class EntityTest extends ElementTest {
 		assertEquals(expectedY, this.Y);
 	};
 
+	/**
+	 * Test of the method moveRIGHT ().
+	 */
 	@Test
 	public void testMoveRIGHT() {
 		this.X = this.X + 1 ;
@@ -60,6 +74,9 @@ public class EntityTest extends ElementTest {
 ;
 	}
 
+	/**
+	 * Test of the method moveLEFT ().
+	 */
 	@Test
 	public void testMoveLEFT() {
 		this.X = this.X - 1 ;
@@ -69,6 +86,9 @@ public class EntityTest extends ElementTest {
 		assertEquals(expectedY, this.Y);
 	}
 
+	/**
+	 * Test of the method getX ().
+	 */
 	@Test
 	public void testGetX() {
 		final int expected = 5;
@@ -76,6 +96,9 @@ public class EntityTest extends ElementTest {
 
 	}
 
+	/**
+	 * Test of the method getY ().
+	 */
 	@Test
 	public void testGetY() {
 		final int expected = 20;
