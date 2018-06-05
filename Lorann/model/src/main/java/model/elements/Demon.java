@@ -43,7 +43,6 @@ public class Demon extends Monster {
 	 * (non-Javadoc)
 	 * @see model.elements.Entity#move()
 	 */
-	@Override
 	public void move() {
 		if(canMoveTo(x+(1*movementVector), y)) {
 			moveTo(x+(1*movementVector), y);

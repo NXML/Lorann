@@ -43,7 +43,6 @@ public class Zombie extends Monster {
 	 * (non-Javadoc)
 	 * @see model.elements.Entity#move()
 	 */
-	@Override
 	public void move() {
 		if(canMoveTo(x, y+(1*movementVector))) {
 			moveTo(x, y+(1*movementVector));

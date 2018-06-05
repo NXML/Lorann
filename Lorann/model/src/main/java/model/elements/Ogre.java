@@ -46,7 +46,6 @@ public class Ogre extends Monster {
 	 * (non-Javadoc)
 	 * @see model.elements.Entity#move()
 	 */
-	@Override
 	public void move() {
 		int xOffset =0;
 		int yOffset =0;
