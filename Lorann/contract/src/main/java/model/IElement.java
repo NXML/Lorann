@@ -25,6 +25,12 @@ public interface IElement {
 	 */
 	boolean isPermeable();
 	
+	/**
+	 * Add an observer.
+	 * 
+	 * @param o
+	 * 			the observer
+	 */
 	void addObserver(Observer o);
 	
 }
