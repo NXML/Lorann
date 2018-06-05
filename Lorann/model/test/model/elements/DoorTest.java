@@ -8,10 +8,19 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import model.Map;
 
+import model.Map;
+/**
+ * <h1>The Class DoorTest.</h1>
+ * 
+ * @author Arthur-Michel
+ * @version 1.0
+ * @see Entity
+ */
 public class DoorTest {
+	/** The Door*/
 	private Door doorTest;
+	/** The map*/
 	private Map map;
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -29,13 +38,13 @@ public class DoorTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	/** door test is open*/
 	@Test
 	public void testIsOpen() {
 		boolean expected = false;
 		assertEquals(expected , this.doorTest.isOpen());
 	}
-
+	/** Test of door set open*/
 	@Test
 	public void testSetOpen() {
 		boolean expected =true;
