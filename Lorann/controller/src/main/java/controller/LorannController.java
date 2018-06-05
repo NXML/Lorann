@@ -123,10 +123,9 @@ public class LorannController implements IOrderPerformer, IController {
 		
 	}
 	
-	/**
-	 * Get the model.
-	 * 
-	 * @return the model
+	/*
+	 * (non-Javadoc)
+	 * @see controller.IController#getModel()
 	 */
 	public IModel getModel() {
 		return this.model;

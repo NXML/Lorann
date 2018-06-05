@@ -26,10 +26,11 @@ public interface IController {
 	 */
 	IOrderPerformer getOrderPerformer();
 
+	/**
+	 * Get the model.
+	 * 
+	 * @return the model
+	 */
 	IModel getModel();
-
-	
-	
-	
 
 }
