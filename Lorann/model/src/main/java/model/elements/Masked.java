@@ -47,7 +47,6 @@ public class Masked extends Monster {
 	 * (non-Javadoc)
 	 * @see model.elements.Entity#move()
 	 */
-	@Override
 	public void move() {
 		int[] array = {-1,0,1};
 		movementVectorX=0;

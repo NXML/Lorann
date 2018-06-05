@@ -142,7 +142,32 @@ public class Map implements IMap {
 	 */
 	public void setFinished(boolean finished) {this.finished = finished;}
 
+<<<<<<< HEAD
 
+=======
+	/**
+	 * Get the ID.
+	 * 
+	 * @return the ID
+	 */
+	public int getID() {return ID;}
+	
+/*	public void existingMap () {
+		try {
+			
+		}catch{
+			
+		}
+	}*/
+	
+	public void setID(int ID) {
+		if (ID >= 5) {
+			throw new IllegalArgumentException();
+		}else {
+			this.ID = ID;
+		}
+	}
+>>>>>>> branch 'preprod' of https://github.com/EpsicrOnn/Lorann_project-V.2
 
 }
 
