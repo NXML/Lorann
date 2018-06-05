@@ -2,28 +2,34 @@ package model.elements;
 
 import static org.junit.Assert.*;
 
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import model.ISprite;
 import model.Map;
 
+/**
+ * <h1>The Class EntityTest.</h1>
+ * 
+ * @author Loïc
+ * @author Nicolas
+ * @version 1.0
+ * @see Entity
+ */
 public class EntityTest extends ElementTest {
 	
+	/** x. */
 	private int X;
-	private int Y;
-	private Map map;
 	
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
+	/** y. */
+	private int Y;
+	
+	/** The map. */
+	private Map map;
 
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
+	/**
+	 * Set up the test configuration.
+	 */
 	@Before
 	public void setUp() throws Exception {
 		super.elementToTest = new Entity(10, 5, this.image, map);
@@ -31,7 +37,9 @@ public class EntityTest extends ElementTest {
 		this.Y = 20;
 	}
 
-
+	/**
+	 * Test the method moveUP().
+	 */
 	@Test
 	public void testMoveUP() {
 		this.Y = this.Y + 1 ;
@@ -42,6 +50,9 @@ public class EntityTest extends ElementTest {
 
 	}
 
+	/**
+	 * Test the method moveDOWN().
+	 */
 	@Test
 	public void testMoveDOWN() {
 		this.Y = this.Y - 1 ;
@@ -49,8 +60,12 @@ public class EntityTest extends ElementTest {
 		final int expectedY = 19;
 		assertEquals(expectedX, this.X);
 		assertEquals(expectedY, this.Y);
-	};
+		
+	}
 
+	/**
+	 * Test the method moveRIGHT().
+	 */
 	@Test
 	public void testMoveRIGHT() {
 		this.X = this.X + 1 ;
@@ -58,9 +73,12 @@ public class EntityTest extends ElementTest {
 		final int expectedY = 20;
 		assertEquals(expectedX, this.X);
 		assertEquals(expectedY, this.Y);
-;
+
 	}
 
+	/**
+	 * Test the method moveLEFT().
+	 */
 	@Test
 	public void testMoveLEFT() {
 		this.X = this.X - 1 ;
@@ -68,6 +86,7 @@ public class EntityTest extends ElementTest {
 		final int expectedY = 20;
 		assertEquals(expectedX, this.X);
 		assertEquals(expectedY, this.Y);
+		
 	}
 	
 	/*
