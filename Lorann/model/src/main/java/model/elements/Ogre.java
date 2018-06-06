@@ -82,6 +82,19 @@ public class Ogre extends Monster {
 		if(canMoveTo(this.x+xOffset,this.y+yOffset)) {
 			moveTo(this.x+xOffset,this.y+yOffset);
 		}
+		for (IEntity entity : (ArrayList<IEntity>) map.getEntities().clone()) {
+			if(entity.getX()==x && entity.getY()== y) {
+				if(entity instanceof FireBall) {
+					map.removeEntity(entity);
+					map.getHero().setSpell(true);
+					map.removeEntity(this);
+					
+				}
+				
+				
+			}
+			
+		}
 	}
 	
 		
