@@ -81,6 +81,22 @@ public class FireBall extends AI {
 	 */
 	@SuppressWarnings("unchecked")
 	public void move() {
+		for (IEntity entity : (ArrayList<IEntity>) map.getEntities().clone()) {
+			if(entity.getX()==x && entity.getY()== y) {
+				if(entity instanceof Monster) {
+					map.removeEntity(entity);
+					map.getHero().setSpell(true);
+					map.removeEntity(this);
+					
+				}
+			
+				
+			}
+			
+		}
+		
+		
+		
 		if(this.mod==1) {
 			if(canMoveTo(this.x+normalVectorX,this.y+normalVectorY)) {
 				moveTo(this.x+normalVectorX,this.y+normalVectorY);
