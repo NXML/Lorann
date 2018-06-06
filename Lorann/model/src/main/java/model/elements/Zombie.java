@@ -72,6 +72,19 @@ public class Zombie extends Monster {
 			movementVector *= -1;
 			
 		}
+		for (IEntity entity : (ArrayList<IEntity>) map.getEntities().clone()) {
+			if(entity.getX()==x && entity.getY()== y) {
+				if(entity instanceof FireBall) {
+					map.removeEntity(entity);
+					map.getHero().setSpell(true);
+					map.removeEntity(this);
+					
+				}
+				
+				
+			}
+			
+		}
 		
 	}
 
