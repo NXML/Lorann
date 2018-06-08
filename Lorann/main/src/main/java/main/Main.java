@@ -8,6 +8,7 @@ import model.IModel;
 import model.Model;
 
 import view.Frame;
+import view.IView;
 
 /**
  * <h1>The Class Main.</h1>
@@ -26,8 +27,11 @@ public abstract class Main {
      * 			Signals that an interrupted exception has occurred
      */
     public static void main(final String[] args) throws InterruptedException, IOException {
-    	IModel model = new Model();
-        final LorannController controller = new LorannController(new Frame(model), model);
+    	final IModel model = new Model();
+    	final IView view = new Frame(model);
+        final LorannController controller = new LorannController(view, model);
+        view.setOrderPerformer(controller.getOrderPerformer());
+        
         controller.play();
         
     }

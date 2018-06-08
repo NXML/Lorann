@@ -1,6 +1,5 @@
 
 package view;
-import java.awt.Window;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowEvent;
@@ -10,7 +9,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 
-import controller.IController;
 import controller.IOrderPerformer;
 import controller.UserOrder;
 import model.IModel;
@@ -38,19 +36,11 @@ public class Frame extends JFrame implements KeyListener, IView {
 	/** The display. */
 	private Display display;
 	
-	/** The controller. */
-	private IController controller;
-	
 	/** The model. */
 	private IModel model;
 	
 	/** The order performer. */
 	private IOrderPerformer orderPerformer;
-	
-	/** The userOrder. */
- 	UserOrder userOrder;
- 	
- 	private Frame frame;
  	
  	
  	
@@ -74,16 +64,6 @@ public class Frame extends JFrame implements KeyListener, IView {
 		this.setVisible(true);
 
 	}
-	
-	/**
-	 * Get the controller.
-	 * 
-	 * @return the controller
-	 */
-	private IController getController() {
-		return controller;
-		
-	}
 
 	/**
 	 * Convert the key code to the user order.
@@ -91,64 +71,46 @@ public class Frame extends JFrame implements KeyListener, IView {
 	 * @param keyCode
 	 * 			the key code
 	 */
-  private void keyCodeToUserOrder(final int keyCode) {
+  private static UserOrder keyCodeToUserOrder(final int keyCode) {
     	
-    	
+    	UserOrder userOrder;
     	
     	switch(keyCode)
 		{
 			case KeyEvent.VK_NUMPAD8:
 				userOrder = UserOrder.UP;
-			//	this.getController().getModel().getMap().getHero().moveUP();
-				model.getMap().getHero().moveUP();
 				break;
 				
 			case KeyEvent.VK_NUMPAD2:
 				userOrder = UserOrder.DOWN;
-			//	this.getController().getModel().getMap().getHero().moveDOWN();
-				model.getMap().getHero().moveDOWN();
 				break;
 				
 			case KeyEvent.VK_NUMPAD4 :
 				userOrder = UserOrder.LEFT;
-			//	this.getController().getModel().getMap().getHero().moveLEFT();
-				model.getMap().getHero().moveLEFT();
 				break;
 				
 			case KeyEvent.VK_NUMPAD6:
 				userOrder = UserOrder.RIGHT;
-			//	this.getController().getModel().getMap().getHero().moveRIGHT();
-				model.getMap().getHero().moveRIGHT();
 				break;
 			
 			case KeyEvent.VK_NUMPAD7:
 				userOrder = UserOrder.TOP_LEFT;
-			//	this.getController().getModel().getMap().getHero().moveUP_LEFT();
-				model.getMap().getHero().moveUP_LEFT();
 				break;
 			
 			case KeyEvent.VK_NUMPAD9:
 				userOrder = UserOrder.TOP_RIGHT;
-			//	this.getController().getModel().getMap().getHero().moveUP_RIGHT();
-				model.getMap().getHero().moveUP_RIGHT();
 				break;	
 				
 			case KeyEvent.VK_NUMPAD1:
 				userOrder = UserOrder.BOTTOM_LEFT;
-			//	this.getController().getModel().getMap().getHero().moveDOWN_LEFT();
-				model.getMap().getHero().moveDOWN_LEFT();
 				break;	
 				
 			case KeyEvent.VK_NUMPAD3:
 				userOrder = UserOrder.BOTTOM_RIGHT;
-			//	this.getController().getModel().getMap().getHero().moveDOWN_RIGHT();
-				model.getMap().getHero().moveDOWN_RIGHT();
 				break;	
 				
 			case KeyEvent.VK_NUMPAD5:
 				userOrder = UserOrder.MAGIC;
-			//	this.getController().getModel().getMap().getHero().launchFireBall();
-				model.getMap().getHero().launchFireBall();
 				break;
 			
 			default:
@@ -157,17 +119,23 @@ public class Frame extends JFrame implements KeyListener, IView {
 				
 		}
     	
+    	return userOrder;
+    	
     }
 
-	/**
-	 * Invoked when a key is pressed.
-	 * 
-	 * @param keyEvent
-	 * 			the key event 
+	/*
+	 * (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyPressed(java.awt.event.KeyEvent)
 	 */
-	
+	@Override
   	public final void keyPressed(final KeyEvent keyEvent) {
-  		keyCodeToUserOrder(keyEvent.getKeyCode());
+  		try {
+			this.getOrderPerformer().orderPerform(keyCodeToUserOrder(keyEvent.getKeyCode()));
+			
+		} catch (final IOException e) {
+			e.printStackTrace();
+			
+		}
 		 
 	}
 	
@@ -199,40 +167,17 @@ public class Frame extends JFrame implements KeyListener, IView {
     */
     private IOrderPerformer getOrderPerformer() {
     	return this.orderPerformer;
+    	
     }
 
-	
-	/**
-	 * Invoked when a key is released.
-	 * 
-	 * @param keyEvent
-	 * 			the key event
+	/*
+	 * (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyTyped(java.awt.event.KeyEvent)
 	 */
-	public void keyReleased(int keyEvent) {
-		this.userOrder = UserOrder.NOP;
-		
-	}
-
-	/**
-	 * Invoked when a key is typed.
-	 * 
-	 * @param keyEvent
-	 * 			the key event
-	 */
-	public void keyTyped(KeyEvent keyEvent) {
+	public final void keyTyped(final KeyEvent keyEvent) {
 		// this.keyCodeToUserOrder(keyEvent.getKeyCode());
 		
 	}
-	
-	/**
-	 * Get the user order.
-	 * 
-	 * @return the user order
-	 */
-	 public UserOrder getUserOrder() {
-	    	return this.userOrder;
-	    	
-	 }
 	    
 	/**
 	 * Repaint the components.
@@ -250,18 +195,6 @@ public class Frame extends JFrame implements KeyListener, IView {
 	 */
 	public Display getDisplay() {
 		return display;
-		
-	}
-	
-
-	/**
-	 * Set the controller.
-	 * 
-	 * @param controller
-	 * 			the controller to set
-	 */
-	public void setController(IController controller) {
-		this.controller = controller;
 		
 	}
 	
@@ -331,16 +264,24 @@ public class Frame extends JFrame implements KeyListener, IView {
 		this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));	
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
+	 */
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 	/*
 	 * (non-Javadoc)
-	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
+	 * @see view.IView#setOrderPerformer(controller.IOrderPerformer)
 	 */
-	
+	@Override
+	public final void setOrderPerformer(final IOrderPerformer orderPerformer) {
+		this.orderPerformer = orderPerformer;
+		
+	}
 	
 }
