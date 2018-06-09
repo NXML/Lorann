@@ -16,7 +16,7 @@ public class Map implements IMap {
 	/**
 	 * The ID.
 	 */
-	private int ID = 4;
+	private int ID = 5;
 	
 	/**
 	 * The end.
